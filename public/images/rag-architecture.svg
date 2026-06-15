@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 500">
+  <defs>
+    <style>
+      .title { font-family: Arial, sans-serif; font-size: 20px; font-weight: bold; fill: #1A1A2E; text-anchor: middle; }
+      .section-title { font-family: Arial, sans-serif; font-size: 14px; font-weight: bold; text-anchor: middle; }
+      .box { rx: 8; ry: 8; }
+      .label { font-family: Arial, sans-serif; font-size: 12px; fill: #1A1A2E; text-anchor: middle; dominant-baseline: middle; }
+      .small-label { font-family: Arial, sans-serif; font-size: 11px; fill: #1A1A2E; text-anchor: middle; dominant-baseline: middle; }
+      .annotation { font-family: Arial, sans-serif; font-size: 10px; fill: #666666; font-style: italic; }
+      .step { font-family: Arial, sans-serif; font-size: 11px; fill: #1A1A2E; }
+      .arrow { stroke: #333; stroke-width: 2; fill: none; marker-end: url(#arrowhead); }
+      .dashed-arrow { stroke: #666; stroke-width: 1.5; stroke-dasharray: 5,3; fill: none; marker-end: url(#arrowhead); }
+    </style>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#333"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="300" y="30" class="title">RAG System Architecture</text>
+
+  <!-- Indexing Pipeline Section -->
+  <text x="140" y="70" class="section-title" fill="#4A4A8A">Indexing Pipeline</text>
+
+  <!-- Documents -->
+  <rect x="40" y="90" width="90" height="50" class="box" fill="#FFE8E8" stroke="#8A4A4A" stroke-width="2"/>
+  <text x="85" y="115" class="label">Documents</text>
+
+  <!-- Chunking -->
+  <rect x="150" y="90" width="80" height="50" class="box" fill="#FFF8E8" stroke="#8A7A4A" stroke-width="2"/>
+  <text x="190" y="115" class="small-label">Chunking</text>
+
+  <!-- Embedding Model -->
+  <rect x="250" y="90" width="80" height="50" class="box" fill="#E8FFE8" stroke="#4A8A4A" stroke-width="2"/>
+  <text x="290" y="110" class="small-label">Embedding</text>
+  <text x="290" y="125" class="small-label">Model</text>
+
+  <!-- Vector Database -->
+  <rect x="350" y="90" width="90" height="50" class="box" fill="#E8E8FF" stroke="#4A4A8A" stroke-width="2"/>
+  <text x="395" y="110" class="small-label">Vector</text>
+  <text x="395" y="125" class="small-label">Database</text>
+
+  <!-- Arrows in Indexing -->
+  <line x1="130" y1="115" x2="150" y2="115" class="arrow"/>
+  <line x1="230" y1="115" x2="250" y2="115" class="arrow"/>
+  <line x1="330" y1="115" x2="350" y2="115" class="arrow"/>
+
+  <!-- Annotations -->
+  <text x="190" y="155" class="annotation">Chunking: Split docs into pieces</text>
+  <text x="390" y="155" class="annotation">Embedding: Convert to vectors</text>
+
+  <!-- Query Pipeline Section -->
+  <text x="140" y="200" class="section-title" fill="#4A8A4A">Query Pipeline</text>
+
+  <!-- User Query -->
+  <rect x="40" y="220" width="90" height="50" class="box" fill="#FFE8E8" stroke="#8A4A4A" stroke-width="2"/>
+  <text x="85" y="245" class="label">User Query</text>
+
+  <!-- Embedding -->
+  <rect x="150" y="220" width="80" height="50" class="box" fill="#E8FFE8" stroke="#4A8A4A" stroke-width="2"/>
+  <text x="190" y="245" class="small-label">Embedding</text>
+
+  <!-- Similarity Search -->
+  <rect x="250" y="220" width="80" height="50" class="box" fill="#E8E8FF" stroke="#4A4A8A" stroke-width="2"/>
+  <text x="290" y="240" class="small-label">Similarity</text>
+  <text x="290" y="255" class="small-label">Search</text>
+
+  <!-- Top-K Chunks -->
+  <rect x="350" y="220" width="80" height="50" class="box" fill="#FFF8E8" stroke="#8A7A4A" stroke-width="2"/>
+  <text x="390" y="240" class="small-label">Top-K</text>
+  <text x="390" y="255" class="small-label">Chunks</text>
+
+  <!-- Arrows in Query -->
+  <line x1="130" y1="245" x2="150" y2="245" class="arrow"/>
+  <line x1="230" y1="245" x2="250" y2="245" class="arrow"/>
+  <line x1="330" y1="245" x2="350" y2="245" class="arrow"/>
+
+  <!-- Retrieval Label -->
+  <text x="390" y="285" class="annotation" text-anchor="middle"><b>Retrieval</b></text>
+
+  <!-- Generation Pipeline Section -->
+  <text x="140" y="340" class="section-title" fill="#8A4A4A">Generation Pipeline</text>
+
+  <!-- Context + Prompt -->
+  <rect x="40" y="360" width="90" height="50" class="box" fill="#FFF8E8" stroke="#8A7A4A" stroke-width="2"/>
+  <text x="85" y="380" class="small-label">Context +</text>
+  <text x="85" y="395" class="small-label">Prompt</text>
+
+  <!-- LLM -->
+  <rect x="150" y="360" width="80" height="50" class="box" fill="#E8E8FF" stroke="#4A4A8A" stroke-width="2"/>
+  <text x="190" y="385" class="label">LLM</text>
+
+  <!-- Generated Response -->
+  <rect x="250" y="360" width="90" height="50" class="box" fill="#E8FFE8" stroke="#4A8A4A" stroke-width="2"/>
+  <text x="295" y="380" class="small-label">Generated</text>
+  <text x="295" y="395" class="small-label">Response</text>
+
+  <!-- Arrows in Generation -->
+  <line x1="130" y1="385" x2="150" y2="385" class="arrow"/>
+  <line x1="230" y1="385" x2="250" y2="385" class="arrow"/>
+
+  <!-- Dashed arrow from Top-K to Context -->
+  <path d="M 390 270 L 390 290 L 130 290 L 130 360" class="dashed-arrow"/>
+</svg>

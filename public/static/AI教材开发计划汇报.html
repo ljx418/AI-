@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI教材开发计划汇报</title>
+    <style>
+        :root {
+            --primary: #4F46E5;
+            --secondary: #7C3AED;
+            --accent: #10B981;
+            --bg: #F8FAFC;
+            --card-bg: #FFFFFF;
+            --text: #1E293B;
+            --text-light: #64748B;
+            --border: #E2E8F0;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+
+        /* Header */
+        .header { text-align: center; padding: 60px 20px; background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); color: white; border-radius: 0 0 32px 32px; margin-bottom: 40px; }
+        .header h1 { font-size: 2.5rem; font-weight: 700; margin-bottom: 16px; }
+        .header p { font-size: 1.2rem; opacity: 0.9; }
+        .header .meta { display: flex; justify-content: center; gap: 32px; margin-top: 24px; flex-wrap: wrap; }
+        .header .meta-item { background: rgba(255,255,255,0.2); padding: 8px 20px; border-radius: 24px; font-size: 0.9rem; }
+
+        /* Navigation */
+        .nav { position: sticky; top: 0; background: var(--card-bg); border-bottom: 1px solid var(--border); padding: 16px 0; z-index: 100; margin-bottom: 40px; }
+        .nav ul { display: flex; gap: 8px; list-style: none; overflow-x: auto; padding: 0 20px; }
+        .nav a { display: block; padding: 8px 16px; color: var(--text); text-decoration: none; border-radius: 8px; font-weight: 500; font-size: 0.9rem; transition: all 0.2s; white-space: nowrap; }
+        .nav a:hover, .nav a.active { background: var(--primary); color: white; }
+
+        /* Sections */
+        section { margin-bottom: 60px; }
+        .section-title { font-size: 1.8rem; font-weight: 700; color: var(--text); margin-bottom: 24px; padding-bottom: 12px; border-bottom: 3px solid var(--primary); display: inline-block; }
+        .section-subtitle { font-size: 1rem; color: var(--text-light); margin-bottom: 20px; }
+
+        /* Cards */
+        .card { background: var(--card-bg); border-radius: 16px; padding: 24px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); margin-bottom: 20px; }
+        .card-title { font-size: 1.2rem; font-weight: 600; margin-bottom: 16px; display: flex; align-items: center; gap: 10px; }
+        .card-title .icon { width: 32px; height: 32px; background: linear-gradient(135deg, var(--primary), var(--secondary)); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1rem; }
+
+        /* Grid */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+        .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+        @media (max-width: 768px) { .grid-3 { grid-template-columns: 1fr; } }
+
+        /* Tables */
+        table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+        th { background: var(--primary); color: white; padding: 12px 16px; text-align: left; font-weight: 600; }
+        td { padding: 12px 16px; border-bottom: 1px solid var(--border); }
+        tr:hover { background: #F1F5F9; }
+
+        /* Tags */
+        .tag { display: inline-block; padding: 4px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: 500; }
+        .tag-primary { background: #EEF2FF; color: var(--primary); }
+        .tag-success { background: #D1FAE5; color: #059669; }
+        .tag-warning { background: #FEF3C7; color: #D97706; }
+        .tag-danger { background: #FEE2E2; color: #DC2626; }
+
+        /* Timeline */
+        .timeline { position: relative; padding-left: 40px; }
+        .timeline::before { content: ''; position: absolute; left: 15px; top: 0; bottom: 0; width: 2px; background: var(--border); }
+        .timeline-item { position: relative; margin-bottom: 30px; }
+        .timeline-item::before { content: ''; position: absolute; left: -33px; top: 4px; width: 12px; height: 12px; border-radius: 50%; background: var(--primary); border: 3px solid white; box-shadow: 00 0 3px var(--primary); }
+        .timeline-item .phase { font-size: 0.8rem; color: var(--primary); font-weight: 600; text-transform: uppercase; }
+        .timeline-item h4 { font-size: 1.1rem; margin: 8px 0; }
+        .timeline-item .duration { color: var(--text-light); font-size: 0.9rem; margin-bottom: 8px; }
+        .timeline-item ul { padding-left: 20px; font-size: 0.9rem; }
+
+        /* Highlight Box */
+        .highlight-box { background: linear-gradient(135deg, #EEF2FF0%, #F5F3FF 100%); border-left: 4px solid var(--primary); padding: 20px; border-radius: 0 12px 12px 0; margin: 20px 0; }
+        .highlight-box.success { background: linear-gradient(135deg, #D1FAE5 0%, #ECFDF5 100%); border-left-color: var(--accent); }
+
+        /* Skill Tree */
+        .skill-layer { display: flex; flex-wrap: wrap; gap: 12px; margin: 12px 0; }
+        .skill-item { background: white; padding: 8px 16px; border-radius: 8px; font-size: 0.85rem; box-shadow: 0 1px 2px rgba(0,0,0,0.05); }
+
+        /* Footer */
+        .footer { text-align: center; padding: 40px; color: var(--text-light); font-size: 0.9rem; border-top: 1px solid var(--border); margin-top: 60px; }
+
+        /* Anchor */
+        .anchor { scroll-margin-top: 80px; }
+
+        /* Badge */
+        .badge { display: inline-flex; align-items: center; gap: 6px; background: var(--accent); color: white; padding: 4px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: 500; }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>🤖 AI教材开发计划</h1>
+        <p>面向学生、转行程序员的就业导向型AI系统教材</p>
+        <div class="meta">
+            <span class="meta-item">📅 2026年6月</span>
+            <span class="meta-item">👥 目标用户：学生 + 转行者</span>
+            <span class="meta-item">🎯 就业导向</span>
+        </div>
+    </header>
+
+    <nav class="nav">
+        <ul>
+            <li><a href="#overview">项目概述</a></li>
+            <li><a href="#market">市场需求</a></li>
+            <li><a href="#curriculum">课程设计</a></li>
+            <li><a href="#projects">实战项目</a></li>
+            <li><a href="#moat">护城河</a></li>
+            <li><a href="#plan">开发计划</a></li>
+            <li><a href="#biz">商业模式</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <!-- Overview -->
+        <section id="overview" class="anchor">
+            <h2 class="section-title">📋 项目概述</h2>
+            <p class="section-subtitle">定位清晰、差异化明显、面向就业的AI系统教材</p>
+
+            <div class="card">
+                <div class="card-title">
+                    <span class="icon">🎯</span>
+                    项目定位
+                </div>
+                <p>开发一套面向<b>计算机专业学生</b>和<b>转行程序员</b>的AI系统教材，课程深度直接对标Boss招聘、脉脉、牛客等平台上大厂AI开发岗位的技能要求，同时覆盖AI前沿技术和社区热点项目。</p>
+            </div>
+
+            <div class="grid">
+                <div class="card">
+                    <div class="card-title"><span class="icon">👥</span>目标用户</div>
+                    <ul style="padding-left: 20px;">
+                        <li>计算机专业在校学生（本科/硕士）</li>
+                        <li>转行进入IT行业的程序员</li>
+                        <li>在职工程师技能提升</li>
+                   </ul>
+                </div>
+                <div class="card">
+                    <div class="card-title"><span class="icon">🏆</span>核心差异</div>
+                    <ul style="padding-left: 20px;">
+                        <li>就业导向：每个知识点对应岗位能力</li>
+                        <li>前沿技术：LLM Agent、RAG、Multi-Agent</li>
+                        <li>中文社区：本地化术语、面试题库</li>
+                        <li>快速见效：6个月完成职业转型</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="highlight-box">
+                <h4 style="margin-bottom: 12px;">🎯 四大护城河体系</h4>
+                <div class="grid">
+                    <div class="skill-item">🛡️ 就业导向的课程设计</div>
+                    <div class="skill-item">🚀 前沿技术全覆盖</div>
+                    <div class="skill-item">💬 中文深度社区</div>
+                    <div class="skill-item">💰 商业闭环</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Market Demand -->
+        <section id="market" class="anchor">
+            <h2 class="section-title">📊 市场需求分析</h2>
+            <p class="section-subtitle">基于Boss招聘、脉脉、牛客等平台的大厂AI岗位技能需求</p>
+
+            <div class="card">
+                <div class="card-title"><span class="icon">🔥</span>高频技能要求（按热度排序）</div>
+                <table>
+                    <tr>
+                        <th>技能分类</th>
+                        <th>具体技术</th>
+                        <th>需求程度</th>
+                    </tr>
+                    <tr>
+                        <td><span class="tag tag-primary">编程语言</span></td>
+                        <td>Python(主导)、C++、Java</td>
+                        <td><span class="badge">⭐⭐⭐⭐⭐</span></td>
+                    </tr>
+                    <tr>
+                        <td><span class="tag tag-primary">深度学习框架</span></td>
+                        <td>PyTorch、TensorFlow</td>
+                        <td><span class="badge">⭐⭐⭐⭐⭐</span></td>
+                    </tr>
+                    <tr>
+                        <td><span class="tag tag-success">大模型技术</span></td>
+                        <td>LLM、LangChain、RAG、Agent</td>
+                        <td><span class="badge">⭐⭐⭐⭐⭐</span></td>
+                    </tr>
+                    <tr>
+                        <td><span class="tag tag-success">向量数据库</span></td>
+                        <td>Milvus、Pinecone、Chroma</td>
+                        <td><span class="badge">⭐⭐⭐⭐</span></td>
+                    </tr>
+                    <tr>
+                        <td><span class="tag tag-warning">分布式训练</span></td>
+                        <td>Ray、DeepSpeed、Megatron-LM</td>
+                        <td><span class="badge">⭐⭐⭐⭐</span></td>
+                    </tr>
+                   <tr>
+                        <td><span class="tag tag-warning">MLOps</span></td>
+                        <td>MLflow、Kubeflow、W&B</td>
+                        <td><span class="badge">⭐⭐⭐</span></td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="grid">
+                <div class="card">
+                    <div class="card-title"><span class="icon">🏢</span>BAT岗位要求</div>
+                    <table style="font-size: 0.85rem;">
+                        <tr><td><b>字节跳动</b></td><td>大模型算法工程师</td></tr>
+                        <tr><td colspan="2">Transformer架构、PyTorch、LLM预训练/SFT/RLHF、分布式训练</td></tr>
+                       <tr><td><b>阿里巴巴</b></td><td>NLP算法工程师</td></tr>
+                        <tr><td colspan="2">BERT/GPT、LangChain、阿里云PAI、业务落地</td></tr>
+                        <tr><td><b>腾讯</b></td><td>AI算法工程师</td></tr>
+                        <tr><td colspan="2">CV/NLP多模态、海量数据处理、游戏AI</td></tr>
+                        <tr><td><b>百度</b></td><td>大模型算法工程师</td></tr>
+                        <tr><td colspan="2">文心大模型、PaddlePaddle、ERNIE微调</td></tr>
+                    </table>
+                </div>
+                <div class="card">
+                    <div class="card-title"><span class="icon">🦄</span>独角兽岗位要求</div>
+                    <table style="font-size: 0.85rem;">
+                        <tr><td><b>月之暗面</b></td><td>Agent工程师</td></tr>
+                        <tr><td colspan="2">LLM预训练、长上下文窗口、Kimi产品、Agent框架</td></tr>
+                        <tr><td><b>智谱AI</b></td><td>RAG应用工程师</td></tr>
+                        <tr><td colspan="2">ChatGLM开发、提示词优化、企业级AI落地</td></tr>
+                        <tr><td><b>MiniMax</b></td><td>多模态算法工程师</td></tr>
+                        <tr><td colspan="2">视频/语音/文本多模态、Stable Diffusion、Agent应用</td></tr>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Curriculum Design -->
+        <section id="curriculum" class="anchor">
+            <h2 class="section-title">📚 课程结构设计</h2>
+            <p class="section-subtitle">12周/24课结构，对标大厂技能图谱</p>
+
+            <div class="card">
+                <div class="card-title"><span class="icon">📅</span>课程大纲（12周/24课）</div>
+                <table>
+                    <tr>
+                        <th>周次</th>
+                        <th>模块</th>
+                        <th>课程内容</th>
+                        <th>实战项目</th>
+                    </tr>
+                    <tr>
+                        <td><span class="tag tag-primary">Week 1-2</span></td>
+                        <td>AI基础与开发环境</td>
+                        <td>L1:AI概述 L2:环境搭建 L3:数学基础 L4:Python进阶</td>
+                        <td>开发环境搭建</td>
+                    </tr>
+                    <tr>
+                        <td><span class="tag tag-success">Week 3-4</span></td>
+                        <td>机器学习核心</td>
+                        <td>L5:ML核心 L6:监督学习 L7:无监督学习 L8:实战项目</td>
+                        <td>房价预测/客户流失</td>
+                    </tr>
+                    <tr>
+                        <td><span class="tag tag-warning">Week 5-6</span></td>
+                        <td>深度学习基础</td>
+                        <td>L9:神经网络 L10:CNN L11:RNN/LSTM L12:实战项目</td>
+                        <td>图像分类/文本分类</td>
+                    </tr>
+                    <tr>
+                        <td><span class="tag tag-danger">Week 7-8</span></td>
+                        <td>NLP与大模型</td>
+                        <td>L13:文本处理 L14:Transformer L15:BERT/GPT L16:实战</td>
+                        <td>情感分析/问答系统</td>
+                    </tr>
+                    <tr>
+                        <td><span class="tag tag-primary">Week 9-10</span></td>
+                        <td>LLM应用</td>
+                        <td>L17:RAG开发 L18:LangChain L19:向量数据库 L20:Prompt工程</td>
+                        <td>RAG知识库</td>
+                    </tr>
+                    <tr>
+                        <td><span class="tag tag-success">Week 11-12</span></td>
+                        <td>前沿与综合</td>
+                        <td>L21:Agent开发 L22:Multi-Agent L23:综合项目 L24:职业规划</td>
+                        <td>端到端AI产品</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="highlight-box">
+                <h4 style="margin-bottom: 12px;">📊 AI工程师技能图谱</h4>
+                <div class="skill-layer">
+                    <div style="width: 100%; background: #dae8fc; padding: 12px; border-radius: 8px; margin-bottom: 8px;">
+                        <strong>基础层：</strong>Python/C++ · 数据结构算法 · Linux操作 · Git版本控制
+                    </div>
+                    <div style="width: 100%; background: #d5e8d4; padding: 12px; border-radius: 8px; margin-bottom: 8px;">
+                        <strong>数学层：</strong>线性代数 · 概率统计 · 信息论 · 优化理论
+                    </div>
+                    <div style="width: 100%; background: #fff2cc; padding: 12px; border-radius: 8px; margin-bottom: 8px;">
+                        <strong>机器学习层：</strong>监督/无监督学习 · 特征工程 · 模型评估 · 集成学习
+                    </div>
+                    <div style="width: 100%; background: #ffe6cc; padding: 12px; border-radius: 8px; margin-bottom: 8px;">
+                        <strong>深度学习层：</strong>CNN/RNN/LSTM · Transformer · PyTorch · 训练优化
+                    </div>
+                    <div style="width: 100%; background: #f8cecc; padding: 12px; border-radius: 8px; margin-bottom: 8px;">
+                        <strong>大模型层：</strong>LLM原理 · Prompt工程 · RAG/向量库 · LangChain
+                    </div>
+                    <div style="width: 100%; background: #e1d5e7; padding: 12px; border-radius: 8px;">
+                        <strong>Agent层：</strong>Agent架构 · 工具调用 · 记忆管理 · Multi-Agent
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects -->
+        <section id="projects" class="anchor">
+            <h2 class="section-title">💻 实战项目池</h2>
+            <p class="section-subtitle">8个对标真实业务场景的项目，可写进简历</p>
+
+            <div class="grid-3">
+                <div class="card">
+                    <div class="card-title"><span class="icon">🏠</span>ML项目</div>
+                    <ul style="padding-left: 20px; font-size: 0.9rem;">
+                        <li>房价预测系统</li>
+                        <li>客户流失预警</li>
+                        <li>推荐系统基础</li>
+                    </ul>
+                    <div style="margin-top: 12px;"><span class="tag tag-primary">Scikit-learn</span> <span class="tag tag-primary">Pandas</span></div>
+                </div>
+                <div class="card">
+                    <div class="card-title"><span class="icon">👁️</span>CV项目</div>
+                    <ul style="padding-left: 20px; font-size: 0.9rem;">
+                        <li>猫狗图像分类</li>
+                        <li>目标检测系统</li>
+                        <li>图像分割应用</li>
+                    </ul>
+                    <div style="margin-top: 12px;"><span class="tag tag-success">PyTorch</span> <span class="tag tag-success">OpenCV</span></div>
+                </div>
+                <div class="card">
+                    <div class="card-title"><span class="icon">📝</span>NLP项目</div>
+                    <ul style="padding-left: 20px; font-size: 0.9rem;">
+                        <li>情感分析系统</li>
+                        <li>智能问答机器人</li>
+                        <li>文本分类器</li>
+                    </ul>
+                    <div style="margin-top: 12px;"><span class="tag tag-warning">BERT</span> <span class="tag tag-warning">GPT</span></div>
+                </div>
+                <div class="card">
+                    <div class="card-title"><span class="icon">🔗</span>LLM项目</div>
+                    <ul style="padding-left: 20px; font-size: 0.9rem;">
+                        <li>RAG知识库问答</li>
+                        <li>Agent智能助手</li>
+                        <li>Multi-Agent协作</li>
+                    </ul>
+                    <div style="margin-top: 12px;"><span class="tag tag-danger">LangChain</span> <span class="tag tag-danger">ChromaDB</span></div>
+                </div>
+                <div class="card">
+                    <div class="card-title"><span class="icon">🎨</span>多模态项目</div>
+                    <ul style="padding-left: 20px; font-size: 0.9rem;">
+                        <li>图文生成系统</li>
+                        <li>视频理解应用</li>
+                        <li>跨模态检索</li>
+                    </ul>
+                    <div style="margin-top: 12px;"><span class="tag tag-primary">CLIP</span> <span class="tag tag-primary">Stable Diffusion</span></div>
+                </div>
+                <div class="card">
+                    <div class="card-title"><span class="icon">🚀</span>综合项目</div>
+                    <ul style="padding-left: 20px; font-size: 0.9rem;">
+                        <li>端到端AI产品</li>
+                        <li>部署上线实战</li>
+                        <li>简历优化指导</li>
+                    </ul>
+                    <div style="margin-top: 12px;"><span class="tag tag-success">FastAPI</span> <span class="tag tag-success">Docker</span></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Moat -->
+        <section id="moat" class="anchor">
+            <h2 class="section-title">🛡️ 护城河设计</h2>
+            <p class="section-subtitle">四大护城河体系，构建竞争壁垒</p>
+
+            <div class="grid">
+                <div class="card">
+                    <div class="card-title"><span class="icon">🎯</span>护城河一：就业导向</div>
+                    <ul style="padding-left: 20px; font-size: 0.9rem;">
+                        <li>对标Boss/脉脉/牛客大厂岗位技能图谱</li>
+                        <li>每个知识点对应具体岗位能力</li>
+                        <li>项目对标真实业务场景（电商、金融、医疗）</li>
+                        <li>配套面试题库和简历模板</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <div class="card-title"><span class="icon">🚀</span>护城河二：前沿技术</div>
+                    <ul style="padding-left: 20px; font-size: 0.9rem;">
+                        <li>LLM Agent + Multi-Agent协作</li>
+                        <li>RAG + Knowledge Graph</li>
+                        <li>AI编程辅助 + Code Agent</li>
+                        <li>周级更新跟上技术热点</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <div class="card-title"><span class="icon">💬</span>护城河三：中文社区</div>
+                    <ul style="padding-left: 20px; font-size: 0.9rem;">
+                        <li>本地化技术术语和案例</li>
+                        <li>配套面试题库和解答</li>
+                        <li>代码审核与项目陪跑</li>
+                        <li>用户分层体系（免费/Pro/企业）</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <div class="card-title"><span class="icon">💰</span>护城河四：商业闭环</div>
+                    <ul style="padding-left: 20px; font-size: 0.9rem;">
+                        <li>C端知识付费变现</li>
+                        <li>B端企业培训定价</li>
+                        <li>招聘对接服务佣金</li>
+                        <li>LTV/CAC优化</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="highlight-box success">
+                <h4 style="margin-bottom: 12px;">🔍 竞品对比分析</h4>
+                <table>
+                    <tr><th>竞品</th><th>Stars</th><th>优势</th><th>劣势（我们的机会）</th></tr>
+                    <tr><td>Microsoft AI-For-Beginners</td><td>48k</td><td>微软官方、质量保障、多语言</td><td>缺乏就业导向、更新慢</td></tr>
+                    <tr><td>Microsoft ML-For-Beginners</td><td>86k</td><td>项目式教学、测验完善</td><td>不含深度学习、内容基础</td></tr>
+                    <tr><td>ApacheCN ailearning</td><td>42k</td><td>中文社区、视频教程</td><td>内容零散、更新慢</td></tr>
+                    <tr><td>Infrasys-AI/AIInfra</td><td>7k</td><td>中文、大模型全栈</td><td>门槛高、偏理论</td></tr>
+                    <tr><td><b>我们的教材（定位）</b></td><td>-</td><td><b>就业导向+前沿+中文社区+商业闭环</b></td><td><b>需要从零建设</b></td></tr>
+                </table>
+            </div>
+        </section>
+
+        <!-- Plan -->
+        <section id="plan" class="anchor">
+            <h2 class="section-title">📅 开发里程碑</h2>
+            <p class="section-subtitle">5个阶段，从团队组建到v1.0正式发布</p>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="phase">Phase 0</div>
+                    <h4>项目启动与团队组建</h4>
+                    <div class="duration">⏱️ Week 1-2</div>
+                    <ul>
+                        <li>核心团队组建（5-8人）</li>
+                        <li>GitHub仓库初始化</li>
+                        <li>贡献者协议和CI/CD</li>
+                        <li>第一阶段内容大纲定稿</li>
+                    </ul>
+                </div>
+                <div class="timeline-item">
+                    <div class="phase">Phase 1</div>
+                    <h4>MVP完成</h4>
+                    <div class="duration">⏱️ Week 3-6</div>
+                    <ul>
+                        <li>6课基础内容完成</li>
+                        <li>1个项目实战</li>
+                        <li>README和文档</li>
+                        <li>内测用户招募（20-50人）</li>
+                    </ul>
+                </div>
+                <div class="timeline-item">
+                    <div class="phase">phase2</div>
+                    <h4>Beta发布</h4>
+                    <div class="duration">⏱️ Week 7-10</div>
+                    <ul>
+                        <li>12课内容完成</li>
+                        <li>3个项目实战</li>
+                        <li>B站/YouTube视频课程</li>
+                        <li>Discord/微信社群搭建</li>
+                    </ul>
+                </div>
+                <div class="timeline-item">
+                    <div class="phase">Phase 3</div>
+                    <h4>公测与优化</h4>
+                    <div class="duration">⏱️ Week 11-14</div>
+                    <ul>
+                        <li>完整24课内容</li>
+                        <li>社区上线运营</li>
+                        <li>用户反馈收集</li>
+                        <li>内容迭代优化</li>
+                    </ul>
+                </div>
+                <div class="timeline-item">
+                    <div class="phase">Phase 4</div>
+                    <h4>正式发布</h4>
+                    <div class="duration">⏱️ Week 15-20</div>
+                    <ul>
+                        <li>v1.0发布</li>
+                        <li>1000+ GitHub Stars</li>
+                        <li>100+ 学习者</li>
+                        <li>付费内容准备</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Business Model -->
+        <section id="biz" class="anchor">
+            <h2 class="section-title">💰 商业模式</h2>
+            <p class="section-subtitle">免费开源引流 + 付费增值服务 + B端变现</p>
+
+            <div class="grid">
+                <div class="card">
+                    <div class="card-title"><span class="icon">🆓</span>C端免费模式</div>
+                    <ul style="padding-left: 20px; font-size: 0.9rem;">
+                        <li>核心课程开源免费</li>
+                        <li>GitHub托管</li>
+                        <li>B站/YouTube视频</li>
+                        <li>社区互助学习</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <div class="card-title"><span class="icon">💎</span>C端付费模式</div>
+                    <ul style="padding-left: 20px; font-size: 0.9rem;">
+                        <li>1v1辅导答疑（¥299/月）</li>
+                        <li>作业批改点评（¥99/次）</li>
+                        <li>简历优化指导（¥399/次）</li>
+                        <li>认证证书（¥199/个）</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <div class="card-title"><span class="icon">🏢</span>B端企业培训</div>
+                    <ul style="padding-left: 20px; font-size: 0.9rem;">
+                        <li>企业内训定制（¥5000-20000/天）</li>
+                        <li>团队学习方案</li>
+                        <li>企业专属题库</li>
+                        <li>培训证书</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="highlight-box">
+                <h4 style="margin-bottom: 12px;">📈 收入预测（首年）</h4>
+                <table>
+                    <tr><th>收入来源</th><th>预估规模</th><th>单价</th><th>年收入估算</th></tr>
+                    <tr><td>付费辅导</td><td>100学员/月</td><td>¥299/月</td><td>¥35.9万/年</td></tr>
+                    <tr><td>企业培训</td><td>10家企业/年</td><td>¥5万/家</td><td>¥50万/年</td></tr>
+                    <tr><td>简历优化</td><td>50单/年</td><td>¥399/次</td><td>¥2万/年</td></tr>
+                    <tr><td>认证证书</td><td>200张/年</td><td>¥199/个</td><td>¥4万/年</td></tr>
+                    <tr style="background: #F1F5F9; font-weight: 700;"><td>合计</td><td>-</td><td>-</td><td>~¥92万/年</td></tr>
+                </table>
+            </div>
+        </section>
+
+        <!-- Team -->
+        <section id="team">
+            <h2 class="section-title">👥 团队需求</h2>
+            <p class="section-subtitle">5-8人核心团队，角色分工明确</p>
+
+            <div class="grid-3">
+                <div class="card">
+                    <div class="card-title"><span class="icon">📚</span>课程负责人</div>
+                    <div style="font-size: 0.9rem;">1人</div>
+                    <ul style="padding-left: 20px; font-size: 0.85rem;">
+                        <li>课程体系设计</li>
+                        <li>内容质量把控</li>
+                        <li>技术审核</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <div class="card-title"><span class="icon">✍️</span>技术编辑</div>
+                    <div style="font-size: 0.9rem;">2-3人</div>
+                    <ul style="padding-left: 20px; font-size: 0.85rem;">
+                        <li>内容撰写</li>
+                        <li>代码编写</li>
+                        <li>项目实战</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <div class="card-title"><span class="icon">🎬</span>视频制作</div>
+                    <div style="font-size: 0.9rem;">1-2人</div>
+                    <ul style="padding-left: 20px; font-size: 0.85rem;">
+                        <li>视频录制</li>
+                        <li>PPT制作</li>
+                        <li>后期剪辑</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <div class="card-title"><span class="icon">💬</span>社区运营</div>
+                    <div style="font-size: 0.9rem;">1-2人</div>
+                    <ul style="padding-left: 20px; font-size: 0.85rem;">
+                        <li>社群管理</li>
+                        <li>用户运营</li>
+                        <li>活动策划</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <div class="card-title"><span class="icon">📊</span>项目管理</div>
+                    <div style="font-size: 0.9rem;">1人</div>
+                    <ul style="padding-left: 20px; font-size: 0.85rem;">
+                        <li>进度把控</li>
+                        <li>质量协调</li>
+                        <li>发布管理</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer class="footer">
+       <p>📋 AI教材开发计划汇报 | 生成时间：2026年6月</p>
+        <p style="margin-top: 8px;">🔗 项目源码将托管于 GitHub | 视频课程将发布于 B站/YouTube</p>
+    </footer>
+
+    <script>
+        // Smooth scroll for navigation
+        document.querySelectorAll('.nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                target.scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+
+        // Active nav highlighting
+        const sections = document.querySelectorAll('section.anchor');
+        const navLinks = document.querySelectorAll('.nav a');
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (scrollY >= sectionTop - 100) {
+                    current = section.getAttribute('id');
+                }
+            });
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

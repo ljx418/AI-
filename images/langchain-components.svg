@@ -1,0 +1,150 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 500">
+  <defs>
+    <style>
+      .title { font-family: Arial, sans-serif; font-size: 20px; font-weight: bold; fill: #1A1A2E; text-anchor: middle; }
+      .component-title { font-family: Arial, sans-serif; font-size: 14px; font-weight: bold; fill: #FFFFFF; text-anchor: middle; dominant-baseline: middle; }
+      .component-label { font-family: Arial, sans-serif; font-size: 12px; fill: #1A1A2E; text-anchor: middle; dominant-baseline: middle; }
+      .sub-label { font-family: Arial, sans-serif; font-size: 10px; fill: #666666; text-anchor: middle; }
+      .desc { font-family: Arial, sans-serif; font-size: 9px; fill: #555555; text-anchor: middle; }
+      .arrow { stroke: #333; stroke-width: 2; fill: none; marker-end: url(#arrowhead); }
+      .bidirectional { stroke: #333; stroke-width: 2; fill: none; marker-end: url(#arrowhead); marker-start: url(#arrowtail); }
+    </style>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#333"/>
+    </marker>
+    <marker id="arrowtail" markerWidth="10" markerHeight="7" refX="1" refY="3.5" orient="auto">
+      <polygon points="10 0, 0 3.5, 10 7" fill="#333"/>
+    </marker>
+    <linearGradient id="promptsGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFE8E8"/>
+      <stop offset="100%" style="stop-color:#FFC8C8"/>
+    </linearGradient>
+    <linearGradient id="chainsGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#E8FFE8"/>
+      <stop offset="100%" style="stop-color:#C8FFC8"/>
+    </linearGradient>
+    <linearGradient id="toolsGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFF8E8"/>
+      <stop offset="100%" style="stop-color:#FFE8A0"/>
+    </linearGradient>
+    <linearGradient id="agentsGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#E8E8FF"/>
+      <stop offset="100%" style="stop-color:#C8C8FF"/>
+    </linearGradient>
+    <linearGradient id="memoryGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#E8F4FF"/>
+      <stop offset="100%" style="stop-color:#C8E8FF"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Title -->
+  <text x="350" y="35" class="title">LangChain Core Components</text>
+
+  <!-- Prompts Component -->
+  <rect x="40" y="70" width="140" height="60" rx="10" ry="10" fill="url(#promptsGrad)" stroke="#8A4A4A" stroke-width="2"/>
+  <rect x="40" y="70" width="140" height="25" rx="10" ry="10" fill="#D35400"/>
+  <text x="110" y="87" class="component-title">Prompts</text>
+  <text x="110" y="105" class="component-label">Template Management</text>
+  <text x="110" y="120" class="sub-label">Few-shot examples</text>
+
+  <!-- Chains Component -->
+  <rect x="220" y="70" width="140" height="60" rx="10" ry="10" fill="url(#chainsGrad)" stroke="#4A8A4A" stroke-width="2"/>
+  <rect x="220" y="70" width="140" height="25" rx="10" ry="10" fill="#27AE60"/>
+  <text x="290" y="87" class="component-title">Chains</text>
+  <text x="290" y="105" class="component-label">Sequential Execution</text>
+  <text x="290" y="120" class="sub-label">LLM Chain, Router</text>
+
+  <!-- Agents Component -->
+  <rect x="400" y="70" width="140" height="60" rx="10" ry="10" fill="url(#agentsGrad)" stroke="#4A4A8A" stroke-width="2"/>
+  <rect x="400" y="70" width="140" height="25" rx="10" ry="10" fill="#2980B9"/>
+  <text x="470" y="87" class="component-title">Agents</text>
+  <text x="470" y="105" class="component-label">Action Planning</text>
+  <text x="470" y="120" class="sub-label">ReAct, Toolformer</text>
+
+  <!-- Tools Component -->
+  <rect x="580" y="70" width="140" height="60" rx="10" ry="10" fill="url(#toolsGrad)" stroke="#8A7A4A" stroke-width="2"/>
+  <rect x="580" y="70" width="140" height="25" rx="10" ry="10" fill="#F39C12"/>
+  <text x="650" y="87" class="component-title">Tools</text>
+  <text x="650" y="105" class="component-label">Function Calling</text>
+  <text x="650" y="120" class="sub-label">Search, API, Calc</text>
+
+  <!-- Memory Component (center) -->
+  <rect x="280" y="200" width="180" height="80" rx="10" ry="10" fill="url(#memoryGrad)" stroke="#4A7A8A" stroke-width="2"/>
+  <rect x="280" y="200" width="180" height="25" rx="10" ry="10" fill="#3498DB"/>
+  <text x="370" y="217" class="component-title">Memory</text>
+  <text x="370" y="240" class="component-label">Conversation History</text>
+  <text x="370" y="260" class="sub-label">Buffer, Summary, Vector</text>
+
+  <!-- LLM Component (center bottom) -->
+  <rect x="280" y="320" width="180" height="70" rx="10" ry="10" fill="#E8E8E8" stroke="#333333" stroke-width="2"/>
+  <rect x="280" y="320" width="180" height="25" rx="10" ry="10" fill="#2C3E50"/>
+  <text x="370" y="337" class="component-title">LLM</text>
+  <text x="370" y="360" class="component-label">Language Model</text>
+  <text x="370" y="378" class="sub-label">GPT-4, Claude, Llama</text>
+
+  <!-- Document Loaders -->
+  <rect x="40" y="200" width="120" height="50" rx="8" ry="8" fill="#F5F5F5" stroke="#999999" stroke-width="1.5"/>
+  <text x="100" y="220" class="component-label">Document Loaders</text>
+  <text x="100" y="238" class="sub-label">PDF, Web, SQL</text>
+
+  <!-- Text Splitters -->
+  <rect x="40" y="270" width="120" height="50" rx="8" ry="8" fill="#F5F5F5" stroke="#999999" stroke-width="1.5"/>
+  <text x="100" y="290" class="component-label">Text Splitters</text>
+  <text x="100" y="308" class="sub-label">Chunking strategies</text>
+
+  <!-- Embeddings -->
+  <rect x="40" y="340" width="120" height="50" rx="8" ry="8" fill="#F5F5F5" stroke="#999999" stroke-width="1.5"/>
+  <text x="100" y="360" class="component-label">Embeddings</text>
+  <text x="100" y="378" class="sub-label">Vector conversion</text>
+
+  <!-- Vector Stores -->
+  <rect x="40" y="410" width="120" height="50" rx="8" ry="8" fill="#F5F5F5" stroke="#999999" stroke-width="1.5"/>
+  <text x="100" y="430" class="component-label">Vector Stores</text>
+  <text x="100" y="448" class="sub-label">Pinecone, Chroma</text>
+
+  <!-- Output Parsers -->
+  <rect x="540" y="200" width="120" height="50" rx="8" ry="8" fill="#F5F5F5" stroke="#999999" stroke-width="1.5"/>
+  <text x="600" y="220" class="component-label">Output Parsers</text>
+  <text x="600" y="238" class="sub-label">JSON, List, Date</text>
+
+  <!-- Callbacks -->
+  <rect x="540" y="270" width="120" height="50" rx="8" ry="8" fill="#F5F5F5" stroke="#999999" stroke-width="1.5"/>
+  <text x="600" y="290" class="component-label">Callbacks</text>
+  <text x="600" y="308" class="sub-label">Logging, Tracing</text>
+
+  <!-- Indexes label -->
+  <text x="100" y="185" class="sub-label" font-weight="bold">Data Indexing</text>
+
+  <!-- Retrieval label -->
+  <text x="600" y="185" class="sub-label" font-weight="bold">Output &amp; Monitoring</text>
+
+  <!-- Connecting arrows -->
+  <!-- Prompts -> LLM -->
+  <path d="M 180 100 Q 220 100 220 140 L 220 170 L 280 170 L 280 200" class="arrow"/>
+  <path d="M 420 130 L 460 130 L 460 200" class="arrow"/>
+  <path d="M 540 100 L 500 100 L 500 170 L 460 170 L 460 200" class="arrow"/>
+
+  <!-- Chains -> LLM -->
+  <path d="M 290 130 L 290 200 L 290 200" class="arrow"/>
+
+  <!-- Tools -> Agents -->
+  <path d="M 470 130 L 470 160" class="arrow"/>
+
+  <!-- Memory <-> LLM -->
+  <line x1="370" y1="280" x2="370" y2="320" class="bidirectional"/>
+
+  <!-- Document Loaders -> Text Splitters -->
+  <line x1="100" y1="250" x2="100" y2="270" class="arrow"/>
+
+  <!-- Text Splitters -> Embeddings -->
+  <line x1="100" y1="320" x2="100" y2="340" class="arrow"/>
+
+  <!-- Embeddings -> Vector Stores -->
+  <line x1="100" y1="390" x2="100" y2="410" class="arrow"/>
+
+  <!-- LLM -> Output Parsers -->
+  <line x1="460" y1="355" x2="540" y2="225" class="arrow"/>
+
+  <!-- LLM -> Callbacks -->
+  <line x1="460" y1="355" x2="540" y2="295" class="arrow"/>
+</svg>

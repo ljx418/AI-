@@ -1,0 +1,144 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a2e"/>
+      <stop offset="100%" style="stop-color:#16213e"/>
+    </linearGradient>
+    <linearGradient id="blueGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#4A90E2"/>
+      <stop offset="100%" style="stop-color:#357ABD"/>
+    </linearGradient>
+    <linearGradient id="greenGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#50C878"/>
+      <stop offset="100%" style="stop-color:#3CB371"/>
+    </linearGradient>
+    <linearGradient id="orangeGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#FF9500"/>
+      <stop offset="100%" style="stop-color:#E6860E"/>
+    </linearGradient>
+    <linearGradient id="purpleGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#9B59B6"/>
+      <stop offset="100%" style="stop-color:#8E44AD"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="800" fill="url(#bgGrad)"/>
+
+  <!-- Title -->
+  <text x="600" y="50" text-anchor="middle" fill="#fff" font-size="32" font-weight="bold" font-family="Arial, sans-serif">监督学习算法对比</text>
+  <text x="600" y="80" text-anchor="middle" fill="#888" font-size="16" font-family="Arial, sans-serif">Supervised Learning Algorithms</text>
+
+  <!-- Card 1: Linear Regression -->
+  <g filter="url(#shadow)">
+    <rect x="60" y="110" width="240" height="320" rx="16" fill="url(#blueGrad)"/>
+    <text x="180" y="145" text-anchor="middle" fill="#fff" font-size="20" font-weight="bold" font-family="Arial, sans-serif">线性回归</text>
+    <text x="180" y="170" text-anchor="middle" fill="#ddd" font-size="12" font-family="Arial, sans-serif">Linear Regression</text>
+    <text x="180" y="200" text-anchor="middle" fill="#ccc" font-size="13" font-family="Arial, sans-serif">连续值预测</text>
+    <text x="180" y="218" text-anchor="middle" fill="#ccc" font-size="13" font-family="Arial, sans-serif">拟合直线/平面</text>
+
+    <!-- Scatter plot with regression line -->
+    <rect x="80" y="240" width="200" height="150" rx="8" fill="#1a1a2e" opacity="0.5"/>
+    <line x1="90" y1="370" x2="270" y2="270" stroke="#FF6B6B" stroke-width="3"/>
+    <circle cx="105" cy="350" r="6" fill="#FF6B6B"/>
+    <circle cx="130" cy="340" r="6" fill="#FF6B6B"/>
+    <circle cx="155" cy="320" r="6" fill="#FF6B6B"/>
+    <circle cx="180" cy="310" r="6" fill="#FF6B6B"/>
+    <circle cx="205" cy="290" r="6" fill="#FF6B6B"/>
+    <circle cx="230" cy="270" r="6" fill="#FF6B6B"/>
+    <circle cx="255" cy="250" r="6" fill="#FF6B6B"/>
+    <text x="180" y="420" text-anchor="middle" fill="#aaa" font-size="11" font-family="Arial, sans-serif">损失函数: MSE</text>
+  </g>
+
+  <!-- Card 2: Logistic Regression -->
+  <g filter="url(#shadow)">
+    <rect x="320" y="110" width="240" height="320" rx="16" fill="url(#greenGrad)"/>
+    <text x="440" y="145" text-anchor="middle" fill="#fff" font-size="20" font-weight="bold" font-family="Arial, sans-serif">逻辑回归</text>
+    <text x="440" y="170" text-anchor="middle" fill="#ddd" font-size="12" font-family="Arial, sans-serif">Logistic Regression</text>
+    <text x="440" y="200" text-anchor="middle" fill="#ccc" font-size="13" font-family="Arial, sans-serif">二分类问题</text>
+    <text x="440" y="218" text-anchor="middle" fill="#ccc" font-size="13" font-family="Arial, sans-serif">概率预测</text>
+
+    <!-- Sigmoid curve with classification areas -->
+    <rect x="340" y="240" width="200" height="150" rx="8" fill="#1a1a2e" opacity="0.5"/>
+    <path d="M350 370 Q440 370 460 250 Q480 130 530 250 Q580 370 550 370" fill="none" stroke="#FF6B6B" stroke-width="2.5"/>
+    <text x="360" y="365" fill="#50C878" font-size="12" font-family="Arial, sans-serif">类别 A</text>
+    <text x="500" y="365" fill="#FF6B6B" font-size="12" font-family="Arial, sans-serif">类别 B</text>
+    <text x="440" y="420" text-anchor="middle" fill="#aaa" font-size="11" font-family="Arial, sans-serif">损失函数: Cross-Entropy</text>
+  </g>
+
+  <!-- Card 3: Decision Tree -->
+  <g filter="url(#shadow)">
+    <rect x="580" y="110" width="240" height="320" rx="16" fill="url(#orangeGrad)"/>
+    <text x="700" y="145" text-anchor="middle" fill="#fff" font-size="20" font-weight="bold" font-family="Arial, sans-serif">决策树</text>
+    <text x="700" y="170" text-anchor="middle" fill="#ddd" font-size="12" font-family="Arial, sans-serif">Decision Tree</text>
+    <text x="700" y="200" text-anchor="middle" fill="#ccc" font-size="13" font-family="Arial, sans-serif">分类/回归</text>
+    <text x="700" y="218" text-anchor="middle" fill="#ccc" font-size="13" font-family="Arial, sans-serif">规则学习</text>
+
+    <!-- Tree structure -->
+    <rect x="620" y="240" width="200" height="150" rx="8" fill="#1a1a2e" opacity="0.5"/>
+    <!-- Root node -->
+    <rect x="670" y="255" width="100" height="28" rx="6" fill="#FF9500"/>
+    <text x="720" y="273" text-anchor="middle" fill="#fff" font-size="11" font-family="Arial, sans-serif">特征A &gt; 0.5?</text>
+    <!-- Branch lines -->
+    <line x1="680" y1="283" x2="660" y2="320" stroke="#50C878" stroke-width="2"/>
+    <line x1="760" y1="283" x2="780" y2="320" stroke="#FF6B6B" stroke-width="2"/>
+    <text x="645" y="318" fill="#50C878" font-size="9">是</text>
+    <text x="785" y="318" fill="#FF6B6B" font-size="9">否</text>
+    <!-- Level 2 nodes -->
+    <rect x="635" y="320" width="80" height="24" rx="5" fill="#FF9500"/>
+    <text x="675" y="336" text-anchor="middle" fill="#fff" font-size="10" font-family="Arial, sans-serif">特征B &gt; 0.3?</text>
+    <rect x="755" y="320" width="80" height="24" rx="5" fill="#FF9500"/>
+    <text x="795" y="336" text-anchor="middle" fill="#fff" font-size="10" font-family="Arial, sans-serif">特征C &gt; 0.7?</text>
+    <!-- Leaf nodes -->
+    <line x1="645" y1="344" x2="640" y2="370" stroke="#50C878" stroke-width="1.5"/>
+    <line x1="715" y1="344" x2="720" y2="370" stroke="#FF9500" stroke-width="1.5"/>
+    <line x1="765" y1="344" x2="780" y2="370" stroke="#9B59B6" stroke-width="1.5"/>
+    <line x1="835" y1="344" x2="840" y2="370" stroke="#4A90E2" stroke-width="1.5"/>
+    <rect x="620" y="370" width="50" height="20" rx="4" fill="#50C878"/>
+    <text x="645" y="384" text-anchor="middle" fill="#fff" font-size="10">类别1</text>
+    <rect x="695" y="370" width="50" height="20" rx="4" fill="#FF9500"/>
+    <text x="720" y="384" text-anchor="middle" fill="#fff" font-size="10">类别2</text>
+    <rect x="760" y="370" width="50" height="20" rx="4" fill="#9B59B6"/>
+    <text x="785" y="384" text-anchor="middle" fill="#fff" font-size="10">类别3</text>
+    <rect x="820" y="370" width="50" height="20" rx="4" fill="#4A90E2"/>
+    <text x="845" y="384" text-anchor="middle" fill="#fff" font-size="10">类别4</text>
+    <text x="700" y="420" text-anchor="middle" fill="#aaa" font-size="11" font-family="Arial, sans-serif">分裂准则: Gini/Entropy</text>
+  </g>
+
+  <!-- Card 4: SVM -->
+  <g filter="url(#shadow)">
+    <rect x="840" y="110" width="240" height="320" rx="16" fill="url(#purpleGrad)"/>
+    <text x="960" y="145" text-anchor="middle" fill="#fff" font-size="20" font-weight="bold" font-family="Arial, sans-serif">支持向量机</text>
+    <text x="960" y="170" text-anchor="middle" fill="#ddd" font-size="12" font-family="Arial, sans-serif">Support Vector Machine</text>
+    <text x="960" y="200" text-anchor="middle" fill="#ccc" font-size="13" font-family="Arial, sans-serif">最大间隔分类</text>
+    <text x="960" y="218" text-anchor="middle" fill="#ccc" font-size="13" font-family="Arial, sans-serif">核函数方法</text>
+
+    <!-- SVM visualization -->
+    <rect x="860" y="240" width="200" height="150" rx="8" fill="#1a1a2e" opacity="0.5"/>
+    <!-- Margin boundaries -->
+    <line x1="870" y1="340" x2="1050" y2="340" stroke="#666" stroke-width="1" stroke-dasharray="4"/>
+    <!-- Hyperplane -->
+    <line x1="960" y1="260" x2="960" y2="380" stroke="#FF6B6B" stroke-width="3"/>
+    <text x="970" y="320" fill="#FF6B6B" font-size="10" font-family="Arial, sans-serif">最大间隔平面</text>
+    <!-- Class A points (green) -->
+    <circle cx="880" cy="300" r="6" fill="#50C878"/>
+    <circle cx="900" cy="320" r="6" fill="#50C878"/>
+    <circle cx="890" cy="340" r="6" fill="#50C878"/>
+    <circle cx="920" cy="310" r="6" fill="#50C878"/>
+    <!-- Class B points (blue) -->
+    <circle cx="1000" cy="310" r="6" fill="#4A90E2"/>
+    <circle cx="1020" cy="330" r="6" fill="#4A90E2"/>
+    <circle cx="1010" cy="350" r="6" fill="#4A90E2"/>
+    <circle cx="1040" cy="320" r="6" fill="#4A90E2"/>
+    <!-- Support vectors highlighted -->
+    <circle cx="880" cy="300" r="10" fill="none" stroke="#fff" stroke-width="2" stroke-dasharray="3"/>
+    <circle cx="1040" cy="320" r="10" fill="none" stroke="#fff" stroke-width="2" stroke-dasharray="3"/>
+    <text x="960" y="420" text-anchor="middle" fill="#aaa" font-size="11" font-family="Arial, sans-serif">支持向量 (虚线圆圈)</text>
+  </g>
+
+  <!-- Footer -->
+  <text x="600" y="760" text-anchor="middle" fill="#555" font-size="12" font-family="Arial, sans-serif">机器学习核心 Week 3-4</text>
+</svg>

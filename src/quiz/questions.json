@@ -1,0 +1,4217 @@
+{
+  "L01": {
+    "title": "AI概述与历史",
+    "questions": [
+      {
+        "id": "L1_Q1",
+        "type": "single",
+        "question": "以下哪个选项正确描述了弱人工智能（Narrow AI）的特点？",
+        "options": [
+          "A. 具备通用认知能力，能在任意领域自主学习",
+          "B. 在特定任务上达到或超越人类水平",
+          "C. 在几乎所有领域远超人类智能",
+          "D. 能理解任意自然语言"
+        ],
+        "answer": "B",
+        "explanation": "弱人工智能在特定任务上表现出色，但不具备通用认知能力。",
+        "知识点": [
+          "AI定义",
+          "狭义AI"
+        ]
+      },
+      {
+        "id": "L1_Q2",
+        "type": "multiple",
+        "question": "深度学习崛起的三大要素包括？",
+        "options": [
+          "A. 数据",
+          "B. 算力",
+          "C. 算法",
+          "D. 网络"
+        ],
+        "answer": [
+          "A",
+          "B",
+          "C"
+        ],
+        "explanation": "深度学习的成功离不开海量数据、GPU算力突破和算法创新（如ReLU、Dropout）。",
+        "知识点": [
+          "深度学习",
+          "三要素"
+        ]
+      },
+      {
+        "id": "L1_Q3",
+        "type": "blank",
+        "question": "1956年达特茅斯会议标志着人工智能作为一门独立学科的诞生。在这次会议上，John McCarthy提出了_____的概念。",
+        "answer": "人工智能",
+        "explanation": "1956年达特茅斯会议上，John McCarthy首次提出了Artificial Intelligence（人工智能）这一术语。",
+        "知识点": [
+          "AI历史",
+          "达特茅斯会议"
+        ]
+      },
+      {
+        "id": "L1_Q4",
+        "type": "code",
+        "question": "以下代码运行后会输出什么？\n```python\nimport numpy as np\na = np.array([1, 2, 3])\nprint(a.shape)\n```",
+        "options": [
+          "(3,)",
+          "(3,1)",
+          "(1,3)",
+          "3"
+        ],
+        "answer": "(3,)",
+        "explanation": "np.array([1,2,3])创建的是一维数组，shape属性返回(3,)。",
+        "知识点": [
+          "NumPy",
+          "数组形状"
+        ]
+      },
+      {
+        "id": "L1_Q5",
+        "type": "single",
+        "question": "以下哪位科学家被誉为「人工智能之父」？",
+        "options": [
+          "A. Alan Turing",
+          "B. John McCarthy",
+          "C. Marvin Minsky",
+          "D. Geoffrey Hinton"
+        ],
+        "answer": "B",
+        "explanation": "John McCarthy在1956年达特茅斯会议上首次提出人工智能概念，被尊称为人工智能之父。",
+        "知识点": [
+          "AI历史",
+          "关键人物"
+        ]
+      },
+      {
+        "id": "L1_Q6",
+        "type": "multiple",
+        "question": "人工智能的主要研究领域包括？",
+        "options": [
+          "A. 机器学习",
+          "B. 计算机视觉",
+          "C. 自然语言处理",
+          "D. 机器人技术"
+        ],
+        "answer": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "explanation": "机器学习、计算机视觉、自然语言处理和机器人技术都是人工智能的重要研究领域。",
+        "知识点": [
+          "AI分支",
+          "研究领域"
+        ]
+      },
+      {
+        "id": "L1_Q7",
+        "type": "single",
+        "question": "强人工智能（AGI）的定义是？",
+        "options": [
+          "A. 在特定领域超越人类",
+          "B.具备与人类相当的通用认知能力",
+          "C. 仅能处理数值计算",
+          "D. 依赖预设规则运行"
+        ],
+        "answer": "B",
+        "explanation": "强人工智能（AGI）指具备与人类相当的通用认知能力，能在各种领域自主学习和推理。",
+        "知识点": [
+          "AI定义",
+          "AGI"
+        ]
+      },
+      {
+        "id": "L1_Q8",
+        "type": "blank",
+        "question": "图灵测试是Alan Turing在1950年发表的论文《_____》中提出的概念。",
+        "answer": "计算机械与智能",
+        "explanation": "图灵在这篇论文中提出了机器能否思考的问题，并设计了图灵测试来评估机器的智能。",
+        "知识点": [
+          "图灵测试",
+          "AI历史"
+        ]
+      },
+      {
+        "id": "L1_Q9",
+        "type": "single",
+        "question": "以下哪个不是人工智能的主要学派？",
+        "options": [
+          "A. 符号主义",
+          "B. 连接主义",
+          "C. 行为主义",
+          "D. 虚无主义"
+        ],
+        "answer": "D",
+        "explanation": "符号主义、连接主义和行为主义是人工智能的三大主要学派。",
+        "知识点": [
+          "AI学派",
+          "符号主义"
+        ]
+      },
+      {
+        "id": "L1_Q10",
+        "type": "multiple",
+        "question": "以下哪些事件推动了人工智能的发展？",
+        "options": [
+          "A. 深度学习在ImageNet竞赛中取得突破",
+          "B. AlphaGo击败李世石",
+          "C. Transformer架构的提出",
+          "D. 区块链技术的兴起"
+        ],
+        "answer": [
+          "A",
+          "B",
+          "C"
+        ],
+        "explanation": "深度学习突破、AlphaGo和Transformer都是AI发展的重要里程碑，区块链与其无关。",
+        "知识点": [
+          "AI历史",
+          "里程碑"
+        ]
+      }
+    ]
+  },
+  "L02": {
+    "title": "开发环境搭建",
+    "questions": [
+      {
+        "id": "L2_Q1",
+        "type": "single",
+        "question": "以下哪个命令可以创建一个新的Python虚拟环境？",
+        "options": [
+          "A. python new env",
+          "B. python -m venv myenv",
+          "C. virtualenv create myenv",
+          "D. pip install venv"
+        ],
+        "answer": "B",
+        "explanation": "python -m venv myenv 是创建虚拟环境的标准命令。",
+        "知识点": [
+          "虚拟环境",
+          "Python基础"
+        ]
+      },
+      {
+        "id": "L2_Q2",
+        "type": "multiple",
+        "question": "Python包管理工具常用的是？",
+        "options": [
+          "A. pip",
+          "B. conda",
+          "C. npm",
+          "D. poetry"
+        ],
+        "answer": [
+          "A",
+          "B",
+          "D"
+        ],
+        "explanation": "pip、conda和poetry都是Python包管理工具，npm是Node.js的包管理器。",
+        "知识点": [
+          "包管理",
+          "pip"
+        ]
+      },
+      {
+        "id": "L2_Q3",
+        "type": "blank",
+        "question": "在Python中，激活虚拟环境的命令是 source ____/bin/activate。",
+        "answer": "myenv",
+        "explanation": "激活虚拟环境的命令格式为 source [虚拟环境名]/bin/activate。",
+        "知识点": [
+          "虚拟环境",
+          "激活"
+        ]
+      },
+      {
+        "id": "L2_Q4",
+        "type": "code",
+        "question": "以下代码运行结果是什么？\n```python\nimport sys\nprint(sys.version)\n```",
+        "options": [
+          "Python版本号字符串",
+          "3.11.4",
+          "2.7.18",
+          "错误"
+        ],
+        "answer": "Python版本号字符串",
+        "explanation": "sys.version会输出完整的Python版本信息字符串。",
+        "知识点": [
+          "sys模块",
+          "版本查看"
+        ]
+      },
+      {
+        "id": "L2_Q5",
+        "type": "single",
+        "question": "Jupyter Notebook的核心组件是？",
+        "options": [
+          "A. IPython内核",
+          "B. Java虚拟机",
+          "C. .NET运行时",
+          "D. Node.js服务器"
+        ],
+        "answer": "A",
+        "explanation": "Jupyter Notebook使用IPython作为内核来执行Python代码。",
+        "知识点": [
+          "Jupyter",
+          "IPython"
+        ]
+      },
+      {
+        "id": "L2_Q6",
+        "type": "multiple",
+        "question": "深度学习开发常用的IDE有？",
+        "options": [
+          "A. VS Code",
+          "B. PyCharm",
+          "C. JupyterLab",
+          "D. Eclipse"
+        ],
+        "answer": [
+          "A",
+          "B",
+          "C"
+        ],
+        "explanation": "VS Code、PyCharm和JupyterLab都是深度学习开发常用的IDE，Eclipse主要用于Java开发。",
+        "知识点": [
+          "开发工具",
+          "IDE"
+        ]
+      },
+      {
+        "id": "L2_Q7",
+        "type": "single",
+        "question": "以下哪个命令可以安装PyTorch CPU版本？",
+        "options": [
+          "A. pip install torch",
+          "B. pip install torch torchvision torchaudio",
+          "C. pip install torch --index-url https://download.pytorch.org/whl/cpu",
+          "D. conda install pytorch"
+        ],
+        "answer": "C",
+        "explanation": "指定CPU版本的wheel URL是安装PyTorch CPU版本的正确方式。",
+        "知识点": [
+          "PyTorch安装",
+          "pip"
+        ]
+      },
+      {
+        "id": "L2_Q8",
+        "type": "blank",
+        "question": "Python中，用于管理包依赖的文件通常是_____或requirements.txt。",
+        "answer": "pyproject.toml",
+        "explanation": "现代Python项目使用pyproject.toml作为包管理配置，传统的则使用requirements.txt。",
+        "知识点": [
+          "依赖管理",
+          "配置文件"
+        ]
+      },
+      {
+        "id": "L2_Q9",
+        "type": "single",
+        "question": "Google Colab提供免费使用的硬件配置是？",
+        "options": [
+          "A.64GB RAM",
+          "B. Tesla T4 GPU",
+          "C. 1TB SSD",
+          "D. 128核CPU"
+        ],
+        "answer": "B",
+        "explanation": "Google Colab免费提供Tesla T4 GPU，RAM通常为12-16GB。",
+        "知识点": [
+          "Colab",
+          "GPU"
+        ]
+      },
+      {
+        "id": "L2_Q10",
+        "type": "multiple",
+        "question": "以下哪些是常用的深度学习框架？",
+        "options": [
+          "A. PyTorch",
+          "B. TensorFlow",
+          "C. Keras",
+          "D. Angular"
+        ],
+        "answer": [
+          "A",
+          "B",
+          "C"
+        ],
+        "explanation": "PyTorch、TensorFlow和Keras都是深度学习框架，Angular是前端框架。",
+        "知识点": [
+          "深度学习框架",
+          "工具"
+        ]
+      }
+    ]
+  },
+  "L03": {
+    "title": "数学基础回顾",
+    "questions": [
+      {
+        "id": "L3_Q1",
+        "type": "single",
+        "question": "以下哪个函数是 sigmoid函数的公式？",
+        "options": [
+          "A. f(x) = x",
+          "B. f(x) = 1/(1+e^(-x))",
+          "C. f(x) = max(0,x)",
+          "D. f(x) = tanh(x)"
+        ],
+        "answer": "B",
+        "explanation": "sigmoid函数的公式是 f(x) = 1/(1+e^(-x))，输出范围在0到1之间。",
+        "知识点": [
+          "激活函数",
+          "sigmoid"
+        ]
+      },
+      {
+        "id": "L3_Q2",
+        "type": "multiple",
+        "question": "以下哪些是矩阵的基本运算？",
+        "options": [
+          "A. 加法",
+          "B. 乘法",
+          "C. 转置",
+          "D. 求导"
+        ],
+        "answer": [
+          "A",
+          "B",
+          "C"
+        ],
+        "explanation": "矩阵的基本运算包括加法、乘法和转置，求导不是矩阵的基本运算。",
+        "知识点": [
+          "矩阵运算",
+          "线性代数"
+        ]
+      },
+      {
+        "id": "L3_Q3",
+        "type": "blank",
+        "question": "在统计学中，描述数据离散程度的指标是_____。",
+        "answer": "标准差",
+        "explanation": "标准差是衡量数据离散程度的主要统计指标，方差是标准差的平方。",
+        "知识点": [
+          "统计量",
+          "离散程度"
+        ]
+      },
+      {
+        "id": "L3_Q4",
+        "type": "code",
+        "question": "以下代码运行后会输出什么？\n```python\nimport numpy as np\na = np.array([[1,2],[3,4]])\nprint(np.linalg.det(a))\n```",
+        "options": [
+          "-2.0",
+          "2.0",
+          "-1.0",
+          "错误"
+        ],
+        "answer": "-2.0",
+        "explanation": "矩阵[[1,2],[3,4]]的行列式为1*4-2*3=-2。",
+        "知识点": [
+          "矩阵行列式",
+          "NumPy"
+        ]
+      },
+      {
+        "id": "L3_Q5",
+        "type": "single",
+        "question": "梯度下降算法中，学习率（learning rate）的作用是？",
+        "options": [
+          "A. 控制模型复杂度",
+          "B. 控制参数更新的步长",
+          "C. 控制训练轮数",
+          "D. 控制特征数量"
+        ],
+        "answer": "B",
+        "explanation": "学习率控制参数更新的步长，过大会导致震荡，过小会导致收敛慢。",
+        "知识点": [
+          "梯度下降",
+          "学习率"
+        ]
+      },
+      {
+        "id": "L3_Q6",
+        "type": "multiple",
+        "question": "以下哪些是概率分布？",
+        "options": [
+          "A. 正态分布",
+          "B. 均匀分布",
+          "C. 梯度分布",
+          "D. 伯努利分布"
+        ],
+        "answer": [
+          "A",
+          "B",
+          "D"
+        ],
+        "explanation": "正态分布、均匀分布和伯努利分布都是常见的概率分布，梯度分布不是。",
+        "知识点": [
+          "概率分布",
+          "统计"
+        ]
+      },
+      {
+        "id": "L3_Q7",
+        "type": "single",
+        "question": "在机器学习中，L1正则化的中文名称是？",
+        "options": [
+          "A. 岭回归",
+          "B. Lasso回归",
+          "C. 弹性网络",
+          "D. Logistic回归"
+        ],
+        "answer": "B",
+        "explanation": "L1正则化又称为Lasso回归，L2正则化又称为岭回归。",
+        "知识点": [
+          "正则化",
+          "L1正则化"
+        ]
+      },
+      {
+        "id": "L3_Q8",
+        "type": "blank",
+        "question": "信息论中，熵（Entropy）的公式是 H = -Σ p(x)_____p(x)。",
+        "answer": "log",
+        "explanation": "熵的公式为 H = -Σ p(x) log p(x)，衡量随机变量的不确定性。",
+        "知识点": [
+          "信息熵",
+          "信息论"
+        ]
+      },
+      {
+        "id": "L3_Q9",
+        "type": "single",
+        "question": "以下哪个是ReLU激活函数的公式？",
+        "options": [
+          "A. f(x) = 1/(1+e^(-x))",
+          "B. f(x) = max(0, x)",
+          "C. f(x) = tanh(x)",
+          "D. f(x) = sigmoid(x)"
+        ],
+        "answer": "B",
+        "explanation": "ReLU（Rectified Linear Unit）的公式是 f(x) = max(0, x)。",
+        "知识点": [
+          "ReLU",
+          "激活函数"
+        ]
+      },
+      {
+        "id": "L3_Q10",
+        "type": "multiple",
+        "question": "以下哪些是神经网络中常用的损失函数？",
+        "options": [
+          "A. MSE均方误差",
+          "B. Cross Entropy交叉熵",
+          "C. MAE平均绝对误差",
+          "D. RMSE均方根误差"
+        ],
+        "answer": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "explanation": "MSE、Cross Entropy、MAE和RMSE都是常用的损失函数。",
+        "知识点": [
+          "损失函数",
+          "神经网络"
+        ]
+      }
+    ]
+  },
+  "L04": {
+    "title": "Python进阶",
+    "questions": [
+      {
+        "id": "L4_Q1",
+        "type": "code",
+        "question": "以下代码运行结果是什么？\n```python\nfruits = ['apple', 'banana', 'cherry']\nprint(fruits[-1])\n```",
+        "options": [
+          "apple",
+          "banana",
+          "cherry",
+          "错误"
+        ],
+        "answer": "cherry",
+        "explanation": "Python中-1表示列表的最后一个元素。",
+        "知识点": [
+          "列表索引",
+          "Python基础"
+        ]
+      },
+      {
+        "id": "L4_Q2",
+        "type": "multiple",
+        "question": "Python中，以下哪些是合法的装饰器？",
+        "options": [
+          "A. @staticmethod",
+          "B. @classmethod",
+          "C. @abstract",
+          "D. @property"
+        ],
+        "answer": [
+          "A",
+          "B",
+          "D"
+        ],
+        "explanation": "@staticmethod、@classmethod和@property都是Python内置装饰器，@abstract需要从abc模块导入。",
+        "知识点": [
+          "装饰器",
+          "Python语法"
+        ]
+      },
+      {
+        "id": "L4_Q3",
+        "type": "blank",
+        "question": "Python中的_____用于将一个函数或类与另一个函数或类进行链接。",
+        "answer": "装饰器",
+        "explanation": "装饰器（Decorator）用于在不修改原函数代码的情况下增加额外功能。",
+        "知识点": [
+          "装饰器",
+          "Python特性"
+        ]
+      },
+      {
+        "id": "L4_Q4",
+        "type": "single",
+        "question": "以下哪个关键字用于定义一个生成器函数？",
+        "options": [
+          "A. return",
+          "B. yield",
+          "C. break",
+          "D. continue"
+        ],
+        "answer": "B",
+        "explanation": "yield关键字用于定义生成器函数，函数执行到yield时会暂停并返回值。",
+        "知识点": [
+          "生成器",
+          "yield"
+        ]
+      },
+      {
+        "id": "L4_Q5",
+        "type": "code",
+        "question": "以下代码运行后会输出什么？\n```python\ng = (x**2 for x in range(3))\nprint(list(g))\n```",
+        "options": [
+          "[0, 1, 4]",
+          "[1, 4, 9]",
+          "[0, 1, 4, 0, 1, 2]",
+          "错误"
+        ],
+        "answer": "[0, 1, 4]",
+        "explanation": "生成器表达式(x**2 for x in range(3))会生成0, 1, 4的序列。",
+        "知识点": [
+          "生成器表达式",
+          "Python"
+        ]
+      },
+      {
+        "id": "L4_Q6",
+        "type": "multiple",
+        "question": "Python中，以下哪些是数据类型？",
+        "options": [
+          "A. tuple",
+          "B. set",
+          "C. frozenset",
+          "D. array"
+        ],
+        "answer": [
+          "A",
+          "B",
+          "C"
+        ],
+        "explanation": "tuple、set和frozenset都是Python内置数据类型，array需要导入array模块。",
+        "知识点": [
+          "数据类型",
+          "Python基础"
+        ]
+      },
+      {
+        "id": "L4_Q7",
+        "type": "single",
+        "question": "以下哪个方法用于获取字典的所有键？",
+        "options": [
+          "A. dict.keys()",
+          "B. dict.values()",
+          "C. dict.items()",
+          "D. dict.get()"
+        ],
+        "answer": "A",
+        "explanation": "dict.keys()返回字典的所有键，values()返回值，items()返回键值对。",
+        "知识点": [
+          "字典方法",
+          "Python基础"
+        ]
+      },
+      {
+        "id": "L4_Q8",
+        "type": "blank",
+        "question": "在Python中，异常处理的三步曲是try、_____和finally。",
+        "answer": "except",
+        "explanation": "Python异常处理使用try-except-finally结构捕获和处理异常。",
+        "知识点": [
+          "异常处理",
+          "Python语法"
+        ]
+      },
+      {
+        "id": "L4_Q9",
+        "type": "single",
+        "question": "以下哪个模块用于Python的并发编程？",
+        "options": [
+          "A. requests",
+          "B. threading",
+          "C. json",
+          "D. re"
+        ],
+        "answer": "B",
+        "explanation": "threading模块用于Python的并发编程，requests用于HTTP请求，json用于JSON处理。",
+        "知识点": [
+          "并发编程",
+          "threading"
+        ]
+      },
+      {
+        "id": "L4_Q10",
+        "type": "multiple",
+        "question": "Python中魔法方法（Magic Methods）包括？",
+        "options": [
+          "A. __init__",
+          "B. __str__",
+          "C. __call__",
+          "D. __main__"
+        ],
+        "answer": [
+          "A",
+          "B",
+          "C"
+        ],
+        "explanation": "__init__、__str__和__call__都是Python的魔法方法，__main__是模块入口。",
+        "知识点": [
+          "魔法方法",
+          "Python OOP"
+        ]
+      }
+    ]
+  },
+  "L05": {
+    "title": "ML核心概念",
+    "questions": [
+      {
+        "id": "L5_Q1",
+        "type": "single",
+        "question": "机器学习中，训练集、验证集和测试集的比例通常是多少？",
+        "options": [
+          "A. 7:2:1",
+          "B. 6:2:2",
+          "C. 8:1:1",
+          "D. 5:3:2"
+        ],
+        "answer": "C",
+        "explanation": "常见的划分比例是训练集80%，验证集10%，测试集10%。",
+        "知识点": [
+          "数据集划分",
+          "机器学习基础"
+        ]
+      },
+      {
+        "id": "L5_Q2",
+        "type": "multiple",
+        "question": "以下哪些是防止过拟合的方法？",
+        "options": [
+          "A. 正则化",
+          "B. Dropout",
+          "C. 数据增强",
+          "D. 增加模型参数"
+        ],
+        "answer": [
+          "A",
+          "B",
+          "C"
+        ],
+        "explanation": "正则化、Dropout和数据增强都是防止过拟合的有效方法。",
+        "知识点": [
+          "过拟合",
+          "正则化"
+        ]
+      },
+      {
+        "id": "L5_Q3",
+        "type": "blank",
+        "question": "模型评估指标中，精确率（Precision）和召回率（Recall）的调和平均值称为F_____分数。",
+        "answer": "1",
+        "explanation": "F1分数是Precision和Recall的调和平均，是最常用的综合评估指标。",
+        "知识点": [
+          "F1分数",
+          "评估指标"
+        ]
+      },
+      {
+        "id": "L5_Q4",
+        "type": "single",
+        "question": "以下哪个算法是无监督学习算法？",
+        "options": [
+          "A. 线性回归",
+          "B. K-means聚类",
+          "C. 决策树",
+          "D. 随机森林"
+        ],
+        "answer": "B",
+        "explanation": "K-means是无监督学习算法，用于聚类任务，其他都是有监督学习算法。",
+        "知识点": [
+          "无监督学习",
+          "K-means"
+        ]
+      },
+      {
+        "id": "L5_Q5",
+        "type": "code",
+        "question": "以下代码运行后会输出什么？\n```python\nfrom sklearn.metrics import accuracy_score\ny_true = [1, 0, 1, 1, 0]\ny_pred = [1, 0, 0, 1, 0]\nprint(accuracy_score(y_true, y_pred))\n```",
+        "options": [
+          "0.8",
+          "0.6",
+          "0.4",
+          "0.2"
+        ],
+        "answer": "0.8",
+        "explanation": "准确率=正确预测数/总数=4/5=0.8。",
+        "知识点": [
+          "准确率",
+          "sklearn"
+        ]
+      },
+      {
+        "id": "L5_Q6",
+        "type": "multiple",
+        "question": "机器学习按学习方式分类包括？",
+        "options": [
+          "A. 监督学习",
+          "B. 无监督学习",
+          "C. 半监督学习",
+          "D. 强化学习"
+        ],
+        "answer": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "explanation": "监督学习、无监督学习、半监督学习和强化学习是机器学习的四大类学习方式。",
+        "知识点": [
+          "机器学习分类",
+          "学习方式"
+        ]
+      },
+      {
+        "id": "L5_Q7",
+        "type": "single",
+        "question": "交叉验证的主要目的是？",
+        "options": [
+          "A. 增加训练数据",
+          "B. 评估模型泛化能力",
+          "C. 加快训练速度",
+          "D. 减少模型参数"
+        ],
+        "answer": "B",
+        "explanation": "交叉验证通过多次不同划分来评估模型的泛化能力，减少随机划分带来的偏差。",
+        "知识点": [
+          "交叉验证",
+          "模型评估"
+        ]
+      },
+      {
+        "id": "L5_Q8",
+        "type": "blank",
+        "question": "在机器学习中，模型在训练数据上表现很好但在测试数据上表现差的现象称为_____。",
+        "answer": "过拟合",
+        "explanation": "过拟合指模型过于复杂，记住了训练数据的噪声，导致泛化能力差。",
+        "知识点": [
+          "过拟合",
+          "欠拟合"
+        ]
+      },
+      {
+        "id": "L5_Q9",
+        "type": "single",
+        "question": "以下哪个指标用于衡量分类模型的整体性能？",
+        "options": [
+          "A. MSE",
+          "B. RMSE",
+          "C. Accuracy",
+          "D. MAE"
+        ],
+        "answer": "C",
+        "explanation": "Accuracy是分类任务的主要评估指标，MSE/RMSE/MAE主要用于回归任务。",
+        "知识点": [
+          "评估指标",
+          "分类"
+        ]
+      },
+      {
+        "id": "L5_Q10",
+        "type": "multiple",
+        "question": "特征工程的主要步骤包括？",
+        "options": [
+          "A. 特征选择",
+          "B. 特征提取",
+          "C. 特征编码",
+          "D. 特征删除"
+        ],
+        "answer": [
+          "A",
+          "B",
+          "C"
+        ],
+        "explanation": "特征工程包括特征选择、特征提取和特征编码，不包括特征删除（那是特征筛选）。",
+        "知识点": [
+          "特征工程",
+          "数据预处理"
+        ]
+      }
+    ]
+  },
+  "L06": {
+    "title": "监督学习算法",
+    "questions": [
+      {
+        "id": "L6_Q1",
+        "type": "single",
+        "question": "线性回归中，最小二乘法的目标是？",
+        "options": [
+          "A. 最大化残差平方和",
+          "B. 最小化残差平方和",
+          "C. 最小化相关系数",
+          "D. 最大化预测值"
+        ],
+        "answer": "B",
+        "explanation": "最小二乘法通过最小化残差平方和来找到最佳拟合直线。",
+        "知识点": [
+          "线性回归",
+          "最小二乘法"
+        ]
+      },
+      {
+        "id": "L6_Q2",
+        "type": "multiple",
+        "question": "以下哪些算法是监督学习算法？",
+        "options": [
+          "A. 逻辑回归",
+          "B. 朴素贝叶斯",
+          "C. K-means",
+          "D. 支持向量机"
+        ],
+        "answer": [
+          "A",
+          "B",
+          "D"
+        ],
+        "explanation": "逻辑回归、朴素贝叶斯和支持向量机都是监督学习算法，K-means是无监督的。",
+        "知识点": [
+          "监督学习算法",
+          "分类"
+        ]
+      },
+      {
+        "id": "L6_Q3",
+        "type": "blank",
+        "question": "决策树中，信息增益（Information Gain）基于熵来计算，熵衡量的是数据的_____程度。",
+        "answer": "不确定性",
+        "explanation": "熵衡量数据的不确定性，信息增益衡量通过划分减少的不确定性。",
+        "知识点": [
+          "决策树",
+          "信息增益"
+        ]
+      },
+      {
+        "id": "L6_Q4",
+        "type": "code",
+        "question": "以下代码运行后会输出什么？\n```python\nfrom sklearn.linear_model import LinearRegression\nimport numpy as np\nX = np.array([[1], [2], [3]])\ny = np.array([2, 4, 6])\nmodel = LinearRegression()\nmodel.fit(X, y)\nprint(model.predict([[4]]))\n```",
+        "options": [
+          "[[8.]]",
+          "[[7.]]",
+          "[[6.]]",
+          "错误"
+        ],
+        "answer": "[[8.]]",
+        "explanation": "线性回归拟合y=2X，预测X=4时y=8。",
+        "知识点": [
+          "线性回归预测",
+          "sklearn"
+        ]
+      },
+      {
+        "id": "L6_Q5",
+        "type": "single",
+        "question": "逻辑回归的输出范围是？",
+        "options": [
+          "A. (0, 1)",
+          "B. [-1, 1]",
+          "C. (-∞, +∞)",
+          "D. [0, 1]"
+        ],
+        "answer": "D",
+        "explanation": "逻辑回归使用sigmoid函数，输出范围在0到1之间，代表概率。",
+        "知识点": [
+          "逻辑回归",
+          "sigmoid"
+        ]
+      },
+      {
+        "id": "L6_Q6",
+        "type": "multiple",
+        "question": "支持向量机（SVM）的核函数包括？",
+        "options": [
+          "A. 线性核",
+          "B. 多项式核",
+          "C. RBF核",
+          "D. Dropout核"
+        ],
+        "answer": [
+          "A",
+          "B",
+          "C"
+        ],
+        "explanation": "线性核、多项式核和RBF核都是SVM常用的核函数，Dropout不是核函数。",
+        "知识点": [
+          "SVM",
+          "核函数"
+        ]
+      },
+      {
+        "id": "L6_Q7",
+        "type": "single",
+        "question": "随机森林采用了什么集成方法？",
+        "options": [
+          "A. Boosting",
+          "B. Bagging",
+          "C. Stacking",
+          "D. Voting"
+        ],
+        "answer": "B",
+        "explanation": "随机森林采用Bagging方法，通过bootstrap抽样和多个决策树集成。",
+        "知识点": [
+          "随机森林",
+          "集成学习"
+        ]
+      },
+      {
+        "id": "L6_Q8",
+        "type": "blank",
+        "question": "在朴素贝叶斯分类器中，假设特征之间相互独立，这个假设称为条件独立_____。",
+        "answer": "假设",
+        "explanation": "朴素贝叶斯假设特征在给定类别条件下相互独立，这是'朴素'一词的含义。",
+        "知识点": [
+          "朴素贝叶斯",
+          "条件独立"
+        ]
+      },
+      {
+        "id": "L6_Q9",
+        "type": "single",
+        "question": "K近邻算法（KNN）的K值过小会导致？",
+        "options": [
+          "A. 过拟合",
+          "B. 欠拟合",
+          "C. 训练速度变快",
+          "D. 内存溢出"
+        ],
+        "answer": "A",
+        "explanation": "K值过小会导致模型复杂度过高，容易过拟合；K值过大则容易欠拟合。",
+        "知识点": [
+          "KNN",
+          "K值选择"
+        ]
+      },
+      {
+        "id": "L6_Q10",
+        "type": "multiple",
+        "question": "梯度提升（Gradient Boosting）的主要组成部分包括？",
+        "options": [
+          "A. 弱学习器",
+          "B. 损失函数",
+          "C. 前向分步算法",
+          "D. Dropout"
+        ],
+        "answer": [
+          "A",
+          "B",
+          "C"
+        ],
+        "explanation": "梯度提升由弱学习器、损失函数和前向分步算法组成，Dropout不是其组成部分。",
+        "知识点": [
+          "梯度提升",
+          "Boosting"
+        ]
+      }
+    ]
+  },
+  "L07": {
+    "title": "无监督学习算法",
+    "questions": [
+      {
+        "id": "L7_Q1",
+        "type": "single",
+        "question": "K-means聚类算法中，K指的是？",
+        "options": [
+          "A. 特征数量",
+          "B. 聚类数量",
+          "C. 样本数量",
+          "D. 迭代次数"
+        ],
+        "answer": "B",
+        "explanation": "K-means中的K表示要形成的聚类数量，需要预先指定。",
+        "知识点": [
+          "K-means",
+          "聚类"
+        ]
+      },
+      {
+        "id": "L7_Q2",
+        "type": "multiple",
+        "question": "以下哪些是层次聚类的方法？",
+        "options": [
+          "A. 凝聚层次聚类",
+          "B. 分裂层次聚类",
+          "C. K-means",
+          "D. DBSCAN"
+        ],
+        "answer": [
+          "A",
+          "B"
+        ],
+        "explanation": "凝聚层次聚类和分裂层次聚类是层次聚类的两种主要方法。",
+        "知识点": [
+          "层次聚类",
+          "聚类算法"
+        ]
+      },
+      {
+        "id": "L7_Q3",
+        "type": "blank",
+        "question": "主成分分析（PCA）是一种常用的_____方法，用于降低数据维度。",
+        "answer": "降维",
+        "explanation": "PCA通过线性变换将高维数据投影到低维空间，保留主要信息。",
+        "知识点": [
+          "PCA",
+          "降维"
+        ]
+      },
+      {
+        "id": "L7_Q4",
+        "type": "single",
+        "question": "DBSCAN聚类算法中，核心点的定义是？",
+        "options": [
+          "A. 密度最高的点",
+          "B. 在ε邻域内至少有MinPts个点的点",
+          "C. 距离聚类中心最近的点",
+          "D. 噪声点"
+        ],
+        "answer": "B",
+        "explanation": "DBSCAN中，核心点是在ε邻域内至少有MinPts个邻域点的点。",
+        "知识点": [
+          "DBSCAN",
+          "核心点"
+        ]
+      },
+      {
+        "id": "L7_Q5",
+        "type": "code",
+        "question": "以下代码运行后会输出什么？\n```python\nfrom sklearn.decomposition import PCA\nimport numpy as np\nX = np.array([[1, 2], [3, 4], [5, 6]])\npca = PCA(n_components=1)\nprint(pca.fit_transform(X).shape)\n```",
+        "options": [
+          "(3, 1)",
+          "(1, 3)",
+          "(3, 2)",
+          "(2, 1)"
+        ],
+        "answer": "(3, 1)",
+        "explanation": "PCA将2维数据降为1维，保留样本数，输出形状为(3, 1)。",
+        "知识点": [
+          "PCA",
+          "sklearn"
+        ]
+      },
+      {
+        "id": "L7_Q6",
+        "type": "multiple",
+        "question": "无监督学习的主要任务包括？",
+        "options": [
+          "A. 聚类",
+          "B. 降维",
+          "C. 异常检测",
+          "D. 分类"
+        ],
+        "answer": [
+          "A",
+          "B",
+          "C"
+        ],
+        "explanation": "聚类、降维和异常检测都是无监督学习的任务，分类是有监督学习任务。",
+        "知识点": [
+          "无监督学习",
+          "任务"
+        ]
+      },
+      {
+        "id": "L7_Q7",
+        "type": "single",
+        "question": "高斯混合模型（GMM）的优势是？",
+        "options": [
+          "A. 只能处理球形簇",
+          "B. 可以处理椭圆形簇",
+          "C. 不需要指定聚类数",
+          "D. 无法处理噪声"
+        ],
+        "answer": "B",
+        "explanation": "GMM可以处理不同形状和大小的簇，不像K-means只限于球形簇。",
+        "知识点": [
+          "GMM",
+          "聚类算法"
+        ]
+      },
+      {
+        "id": "L7_Q8",
+        "type": "blank",
+        "question": "t-SNE是一种用于高维数据可视化的非线性_____方法。",
+        "answer": "降维",
+        "explanation": "t-SNE将高维数据降维到2维或3维用于可视化，保留局部结构。",
+        "知识点": [
+          "t-SNE",
+          "降维可视化"
+        ]
+      },
+      {
+        "id": "L7_Q9",
+        "type": "single",
+        "question": "肘部法则（Elbow Method）用于确定什么参数？",
+        "options": [
+          "A. 学习率",
+          "B. 聚类数量K",
+          "C. 正则化参数",
+          "D. 迭代次数"
+        ],
+        "answer": "B",
+        "explanation": "肘部法则通过观察SSE随K变化的曲线，找到拐点来确定最佳聚类数。",
+        "知识点": [
+          "肘部法则",
+          "K-means"
+        ]
+      },
+      {
+        "id": "L7_Q10",
+        "type": "multiple",
+        "question": "以下哪些算法可以用于异常检测？",
+        "options": [
+          "A. Isolation Forest",
+          "B. DBSCAN",
+          "C. Local Outlier Factor",
+          "D. SVM"
+        ],
+        "answer": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "explanation": "Isolation Forest、DBSCAN、LOF和SVM都可以用于异常检测任务。",
+        "知识点": [
+          "异常检测",
+          "算法"
+        ]
+      }
+    ]
+  },
+  "L08": {
+    "title": "ML实战项目",
+    "questions": [
+      {
+        "id": "L8_Q1",
+        "type": "single",
+        "question": "机器学习项目流程中，第一步通常是？",
+        "options": [
+          "A. 特征工程",
+          "B. 数据收集与理解",
+          "C. 模型训练",
+          "D. 模型部署"
+        ],
+        "answer": "B",
+        "explanation": "机器学习项目通常从数据收集与理解开始，这是整个项目的基础。",
+        "知识点": [
+          "ML项目流程",
+          "数据收集"
+        ]
+      },
+      {
+        "id": "L8_Q2",
+        "type": "multiple",
+        "question": "sklearn中用于数据划分的函数是？",
+        "options": [
+          "A. train_test_split",
+          "B. cross_val_score",
+          "C. GridSearchCV",
+          "D. StandardScaler"
+        ],
+        "answer": [
+          "A",
+          "B",
+          "C"
+        ],
+        "explanation": "train_test_split、cross_val_score和GridSearchCV都涉及数据划分，StandardScaler是标准化。",
+        "知识点": [
+          "sklearn",
+          "数据划分"
+        ]
+      },
+      {
+        "id": "L8_Q3",
+        "type": "blank",
+        "question": "特征缩放中，将特征值缩放到0和1之间的方法称为_____归一化。",
+        "answer": "Min-Max",
+        "explanation": "Min-Max归一化将数据缩放到[0,1]范围，公式为(X-Xmin)/(Xmax-Xmin)。",
+        "知识点": [
+          "特征缩放",
+          "归一化"
+        ]
+      },
+      {
+        "id": "L8_Q4",
+        "type": "code",
+        "question": "以下代码运行后会输出什么？\n```python\nfrom sklearn.preprocessing import LabelEncoder\nle = LabelEncoder()\ny = ['cat', 'dog', 'cat', 'bird']\nprint(le.fit_transform(y))\n```",
+        "options": [
+          "[0 1 0 2]",
+          "[1 2 1 3]",
+          "[0 1 2 3]",
+          "错误"
+        ],
+        "answer": "[0 1 0 2]",
+        "explanation": "LabelEncoder将类别编码为0,1, 2,...，cat=0, dog=1, bird=2。",
+        "知识点": [
+          "标签编码",
+          "sklearn"
+        ]
+      },
+      {
+        "id": "L8_Q5",
+        "type": "single",
+        "question": "GridSearchCV的作用是？",
+        "options": [
+          "A. 数据预处理",
+          "B. 超参数网格搜索",
+          "C. 特征选择",
+          "D. 模型评估"
+        ],
+        "answer": "B",
+        "explanation": "GridSearchCV通过穷举搜索来找到最佳超参数组合。",
+        "知识点": [
+          "GridSearchCV",
+          "超参数调优"
+        ]
+      },
+      {
+        "id": "L8_Q6",
+        "type": "multiple",
+        "question": "一个完整的ML项目通常包括哪些阶段？",
+        "options": [
+          "A. 数据收集",
+          "B. 数据清洗",
+          "C. 模型训练与评估",
+          "D. 模型部署"
+        ],
+        "answer": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "explanation": "完整的ML项目包括数据收集、清洗、特征工程、训练评估和部署。",
+        "知识点": [
+          "ML项目",
+          "完整流程"
+        ]
+      },
+      {
+        "id": "L8_Q7",
+        "type": "single",
+        "question": "Pipeline在sklearn中的作用是？",
+        "options": [
+          "A. 数据可视化",
+          "B. 连接多个数据处理步骤",
+          "C. 模型部署",
+          "D. 数据存储"
+        ],
+        "answer": "B",
+        "explanation": "Pipeline将多个数据处理步骤串联起来，确保训练和测试时处理一致。",
+        "知识点": [
+          "sklearn Pipeline",
+          "数据处理"
+        ]
+      },
+      {
+        "id": "L8_Q8",
+        "type": "blank",
+        "question": "在ML比赛中，常用的模型融合方法是Bagging和Boosting，统称为_____方法。",
+        "answer": "集成学习",
+        "explanation": "Bagging和Boosting都是集成学习方法，通过组合多个模型提升性能。",
+        "知识点": [
+          "集成学习",
+          "Bagging"
+        ]
+      },
+      {
+        "id": "L8_Q9",
+        "type": "single",
+        "question": "模型保存常用的格式是？",
+        "options": [
+          "A. .txt",
+          "B. .csv",
+          "C. .pkl",
+          "D. .json"
+        ],
+        "answer": "C",
+        "explanation": "sklearn模型通常保存为.pkl格式（pickle），也可使用.joblib格式。",
+        "知识点": [
+          "模型保存",
+          "pickle"
+        ]
+      },
+      {
+        "id": "L8_Q10",
+        "type": "multiple",
+        "question": "以下哪些是常用的特征编码方法？",
+        "options": [
+          "A. One-Hot编码",
+          "B. Label编码",
+          "C. 目标编码",
+          "D. 顺序编码"
+        ],
+        "answer": [
+          "A",
+          "B",
+          "C"
+        ],
+        "explanation": "One-Hot、Label和目标编码都是常用的特征编码方法。",
+        "知识点": [
+          "特征编码",
+          "数据预处理"
+        ]
+      }
+    ]
+  },
+  "L09": {
+    "title": "神经网络基础",
+    "questions": [
+      {
+        "id": "L9_Q1",
+        "type": "single",
+        "question": "感知机（Perceptron）的基本结构包括？",
+        "options": [
+          "A. 输入层和输出层",
+          "B. 输入层、隐藏层和输出层",
+          "C. 只有输出层",
+          "D. 输入层和激活层"
+        ],
+        "answer": "A",
+        "explanation": "感知机是最简单的神经网络，只有输入层和输出层，没有隐藏层。",
+        "知识点": [
+          "感知机",
+          "神经网络基础"
+        ]
+      },
+      {
+        "id": "L9_Q2",
+        "type": "multiple",
+        "question": "神经网络的激活函数包括？",
+        "options": [
+          "A. Sigmoid",
+          "B. ReLU",
+          "C. Tanh",
+          "D. Linear"
+        ],
+        "answer": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "explanation": "Sigmoid、ReLU、Tanh和Linear都是神经网络中使用的激活函数。",
+        "知识点": [
+          "激活函数",
+          "神经网络"
+        ]
+      },
+      {
+        "id": "L9_Q3",
+        "type": "blank",
+        "question": "神经网络中，反向传播（Backpropagation）用于计算损失函数对每个参数的_____。",
+        "answer": "梯度",
+        "explanation": "反向传播通过链式法则计算损失函数对每个参数的偏导数（梯度）。",
+        "知识点": [
+          "反向传播",
+          "梯度计算"
+        ]
+      },
+      {
+        "id": "L9_Q4",
+        "type": "code",
+        "question": "以下代码运行后会输出什么？\n```python\nimport torch\nx = torch.tensor([1.0, 2.0])\ny = torch.tensor([3.0, 4.0])\nprint(x + y)\n```",
+        "options": [
+          "tensor([4., 6.])",
+          "tensor([3., 8.])",
+          "[4., 6.]",
+          "错误"
+        ],
+        "answer": "tensor([4., 6.])",
+        "explanation": "PyTorch张量支持逐元素加法，输出为[1+3, 2+4]=[4., 6.]。",
+        "知识点": [
+          "PyTorch",
+          "张量运算"
+        ]
+      },
+      {
+        "id": "L9_Q5",
+        "type": "single",
+        "question": "神经网络中，dropout层的作用是？",
+        "options": [
+          "A. 加速训练",
+          "B. 防止过拟合",
+          "C. 增加参数",
+          "D. 归一化"
+        ],
+        "answer": "B",
+        "explanation": "Dropout在训练时随机丢弃部分神经元，防止网络过度依赖某些神经元。",
+        "知识点": [
+          "Dropout",
+          "正则化"
+        ]
+      },
+      {
+        "id": "L9_Q6",
+        "type": "multiple",
+        "question": "以下哪些是神经网络的优化器？",
+        "options": [
+          "A. SGD",
+          "B. Adam",
+          "C. RMSprop",
+          "D. Dropout"
+        ],
+        "answer": [
+          "A",
+          "B",
+          "C"
+        ],
+        "explanation": "SGD、Adam和RMSprop都是常用的优化器，Dropout是正则化手段不是优化器。",
+        "知识点": [
+          "优化器",
+          "SGD"
+        ]
+      },
+      {
+        "id": "L9_Q7",
+        "type": "single",
+        "question": "批归一化（Batch Normalization）的作用是？",
+        "options": [
+          "A. 增加梯度",
+          "B. 稳定和加速训练",
+          "C. 减少参数",
+          "D. 增加隐藏层"
+        ],
+        "answer": "B",
+        "explanation": "Batch Normalization通过归一化层的输入，稳定和加速深度网络的训练。",
+        "知识点": [
+          "BatchNorm",
+          "归一化"
+        ]
+      },
+      {
+        "id": "L9_Q8",
+        "type": "blank",
+        "question": "损失函数衡量模型预测值与真实值之间的差异，在训练过程中我们的目标是_____它。",
+        "answer": "最小化",
+        "explanation": "训练的目标是通过优化算法最小化损失函数，使模型预测更准确。",
+        "知识点": [
+          "损失函数",
+          "训练目标"
+        ]
+      },
+      {
+        "id": "L9_Q9",
+        "type": "single",
+        "question": "神经网络的学习率过高会导致？",
+        "options": [
+          "A. 训练过慢",
+          "B. 收敛过快",
+          "C. 震荡无法收敛",
+          "D. 精度提高"
+        ],
+        "answer": "C",
+        "explanation": "学习率过高会导致参数在最优点附近震荡，无法收敛到最优解。",
+        "知识点": [
+          "学习率",
+          "训练稳定性"
+        ]
+      },
+      {
+        "id": "L9_Q10",
+        "type": "multiple",
+        "question": "以下哪些是神经网络中常见的正则化技术？",
+        "options": [
+          "A. L1/L2正则化",
+          "B. Dropout",
+          "C. Batch Normalization",
+          "D. 提前停止"
+        ],
+        "answer": [
+          "A",
+          "B",
+          "D"
+        ],
+        "explanation": "L1/L2正则化、Dropout和提前停止都是正则化技术，BatchNorm不是正则化。",
+        "知识点": [
+          "正则化技术",
+          "神经网络"
+        ]
+      }
+    ]
+  },
+  "L10": {
+    "title": "CNN卷积神经网络",
+    "questions": [
+      {
+        "id": "L10_Q1",
+        "type": "single",
+        "question": "卷积神经网络（CNN）中最核心的操作是？",
+        "options": [
+          "A. 池化",
+          "B. 全连接",
+          "C. 卷积",
+          "D. 激活"
+        ],
+        "answer": "C",
+        "explanation": "卷积操作是CNN的核心，通过卷积核提取图像特征。",
+        "知识点": [
+          "卷积操作",
+          "CNN"
+        ]
+      },
+      {
+        "id": "L10_Q2",
+        "type": "multiple",
+        "question": "CNN的主要组成部分包括？",
+        "options": [
+          "A. 卷积层",
+          "B. 池化层",
+          "C. 全连接层",
+          "D. 循环层"
+        ],
+        "answer": [
+          "A",
+          "B",
+          "C"
+        ],
+        "explanation": "卷积层、池化层和全连接层是CNN的主要组成部分。",
+        "知识点": [
+          "CNN结构",
+          "网络层"
+        ]
+      },
+      {
+        "id": "L10_Q3",
+        "type": "blank",
+        "question": "在卷积操作中，卷积核在图像上滑动的步长称为_____。",
+        "answer": "步长",
+        "explanation": "步长（stride）指卷积核在图像上每次移动的像素数。",
+        "知识点": [
+          "卷积步长",
+          "卷积操作"
+        ]
+      },
+      {
+        "id": "L10_Q4",
+        "type": "single",
+        "question": "池化层（Pooling）的主要作用是？",
+        "options": [
+          "A. 增加特征图尺寸",
+          "B. 减少特征图尺寸和参数数量",
+          "C. 增加网络层数",
+          "D. 改变通道数"
+        ],
+        "answer": "B",
+        "explanation": "池化层通过下采样减少特征图尺寸和参数数量，同时保留重要特征。",
+        "知识点": [
+          "池化层",
+          "下采样"
+        ]
+      },
+      {
+        "id": "L10_Q5",
+        "type": "code",
+        "question": "以下代码运行后会输出什么？\n```python\nimport torch\nx = torch.randn(1, 3, 224, 224)\nconv = torch.nn.Conv2d(3, 64, kernel_size=3, padding=1)\nprint(conv(x).shape)\n```",
+        "options": [
+          "torch.Size([1, 64, 224, 224])",
+          "torch.Size([1, 3, 224, 224])",
+          "torch.Size([1, 64, 222, 222])",
+          "错误"
+        ],
+        "answer": "torch.Size([1, 64, 224, 224])",
+        "explanation": "输入3通道，输出64通道，padding=1保持尺寸不变，形状为[1, 64, 224, 224]。",
+        "知识点": [
+          "Conv2d",
+          "PyTorch"
+        ]
+      },
+      {
+        "id": "L10_Q6",
+        "type": "multiple",
+        "question": "常见的池化方式包括？",
+        "options": [
+          "A. Max Pooling",
+          "B. Average Pooling",
+          "C. Global Pooling",
+          "D. Min Pooling"
+        ],
+        "answer": [
+          "A",
+          "B",
+          "C"
+        ],
+        "explanation": "Max Pooling、Average Pooling和Global Pooling都是常用的池化方式。",
+        "知识点": [
+          "池化方式",
+          "Max Pooling"
+        ]
+      },
+      {
+        "id": "L10_Q7",
+        "type": "single",
+        "question": "1x1卷积核的作用是？",
+        "options": [
+          "A. 增加图像尺寸",
+          "B. 改变通道数",
+          "C. 提取空间特征",
+          "D. 模糊图像"
+        ],
+        "answer": "B",
+        "explanation": "1x1卷积核在不改变空间尺寸的情况下改变通道数，实现特征整合。",
+        "知识点": [
+          "1x1卷积",
+          "通道控制"
+        ]
+      },
+      {
+        "id": "L10_Q8",
+        "type": "blank",
+        "question": "VGGNet的特点是使用3x3小卷积核，通过多次叠加达到增大_____的效果。",
+        "answer": "感受野",
+        "explanation": "多个3x3卷积核堆叠可以达到与更大卷积核相同的感受野，同时减少参数。",
+        "知识点": [
+          "VGGNet",
+          "感受野"
+        ]
+      },
+      {
+        "id": "L10_Q9",
+        "type": "single",
+        "question": "ResNet提出的跳跃连接（Skip Connection）主要用于解决？",
+        "options": [
+          "A. 梯度消失",
+          "B. 过拟合",
+          "C. 训练速度慢",
+          "D. 内存不足"
+        ],
+        "answer": "A",
+        "explanation": "跳跃连接允许梯度直接传播到前面层，有效缓解深层网络的梯度消失问题。",
+        "知识点": [
+          "ResNet",
+          "跳跃连接"
+        ]
+      },
+      {
+        "id": "L10_Q10",
+        "type": "multiple",
+        "question": "以下哪些是经典的CNN架构？",
+        "options": [
+          "A. LeNet",
+          "B. AlexNet",
+          "C. VGGNet",
+          "D. ResNet"
+        ],
+        "answer": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "explanation": "LeNet、AlexNet、VGGNet和ResNet都是经典的CNN架构。",
+        "知识点": [
+          "CNN架构",
+          "经典网络"
+        ]
+      }
+    ]
+  },
+  "L11": {
+    "title": "RNN与序列数据处理",
+    "questions": [
+      {
+        "id": "L11_Q1",
+        "type": "single",
+        "question": "循环神经网络（RNN）最适合处理什么类型的数据？",
+        "options": [
+          "A. 静态图像",
+          "B. 固定长度向量",
+          "C. 序列数据",
+          "D. 表格数据"
+        ],
+        "answer": "C",
+        "explanation": "RNN通过循环结构处理序列数据，能够捕捉时间依赖关系。",
+        "知识点": [
+          "RNN",
+          "序列数据"
+        ]
+      },
+      {
+        "id": "L11_Q2",
+        "type": "multiple",
+        "question": "RNN存在的问题包括？",
+        "options": [
+          "A. 梯度消失",
+          "B. 梯度爆炸",
+          "C. 长期依赖问题",
+          "D. 过拟合"
+        ],
+        "answer": [
+          "A",
+          "B",
+          "C"
+        ],
+        "explanation": "梯度消失、梯度爆炸和长期依赖问题是RNN面临的主要挑战。",
+        "知识点": [
+          "RNN问题",
+          "梯度问题"
+        ]
+      },
+      {
+        "id": "L11_Q3",
+        "type": "blank",
+        "question": "LSTM通过引入细胞状态和门控机制来解决普通RNN的_____依赖问题。",
+        "answer": "长期",
+        "explanation": "LSTM通过门控机制选择性地记住或遗忘信息，解决了长期依赖问题。",
+        "知识点": [
+          "LSTM",
+          "长期依赖"
+        ]
+      },
+      {
+        "id": "L11_Q4",
+        "type": "single",
+        "question": "LSTM中的遗忘门（Forget Gate）的作用是？",
+        "options": [
+          "A. 决定忘记哪些信息",
+          "B. 添加新信息",
+          "C. 输出最终结果",
+          "D. 控制梯度流"
+        ],
+        "answer": "A",
+        "explanation": "遗忘门决定从细胞状态中遗忘哪些旧信息，保留哪些新信息。",
+        "知识点": [
+          "LSTM门控",
+          "遗忘门"
+        ]
+      },
+      {
+        "id": "L11_Q5",
+        "type": "code",
+        "question": "以下代码运行后会输出什么？\n```python\nimport torch\nrnn = torch.nn.RNN(10, 20, 2)\nx = torch.randn(5, 3, 10)\noutput, hn = rnn(x)\nprint(hn.shape)\n```",
+        "options": [
+          "torch.Size([2, 3, 20])",
+          "torch.Size([5, 3, 20])",
+          "torch.Size([2, 3, 10])",
+          "错误"
+        ],
+        "answer": "torch.Size([2, 3, 20])",
+        "explanation": "RNN层数2，批量3，隐藏单元20，hn形状为[层数, 批量, 隐藏单元]。",
+        "知识点": [
+          "RNN",
+          "PyTorch"
+        ]
+      },
+      {
+        "id": "L11_Q6",
+        "type": "multiple",
+        "question": "以下哪些是序列到序列（Seq2Seq）模型的组成部分？",
+        "options": [
+          "A. 编码器",
+          "B. 解码器",
+          "C. 注意力机制",
+          "D. 生成器"
+        ],
+        "answer": [
+          "A",
+          "B",
+          "C"
+        ],
+        "explanation": "Seq2Seq模型通常由编码器、解码器和注意力机制组成。",
+        "知识点": [
+          "Seq2Seq",
+          "编码器解码器"
+        ]
+      },
+      {
+        "id": "L11_Q7",
+        "type": "single",
+        "question": "GRU与LSTM的主要区别是？",
+        "options": [
+          "A. GRU没有门",
+          "B. GRU只有两个门，更简单",
+          "C. GRU无法处理序列数据",
+          "D. GRU参数更多"
+        ],
+        "answer": "B",
+        "explanation": "GRU将LSTM的三个门合并为两个（更新门和重置门），结构更简单。",
+        "知识点": [
+          "GRU",
+          "LSTM对比"
+        ]
+      },
+      {
+        "id": "L11_Q8",
+        "type": "blank",
+        "question": "在自然语言处理中，文本序列化后需要通过_____层将词转换为词向量。",
+        "answer": "Embedding",
+        "explanation": "Embedding层将离散的词索引映射为连续的词向量，捕捉语义信息。",
+        "知识点": [
+          "Embedding",
+          "词向量"
+        ]
+      },
+      {
+        "id": "L11_Q9",
+        "type": "single",
+        "question": "双向RNN（Bi-RNN）的优势是？",
+        "options": [
+          "A. 训练更快",
+          "B. 可以利用前后文信息",
+          "C. 参数更少",
+          "D. 不需要标注数据"
+        ],
+        "answer": "B",
+        "explanation": "双向RNN同时处理正序和逆序的序列，能够利用完整的前后文信息。",
+        "知识点": [
+          "双向RNN",
+          "上下文"
+        ]
+      },
+      {
+        "id": "L11_Q10",
+        "type": "multiple",
+        "question": "以下哪些是RNN的变体？",
+        "options": [
+          "A. LSTM",
+          "B. GRU",
+          "C. Bi-RNN",
+          "D. CNN"
+        ],
+        "answer": [
+          "A",
+          "B",
+          "C"
+        ],
+        "explanation": "LSTM、GRU和Bi-RNN都是RNN的变体，CNN不是RNN的变体。",
+        "知识点": [
+          "RNN变体",
+          "LSTM"
+        ]
+      }
+    ]
+  },
+  "L12": {
+    "title": "深度学习实战项目",
+    "questions": [
+      {
+        "id": "L12_Q1",
+        "type": "single",
+        "question": "PyTorch中，哪个方法用于将模型切换到训练模式？",
+        "options": [
+          "A. model.eval()",
+          "B. model.train()",
+          "C. model.start()",
+          "D. model.fit()"
+        ],
+        "answer": "B",
+        "explanation": "model.train()将模型切换到训练模式，model.eval()将模型切换到评估模式。",
+        "知识点": [
+          "PyTorch训练",
+          "模型模式"
+        ]
+      },
+      {
+        "id": "L12_Q2",
+        "type": "multiple",
+        "question": "深度学习项目的数据增强方法包括？",
+        "options": [
+          "A. 随机翻转",
+          "B. 随机裁剪",
+          "C. 颜色变换",
+          "D. One-Hot编码"
+        ],
+        "answer": [
+          "A",
+          "B",
+          "C"
+        ],
+        "explanation": "随机翻转、随机裁剪和颜色变换都是常用的数据增强方法。",
+        "知识点": [
+          "数据增强",
+          "图像处理"
+        ]
+      },
+      {
+        "id": "L12_Q3",
+        "type": "blank",
+        "question": "学习率调度中，当验证集性能不再提升时降低学习率，称为学习率_____。",
+        "answer": "衰减",
+        "explanation": "学习率衰减在训练后期降低学习率，帮助模型更精细地收敛。",
+        "知识点": [
+          "学习率调度",
+          "衰减策略"
+        ]
+      },
+      {
+        "id": "L12_Q4",
+        "type": "code",
+        "question": "以下代码运行后会输出什么？\n```python\nimport torch\nfrom torch.utils.data import DataLoader\nfrom torchvision import transforms, datasets\ntrain_loader = DataLoader(datasets.MNIST(root='./data', train=True, download=False, transform=transforms.ToTensor()), batch_size=64, shuffle=True)\nprint(len(train_loader))\n```",
+        "options": [
+          "938",
+          "60000",
+          "64",
+          "1000"
+        ],
+        "answer": "938",
+        "explanation": "MNIST训练集有60000张图，batch_size=64，60000/64约等于938个batch。",
+        "知识点": [
+          "DataLoader",
+          "PyTorch"
+        ]
+      },
+      {
+        "id": "L12_Q5",
+        "type": "single",
+        "question": "模型检查点（Checkpoint）通常保存什么？",
+        "options": [
+          "A. 训练数据",
+          "B. 模型参数和优化器状态",
+          "C. 测试结果",
+          "D. 数据集划分"
+        ],
+        "answer": "B",
+        "explanation": "Checkpoint保存模型参数、优化器状态、学习率等，便于恢复训练和部署。",
+        "知识点": [
+          "模型保存",
+          "Checkpoint"
+        ]
+      },
+      {
+        "id": "L12_Q6",
+        "type": "multiple",
+        "question": "深度学习训练中的监控指标包括？",
+        "options": [
+          "A. Train Loss",
+          "B. Val Loss",
+          "C. Val Accuracy",
+          "D. GPU温度"
+        ],
+        "answer": [
+          "A",
+          "B",
+          "C"
+        ],
+        "explanation": "Train Loss、Val Loss和Val Accuracy都是训练监控指标，GPU温度不是训练指标。",
+        "知识点": [
+          "训练监控",
+          "指标"
+        ]
+      },
+      {
+        "id": "L12_Q7",
+        "type": "single",
+        "question": "早停（Early Stopping）的标准是？",
+        "options": [
+          "A. 训练损失过高",
+          "B. 验证集性能多轮不提升",
+          "C. 训练轮数达到上限",
+          "D. GPU显存不足"
+        ],
+        "answer": "B",
+        "explanation": "早停当验证集性能在连续若干轮后不再提升时停止训练，防止过拟合。",
+        "知识点": [
+          "早停",
+          "正则化策略"
+        ]
+      },
+      {
+        "id": "L12_Q8",
+        "type": "blank",
+        "question": "使用预训练模型进行微调时，通常将学习率设置得比从头训练时更_____。",
+        "answer": "小",
+        "explanation": "预训练模型已经学习了有效特征，微调时用小学习率避免破坏已学特征。",
+        "知识点": [
+          "迁移学习",
+          "微调策略"
+        ]
+      },
+      {
+        "id": "L12_Q9",
+        "type": "single",
+        "question": "梯度裁剪（Gradient Clipping）的作用是？",
+        "options": [
+          "A. 加速收敛",
+          "B. 防止梯度爆炸",
+          "C. 增加泛化能力",
+          "D. 减少显存使用"
+        ],
+        "answer": "B",
+        "explanation": "梯度裁剪将梯度的L2范数限制在阈值内，防止RNN等模型训练时的梯度爆炸。",
+        "知识点": [
+          "梯度裁剪",
+          "训练稳定"
+        ]
+      },
+      {
+        "id": "L12_Q10",
+        "type": "multiple",
+        "question": "以下哪些是常用的模型部署方式？",
+        "options": [
+          "A. TorchScript",
+          "B. ONNX",
+          "C. TensorFlow Serving",
+          "D. Docker容器化"
+        ],
+        "answer": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "explanation": "TorchScript、ONNX、TensorFlow Serving和Docker都是常用的模型部署方式。",
+        "知识点": [
+          "模型部署",
+          "部署框架"
+        ]
+      }
+    ]
+  },
+  "L13": {
+    "title": "NLP基础与文本表示",
+    "questions": [
+      {
+        "id": "L13_Q1",
+        "type": "single",
+        "question": "词袋模型（Bag of Words）的缺点是？",
+        "options": [
+          "A. 无法处理文本",
+          "B. 丢失词序信息",
+          "C. 无法计算相似度",
+          "D. 需要大量内存"
+        ],
+        "answer": "B",
+        "explanation": "词袋模型只统计词频，忽略了词的顺序和上下文关系。",
+        "知识点": [
+          "词袋模型",
+          "BoW"
+        ]
+      },
+      {
+        "id": "L13_Q2",
+        "type": "multiple",
+        "question": "以下哪些是词向量的表示方法？",
+        "options": [
+          "A. One-Hot编码",
+          "B. Word2Vec",
+          "C. GloVe",
+          "D. TF-IDF"
+        ],
+        "answer": [
+          "A",
+          "B",
+          "C"
+        ],
+        "explanation": "One-Hot、Word2Vec和GloVe都是词向量表示方法，TF-IDF是词权重表示。",
+        "知识点": [
+          "词向量",
+          "表示方法"
+        ]
+      },
+      {
+        "id": "L13_Q3",
+        "type": "blank",
+        "question": "TF-IDF中，TF表示词频，IDF表示逆文档_____。",
+        "answer": "频率",
+        "explanation": "IDF（Inverse Document Frequency）衡量词在文档集中的罕见程度。",
+        "知识点": [
+          "TF-IDF",
+          "词权重"
+        ]
+      },
+      {
+        "id": "L13_Q4",
+        "type": "single",
+        "question": "Word2Vec中，哪种方法更适合处理大规模语料库？",
+        "options": [
+          "A. CBOW",
+          "B. Skip-gram",
+          "C. 两者相同",
+          "D. 都不是"
+        ],
+        "answer": "B",
+        "explanation": "Skip-gram在大型语料库中效果更好，每个词作为中心词时处理更多上下文。",
+        "知识点": [
+          "Word2Vec",
+          "Skip-gram"
+        ]
+      },
+      {
+        "id": "L13_Q5",
+        "type": "code",
+        "question": "以下代码运行后会输出什么？\n```python\nfrom sklearn.feature_extraction.text import CountVectorizer\ncorpus = ['I love AI', 'AI is great']\nvectorizer = CountVectorizer()\nX = vectorizer.fit_transform(corpus)\nprint(X.toarray())\n```",
+        "options": [
+          "[[1 0 1], [1 1 1]]",
+          "[[1 0 1], [0 1 1]]",
+          "[[1 1 0], [1 0 1]]",
+          "[[0 1 1], [1 1 0]]"
+        ],
+        "answer": "[[1 0 1], [1 1 1]]",
+        "explanation": "词汇表为['AI', 'I', 'love']，第一句[love=1, I=1, AI=1]，[1 0 1]表示[I=1, love=0, AI=1]。",
+        "知识点": [
+          "CountVectorizer",
+          "sklearn"
+        ]
+      },
+      {
+        "id": "L13_Q6",
+        "type": "multiple",
+        "question": "文本预处理的步骤包括？",
+        "options": [
+          "A. 分词（Tokenization）",
+          "B. 去停用词",
+          "C. 词干提取",
+          "D. 词性标注"
+        ],
+        "answer": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "explanation": "分词、去停用词、词干提取和词性标注都是文本预处理的常见步骤。",
+        "知识点": [
+          "文本预处理",
+          "NLP基础"
+        ]
+      },
+      {
+        "id": "L13_Q7",
+        "type": "single",
+        "question": "N-gram模型中，bigram是指？",
+        "options": [
+          "A. 单个词",
+          "B. 两个词的组合",
+          "C. 三个词的组合",
+          "D. 任意长度词组合"
+        ],
+        "answer": "B",
+        "explanation": "N-gram中N表示词的数量，bigram是2个连续词的组合，unigram是单个词。",
+        "知识点": [
+          "N-gram",
+          "bigram"
+        ]
+      },
+      {
+        "id": "L13_Q8",
+        "type": "blank",
+        "question": "评估词向量质量的常用方法是计算词的余弦相似度，检查语义相似词的向量距离是否_____。",
+        "answer": "接近",
+        "explanation": "语义相似的词在向量空间中距离应该接近，这是词向量的基本特性。",
+        "知识点": [
+          "词向量评估",
+          "相似度"
+        ]
+      },
+      {
+        "id": "L13_Q9",
+        "type": "single",
+        "question": "以下哪个不是文本分类任务？",
+        "options": [
+          "A. 垃圾邮件检测",
+          "B. 情感分析",
+          "C. 机器翻译",
+          "D. 主题分类"
+        ],
+        "answer": "C",
+        "explanation": "垃圾邮件检测、情感分析和主题分类都是文本分类任务，机器翻译是序列到序列任务。",
+        "知识点": [
+          "文本分类",
+          "NLP任务"
+        ]
+      },
+      {
+        "id": "L13_Q10",
+        "type": "multiple",
+        "question": "以下哪些是序列标注任务？",
+        "options": [
+          "A. 命名实体识别",
+          "B. 词性标注",
+          "C. 依存句法分析",
+          "D. 情感分类"
+        ],
+        "answer": [
+          "A",
+          "B",
+          "C"
+        ],
+        "explanation": "命名实体识别、词性标注和依存句法分析都是序列标注任务，为每个token预测标签。",
+        "知识点": [
+          "序列标注",
+          "NER"
+        ]
+      }
+    ]
+  },
+  "L14": {
+    "title": "Transformer与注意力机制",
+    "questions": [
+      {
+        "id": "L14_Q1",
+        "type": "single",
+        "question": "Transformer架构最初是在哪篇论文中提出的？",
+        "options": [
+          "A. Attention Is All You Need",
+          "B. Deep Residual Learning",
+          "C. ImageNet Classification",
+          "D. Neural Machine Translation"
+        ],
+        "answer": "A",
+        "explanation": "Transformer在2017年论文《Attention Is All You Need》中被首次提出。",
+        "知识点": [
+          "Transformer",
+          "论文"
+        ]
+      },
+      {
+        "id": "L14_Q2",
+        "type": "multiple",
+        "question": "Transformer的主要组成部分包括？",
+        "options": [
+          "A. 编码器",
+          "B. 解码器",
+          "C. 位置编码",
+          "D. 池化层"
+        ],
+        "answer": [
+          "A",
+          "B",
+          "C"
+        ],
+        "explanation": "编码器、解码器和位置编码是Transformer的核心组成部分。",
+        "知识点": [
+          "Transformer结构",
+          "编码器解码器"
+        ]
+      },
+      {
+        "id": "L14_Q3",
+        "type": "blank",
+        "question": "自注意力机制（Self-Attention）中，Query、Key和Value通过线性变换从输入X中生成，变换矩阵用W_____表示。",
+        "answer": "Q/K/V",
+        "explanation": "Self-Attention中，X通过Wq、Wk、Wv三个矩阵分别生成Q、K、V。",
+        "知识点": [
+          "Self-Attention",
+          "QKV"
+        ]
+      },
+      {
+        "id": "L14_Q4",
+        "type": "single",
+        "question": "多头注意力（Multi-Head Attention）的作用是？",
+        "options": [
+          "A. 增加计算量",
+          "B. 捕捉多种类型的依赖关系",
+          "C. 减少模型参数",
+          "D. 加速推理"
+        ],
+        "answer": "B",
+        "explanation": "多头注意力允许模型同时关注不同位置的不同语义关系。",
+        "知识点": [
+          "多头注意力",
+          "Multi-Head"
+        ]
+      },
+      {
+        "id": "L14_Q5",
+        "type": "code",
+        "question": "以下代码运行后会输出什么？\n```python\nimport torch\nimport torch.nn as nn\nx = torch.randn(2, 4, 8)  # batch=2, seq_len=4, d_model=8\nattn = nn.MultiheadAttention(8, 2)\nout, _ = attn(x, x, x)\nprint(out.shape)\n```",
+        "options": [
+          "torch.Size([2, 4, 8])",
+          "torch.Size([4, 2, 8])",
+          "torch.Size([2, 8, 4])",
+          "错误"
+        ],
+        "answer": "torch.Size([2, 4, 8])",
+        "explanation": "MultiheadAttention输入输出形状相同，[batch, seq_len, d_model]。",
+        "知识点": [
+          "MultiheadAttention",
+          "PyTorch"
+        ]
+      },
+      {
+        "id": "L14_Q6",
+        "type": "multiple",
+        "question": "Transformer中的残差连接（Residual Connection）作用是？",
+        "options": [
+          "A. 增加模型深度",
+          "B. 缓解梯度消失",
+          "C. 使信息直接传递",
+          "D. 减少参数量"
+        ],
+        "answer": [
+          "B",
+          "C"
+        ],
+        "explanation": "残差连接让梯度直接传播，缓解梯度消失，使深层网络更容易训练。",
+        "知识点": [
+          "残差连接",
+          "Transformer"
+        ]
+      },
+      {
+        "id": "L14_Q7",
+        "type": "single",
+        "question": "Transformer中，为什么需要位置编码（Positional Encoding）？",
+        "options": [
+          "A. 增加参数",
+          "B. 补充序列位置信息",
+          "C. 加速收敛",
+          "D. 降低成本"
+        ],
+        "answer": "B",
+        "explanation": "Transformer没有循环结构，需要位置编码补充词序信息。",
+        "知识点": [
+          "位置编码",
+          "Positional Encoding"
+        ]
+      },
+      {
+        "id": "L14_Q8",
+        "type": "blank",
+        "question": "缩放点积注意力（Scaled Dot-Product Attention）中，需要对点积结果进行缩放，缩放因子是sqrt(d_____)。",
+        "answer": "k",
+        "explanation": "点积可能很大，需要除以sqrt(dk)来缩放，防止梯度消失。",
+        "知识点": [
+          "缩放注意力",
+          "Scaled"
+        ]
+      },
+      {
+        "id": "L14_Q9",
+        "type": "single",
+        "question": "BERT使用的是Transformer的哪一部分？",
+        "options": [
+          "A. 仅编码器",
+          "B. 仅解码器",
+          "C. 完整Transformer",
+          "D. 都不使用"
+        ],
+        "answer": "A",
+        "explanation": "BERT使用双向Transformer编码器，用于理解任务。",
+        "知识点": [
+          "BERT",
+          "Transformer架构"
+        ]
+      },
+      {
+        "id": "L14_Q10",
+        "type": "multiple",
+        "question": "以下哪些是Transformer的变体或应用？",
+        "options": [
+          "A. BERT",
+          "B. GPT",
+          "C. T5",
+          "D. ResNet"
+        ],
+        "answer": [
+          "A",
+          "B",
+          "C"
+        ],
+        "explanation": "BERT、GPT和T5都是基于Transformer的预训练模型，ResNet是CNN架构。",
+        "知识点": [
+          "Transformer变体",
+          "预训练模型"
+        ]
+      }
+    ]
+  },
+  "L15": {
+    "title": "预训练语言模型",
+    "questions": [
+      {
+        "id": "L15_Q1",
+        "type": "single",
+        "question": "预训练语言模型的核心思想是？",
+        "options": [
+          "A. 从头训练所有参数",
+          "B. 在大规模语料上预训练，学习通用语言表示",
+          "C. 只训练最后几层",
+          "D. 不需要微调"
+        ],
+        "answer": "B",
+        "explanation": "预训练语言模型在大规模语料上学习通用语言表示，然后针对具体任务微调。",
+        "知识点": [
+          "预训练",
+          "语言模型"
+        ]
+      },
+      {
+        "id": "L15_Q2",
+        "type": "multiple",
+        "question": "预训练任务包括哪些类型？",
+        "options": [
+          "A. MLM（掩码语言模型）",
+          "B. NSP（下一句预测）",
+          "C. NER（命名实体识别）",
+          "D. CLM（因果语言模型）"
+        ],
+        "answer": [
+          "A",
+          "B",
+          "D"
+        ],
+        "explanation": "MLM、NSP和CLM都是预训练任务，NER是下游任务不是预训练任务。",
+        "知识点": [
+          "预训练任务",
+          "MLM"
+        ]
+      },
+      {
+        "id": "L15_Q3",
+        "type": "blank",
+        "question": "BERT使用的预训练任务是掩码语言模型（MLM）和下一句预测（NSP），其中MLM也称为_____任务。",
+        "answer": "完形填空",
+        "explanation": "MLM类似于英语完形填空，随机遮盖部分词让模型预测。",
+        "知识点": [
+          "MLM",
+          "BERT"
+        ]
+      },
+      {
+        "id": "L15_Q4",
+        "type": "single",
+        "question": "GPT系列模型使用的是哪种预训练任务？",
+        "options": [
+          "A. 掩码语言模型（MLM）",
+          "B. 因果语言模型（CLM）",
+          "C. 下一句预测（NSP）",
+          "D. 序列标注"
+        ],
+        "answer": "B",
+        "explanation": "GPT使用因果语言模型，只根据上文预测下一个词，单向注意。",
+        "知识点": [
+          "GPT",
+          "CLM"
+        ]
+      },
+      {
+        "id": "L15_Q5",
+        "type": "code",
+        "question": "以下代码运行后会输出什么？\n```python\nfrom transformers import AutoTokenizer, AutoModel\ntokenizer = AutoTokenizer.from_pretrained('bert-base-uncased')\ntext = 'Hello, AI assistant!'\ntokens = tokenizer(text, return_tensors='pt')\nprint(tokens['input_ids'])\n```",
+        "options": [
+          "张量形式的token ids",
+          "[101, 3112, 117, 13333, 3006, 999, 102]",
+          "[101, 999, 3006, 13333, 117, 3112, 102]",
+          "错误"
+        ],
+        "answer": "张量形式的token ids",
+        "explanation": "BERT tokenizer会对文本进行分词，添加[CLS]和[SEP]标记，输出input_ids张量。",
+        "知识点": [
+          "BERT tokenizer",
+          "HuggingFace"
+        ]
+      },
+      {
+        "id": "L15_Q6",
+        "type": "multiple",
+        "question": "HuggingFace Transformers库的核心类包括？",
+        "options": [
+          "A. AutoModel",
+          "B. AutoTokenizer",
+          "C. Trainer",
+          "D. Pipeline"
+        ],
+        "answer": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "explanation": "AutoModel、AutoTokenizer、Trainer和Pipeline都是HuggingFace的核心类。",
+        "知识点": [
+          "HuggingFace",
+          "Transformers库"
+        ]
+      },
+      {
+        "id": "L15_Q7",
+        "type": "single",
+        "question": "ELMo使用的是哪种架构？",
+        "options": [
+          "A. Transformer编码器",
+          "B. 双向LSTM",
+          "C. CNN",
+          "D. MLP"
+        ],
+        "answer": "B",
+        "explanation": "ELMo使用双向LSTM提取特征，是早期的重要预训练模型。",
+        "知识点": [
+          "ELMo",
+          "双向LSTM"
+        ]
+      },
+      {
+        "id": "L15_Q8",
+        "type": "blank",
+        "question": "模型微调时，通常在预训练模型顶部添加一个任务特定的头（Head），这个头是一个_____网络。",
+        "answer": "分类",
+        "explanation": "微调时添加分类器/解码器等任务头网络，输出任务需要的预测。",
+        "知识点": [
+          "任务头",
+          "微调"
+        ]
+      },
+      {
+        "id": "L15_Q9",
+        "type": "single",
+        "question": "RoBERTa相比BERT的主要改进不包括？",
+        "options": [
+          "A. 去除NSP任务",
+          "B. 动态掩码",
+          "C. 更少训练数据",
+          "D. 更长训练时间"
+        ],
+        "answer": "C",
+        "explanation": "RoBERTa使用更多训练数据，其他选项都是它的改进点。",
+        "知识点": [
+          "RoBERTa",
+          "BERT改进"
+        ]
+      },
+      {
+        "id": "L15_Q10",
+        "type": "multiple",
+        "question": "以下哪些是预训练语言模型？",
+        "options": [
+          "A. BERT",
+          "B. GPT",
+          "C. T5",
+          "D. ResNet"
+        ],
+        "answer": [
+          "A",
+          "B",
+          "C"
+        ],
+        "explanation": "BERT、GPT和T5都是预训练语言模型，ResNet是图像分类模型。",
+        "知识点": [
+          "预训练模型",
+          "NLP"
+        ]
+      }
+    ]
+  },
+  "L16": {
+    "title": "NLP实战项目",
+    "questions": [
+      {
+        "id": "L16_Q1",
+        "type": "single",
+        "question": "HuggingFace Pipeline中，用于情感分析的pipeline是？",
+        "options": [
+          "A. sentiment-analysis",
+          "B. text-classification",
+          "C. emotion-detection",
+          "D. opinion-mining"
+        ],
+        "answer": "A",
+        "explanation": "sentiment-analysis pipeline专门用于情感分析任务。",
+        "知识点": [
+          "HuggingFace Pipeline",
+          "情感分析"
+        ]
+      },
+      {
+        "id": "L16_Q2",
+        "type": "multiple",
+        "question": "文本分类项目的数据处理步骤包括？",
+        "options": [
+          "A. 数据清洗",
+          "B. 分词",
+          "C. 序列填充",
+          "D. 模型训练"
+        ],
+        "answer": [
+          "A",
+          "B",
+          "C"
+        ],
+        "explanation": "文本分类需要数据清洗、分词和序列填充等预处理步骤。",
+        "知识点": [
+          "文本分类",
+          "数据处理"
+        ]
+      },
+      {
+        "id": "L16_Q3",
+        "type": "blank",
+        "question": "训练时需要对不同长度的文本进行截断或填充，这个过程称为_____（Padding）。",
+        "answer": "填充",
+        "explanation": "Padding将不同长度文本统一到相同长度，通常用0填充短文本。",
+        "知识点": [
+          "序列填充",
+          "Padding"
+        ]
+      },
+      {
+        "id": "L16_Q4",
+        "type": "single",
+        "question": "问答系统（QA）任务的输入格式是？",
+        "options": [
+          "A. 纯文本",
+          "B. 问题-段落对",
+          "C. 文本-标签对",
+          "D. 句子对"
+        ],
+        "answer": "B",
+        "explanation": "问答系统输入是问题和相关段落，输出是段落中的答案区间。",
+        "知识点": [
+          "问答系统",
+          "QA"
+        ]
+      },
+      {
+        "id": "L16_Q5",
+        "type": "code",
+        "question": "以下代码运行后会输出什么？\n```python\nfrom transformers import pipeline\nqa = pipeline('question-answering')\nresult = qa(context='The sky is blue.', question='What color is the sky?')\nprint(result['answer'])\n```",
+        "options": [
+          "blue",
+          "The sky is blue",
+          "sky",
+          "blue."
+        ],
+        "answer": "blue",
+        "explanation": "QA模型从context中提取question的答案，输出'blue'。",
+        "知识点": [
+          "QA pipeline",
+          "HuggingFace"
+        ]
+      },
+      {
+        "id": "L16_Q6",
+        "type": "multiple",
+        "question": "以下哪些是常见的NLP下游任务？",
+        "options": [
+          "A. 文本分类",
+          "B. 命名实体识别",
+          "C. 机器翻译",
+          "D. 图像识别"
+        ],
+        "answer": [
+          "A",
+          "B",
+          "C"
+        ],
+        "explanation": "文本分类、命名实体识别和机器翻译都是NLP下游任务，图像识别不是。",
+        "知识点": [
+          "NLP任务",
+          "下游任务"
+        ]
+      },
+      {
+        "id": "L16_Q7",
+        "type": "single",
+        "question": "命名实体识别（NER）的输出是？",
+        "options": [
+          "A. 文本类别",
+          "B. 实体的边界和类型",
+          "C. 情感分数",
+          "D. 词向量"
+        ],
+        "answer": "B",
+        "explanation": "NER识别文本中实体的边界（如人名、地点）和类型。",
+        "知识点": [
+          "NER",
+          "命名实体识别"
+        ]
+      },
+      {
+        "id": "L16_Q8",
+        "type": "blank",
+        "question": "文本生成任务中，使用采样（ Sampling）策略时，温度参数越低，输出越_____。",
+        "answer": "确定",
+        "explanation": "温度越低，概率分布越尖锐，模型越倾向于选择高概率词，输出越确定。",
+        "知识点": [
+          "文本生成",
+          "Temperature"
+        ]
+      },
+      {
+        "id": "L16_Q9",
+        "type": "single",
+        "question": "序列到序列（Seq2Seq）模型最适合什么任务？",
+        "options": [
+          "A. 图像分类",
+          "B. 文本分类",
+          "C. 机器翻译",
+          "D. 实体识别"
+        ],
+        "answer": "C",
+        "explanation": "Seq2Seq模型适合输入输出都是序列的任务，如机器翻译、摘要生成。",
+        "知识点": [
+          "Seq2Seq",
+          "机器翻译"
+        ]
+      },
+      {
+        "id": "L16_Q10",
+        "type": "multiple",
+        "question": "评估NLP模型的方法包括？",
+        "options": [
+          "A. BLEU分数",
+          "B. ROUGE分数",
+          "C. F1分数",
+          "D. Accuracy"
+        ],
+        "answer": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "explanation": "BLEU、ROUGE、F1和Accuracy都是评估NLP模型的指标。",
+        "知识点": [
+          "NLP评估",
+          "评估指标"
+        ]
+      }
+    ]
+  },
+  "L17": {
+    "title": "LLM基础与提示工程",
+    "questions": [
+      {
+        "id": "L17_Q1",
+        "type": "single",
+        "question": "大语言模型（LLM）的参数规模通常是多少？",
+        "options": [
+          "A. 数十万",
+          "B. 数百万",
+          "C. 数亿到数千亿",
+          "D. 数千"
+        ],
+        "answer": "C",
+        "explanation": "大语言模型通常有数十亿到数千亿参数，如GPT-3有1750亿参数。",
+        "知识点": [
+          "LLM定义",
+          "模型规模"
+        ]
+      },
+      {
+        "id": "L17_Q2",
+        "type": "multiple",
+        "question": "提示工程（Prompt Engineering）的核心技巧包括？",
+        "options": [
+          "A. 清晰具体的指令",
+          "B. 提供示例",
+          "C. 指定输出格式",
+          "D. 无限长度输入"
+        ],
+        "answer": [
+          "A",
+          "B",
+          "C"
+        ],
+        "explanation": "清晰指令、示例和格式指定都是提示工程的重要技巧。",
+        "知识点": [
+          "提示工程",
+          "核心技巧"
+        ]
+      },
+      {
+        "id": "L17_Q3",
+        "type": "blank",
+        "question": "few-shot prompting是指在提示中提供几个_____，帮助模型理解任务。",
+        "answer": "示例",
+        "explanation": "Few-shot在提示中提供2-3个示例，让模型从示例中学习模式。",
+        "知识点": [
+          "Few-shot",
+          "提示工程"
+        ]
+      },
+      {
+        "id": "L17_Q4",
+        "type": "single",
+        "question": "思维链（Chain-of-Thought）提示的作用是？",
+        "options": [
+          "A.加快推理速度",
+          "B. 让模型展示推理过程",
+          "C. 减少参数",
+          "D. 增加记忆长度"
+        ],
+        "answer": "B",
+        "explanation": "CoT提示让模型分步骤推理，对于复杂推理任务效果显著。",
+        "知识点": [
+          "思维链",
+          "CoT"
+        ]
+      },
+      {
+        "id": "L17_Q5",
+        "type": "code",
+        "question": "以下代码运行后会输出什么？\n```python\nfrom transformers import pipeline\nprompt = 'Translate to French: Hello, how are you?'\ntranslator = pipeline('translation_en_to_de', model='t5-small')\nprint(translator(prompt))\n```",
+        "options": [
+          "翻译结果",
+          "[Translation结果]",
+          "错误",
+          "None"
+        ],
+        "answer": "翻译结果",
+        "explanation": "t5-small模型会将英语翻译成德语，pipeline返回翻译结果列表。",
+        "知识点": [
+          "翻译pipeline",
+          "T5"
+        ]
+      },
+      {
+        "id": "L17_Q6",
+        "type": "multiple",
+        "question": "以下哪些是LLM的典型应用场景？",
+        "options": [
+          "A. 文本生成",
+          "B. 问答系统",
+          "C. 代码生成",
+          "D. 图像识别"
+        ],
+        "answer": [
+          "A",
+          "B",
+          "C"
+        ],
+        "explanation": "文本生成、问答系统和代码生成都是LLM的典型应用。",
+        "知识点": [
+          "LLM应用",
+          "场景"
+        ]
+      },
+      {
+        "id": "L17_Q7",
+        "type": "single",
+        "question": "LLM的上下文学习（In-Context Learning）能力是指？",
+        "options": [
+          "A. 在训练时学习",
+          "B. 在推理时从提示中的示例学习",
+          "C. 持续学习新知识",
+          "D. 学习长文本"
+        ],
+        "answer": "B",
+        "explanation": "In-Context Learning让模型在推理时从提示中的示例学习新任务。",
+        "知识点": [
+          "上下文学习",
+          "ICL"
+        ]
+      },
+      {
+        "id": "L17_Q8",
+        "type": "blank",
+        "question": "LLM生成文本时的随机性主要由温度（Temperature）参数控制，temperature=0时输出_____确定。",
+        "answer": "完全",
+        "explanation": "temperature=0时模型总是选择最高概率的词，输出完全确定。",
+        "知识点": [
+          "Temperature",
+          "采样策略"
+        ]
+      },
+      {
+        "id": "L17_Q9",
+        "type": "single",
+        "question": "系统提示（System Prompt）的作用是？",
+        "options": [
+          "A. 定义模型角色",
+          "B. 提供训练数据",
+          "C. 调整模型参数",
+          "D. 保存对话历史"
+        ],
+        "answer": "A",
+        "explanation": "System Prompt定义模型的身份、行为和约束，指导模型响应。",
+        "知识点": [
+          "系统提示",
+          "Prompt"
+        ]
+      },
+      {
+        "id": "L17_Q10",
+        "type": "multiple",
+        "question": "以下哪些是常用的采样策略？",
+        "options": [
+          "A. Greedy",
+          "B. Top-K",
+          "C. Top-P",
+          "D. Random"
+        ],
+        "answer": [
+          "A",
+          "B",
+          "C"
+        ],
+        "explanation": "Greedy、Top-K和Top-P都是常用采样策略，控制生成的多样性。",
+        "知识点": [
+          "采样策略",
+          "文本生成"
+        ]
+      }
+    ]
+  },
+  "L18": {
+    "title": "RAG与向量数据库",
+    "questions": [
+      {
+        "id": "L18_Q1",
+        "type": "single",
+        "question": "RAG的中文名称是？",
+        "options": [
+          "A. 检索增强生成",
+          "B. 随机梯度下降",
+          "C. 关系对齐图",
+          "D. 递归注意力生成"
+        ],
+        "answer": "A",
+        "explanation": "RAG（Retrieval-Augmented Generation）即检索增强生成。",
+        "知识点": [
+          "RAG",
+          "检索增强"
+        ]
+      },
+      {
+        "id": "L18_Q2",
+        "type": "multiple",
+        "question": "RAG系统的主要组成部分包括？",
+        "options": [
+          "A. 检索器",
+          "B. 生成器",
+          "C. 向量数据库",
+          "D. 排序器"
+        ],
+        "answer": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "explanation": "RAG系统包括检索器、生成器、向量数据库和可能的重排序器。",
+        "知识点": [
+          "RAG架构",
+          "组成部分"
+        ]
+      },
+      {
+        "id": "L18_Q3",
+        "type": "blank",
+        "question": "向量数据库中，使用余弦相似度衡量两个向量的相似程度，相似度越高，距离越_____。",
+        "answer": "小",
+        "explanation": "余弦相似度越高，两个向量方向越接近，在0-1之间。",
+        "知识点": [
+          "余弦相似度",
+          "向量距离"
+        ]
+      },
+      {
+        "id": "L18_Q4",
+        "type": "single",
+        "question": "Milvus是一款什么样的数据库？",
+        "options": [
+          "A. 关系型数据库",
+          "B. 向量数据库",
+          "C. 图数据库",
+          "D. 时序数据库"
+        ],
+        "answer": "B",
+        "explanation": "Milvus是开源向量数据库，专门用于存储和检索向量。",
+        "知识点": [
+          "Milvus",
+          "向量数据库"
+        ]
+      },
+      {
+        "id": "L18_Q5",
+        "type": "code",
+        "question": "以下代码运行后会输出什么？\n```python\nimport numpy as np\na = np.array([1, 0, 0])\nb = np.array([1, 0, 0])\nc = np.array([0, 1, 0])\nprint(np.dot(a, b) / (np.linalg.norm(a) * np.linalg.norm(b)))\n```",
+        "options": [
+          "1.0",
+          "0.5",
+          "0.0",
+          "2.0"
+        ],
+        "answer": "1.0",
+        "explanation": "a和b完全相同，余弦相似度为1.0。",
+        "知识点": [
+          "余弦相似度",
+          "NumPy"
+        ]
+      },
+      {
+        "id": "L18_Q6",
+        "type": "multiple",
+        "question": "常见的向量检索算法包括？",
+        "options": [
+          "A. HNSW",
+          "B. IVF",
+          "C. ANNOY",
+          "D. B-Tree"
+        ],
+        "answer": [
+          "A",
+          "B",
+          "C"
+        ],
+        "explanation": "HNSW、IVF和ANNOY都是向量检索算法，B-Tree是传统索引。",
+        "知识点": [
+          "向量检索",
+          "HNSW"
+        ]
+      },
+      {
+        "id": "L18_Q7",
+        "type": "single",
+        "question": "文本嵌入（Embedding）模型的作用是？",
+        "options": [
+          "A. 翻译文本",
+          "B. 将文本转换为向量",
+          "C.总结文本",
+          "D. 分类文本"
+        ],
+        "answer": "B",
+        "explanation": "Embedding模型将文本映射到向量空间，语义相似的文本向量接近。",
+        "知识点": [
+          "文本嵌入",
+          "Embedding"
+        ]
+      },
+      {
+        "id": "L18_Q8",
+        "type": "blank",
+        "question": "RAG中，当用户提问时，首先通过嵌入模型将问题转换为向量，然后在向量数据库中搜索最相关的_____。",
+        "answer": "文档",
+        "explanation": "RAG检索阶段将用户问题转换为向量，搜索最相关的文档或片段。",
+        "知识点": [
+          "RAG检索",
+          "文档检索"
+        ]
+      },
+      {
+        "id": "L18_Q9",
+        "type": "single",
+        "question": "RAG相比纯LLM的优势是？",
+        "options": [
+          "A. 训练更快",
+          "B. 减少幻觉",
+          "C. 参数更少",
+          "D. 推理更快"
+        ],
+        "answer": "B",
+        "explanation": "RAG通过检索提供真实知识，减少LLM的幻觉问题。",
+        "知识点": [
+          "RAG优势",
+          "减少幻觉"
+        ]
+      },
+      {
+        "id": "L18_Q10",
+        "type": "multiple",
+        "question": "以下哪些是向量数据库？",
+        "options": [
+          "A. Pinecone",
+          "B. Weaviate",
+          "C. Chroma",
+          "D. PostgreSQL"
+        ],
+        "answer": [
+          "A",
+          "B",
+          "C"
+        ],
+        "explanation": "Pinecone、Weaviate和Chroma都是向量数据库，PostgreSQL是关系型数据库。",
+        "知识点": [
+          "向量数据库",
+          "产品"
+        ]
+      }
+    ]
+  },
+  "L19": {
+    "title": "Agent架构与工具调用",
+    "questions": [
+      {
+        "id": "L19_Q1",
+        "type": "single",
+        "question": "AI Agent的核心能力是？",
+        "options": [
+          "A. 仅文本生成",
+          "B. 自主规划和使用工具",
+          "C. 数据存储",
+          "D. 图像识别"
+        ],
+        "answer": "B",
+        "explanation": "AI Agent能自主规划任务、使用工具、与环境交互，完成复杂目标。",
+        "知识点": [
+          "Agent定义",
+          "核心能力"
+        ]
+      },
+      {
+        "id": "L19_Q2",
+        "type": "multiple",
+        "question": "Agent系统的核心组件包括？",
+        "options": [
+          "A. 规划器",
+          "B. 记忆",
+          "C. 工具",
+          "D. 执行器"
+        ],
+        "answer": [
+          "A",
+          "B",
+          "C"
+        ],
+        "explanation": "规划器、记忆和工具是Agent系统的三大核心组件。",
+        "知识点": [
+          "Agent架构",
+          "组件"
+        ]
+      },
+      {
+        "id": "L19_Q3",
+        "type": "blank",
+        "question": "在Agent系统中，ReAct是指推理（Reasoning）和行动（Acting）的_____。",
+        "answer": "结合",
+        "explanation": "ReAct让Agent交替进行推理和行动，动态调整策略。",
+        "知识点": [
+          "ReAct",
+          "推理行动"
+        ]
+      },
+      {
+        "id": "L19_Q4",
+        "type": "single",
+        "question": "Agent的记忆类型包括？",
+        "options": [
+          "A. 短期记忆",
+          "B. 长期记忆",
+          "C. 情节记忆",
+          "D. 以上都是"
+        ],
+        "answer": "D",
+        "explanation": "Agent通常有短期记忆（上下文）、长期记忆（知识库）和情节记忆。",
+        "知识点": [
+          "Agent记忆",
+          "记忆类型"
+        ]
+      },
+      {
+        "id": "L19_Q5",
+        "type": "code",
+        "question": "以下代码运行后会输出什么？\n```python\nfrom langchain.tools import Tool\ndef add(a, b):\n    return a + b\ntool = Tool(name='add', func=add, description='Adds two numbers')\nprint(tool.run((2, 3)))\n```",
+        "options": [
+          "5",
+          "2,3",
+          "Error",
+          "None"
+        ],
+        "answer": "5",
+        "explanation": "Tool运行add函数，输入(2,3)，输出5。",
+        "知识点": [
+          "LangChain Tools",
+          "工具调用"
+        ]
+      },
+      {
+        "id": "L19_Q6",
+        "type": "multiple",
+        "question": "以下哪些是Agent可用的工具？",
+        "options": [
+          "A. 搜索引擎",
+          "B. 计算器",
+          "C. 代码执行器",
+          "D. 数据库查询"
+        ],
+        "answer": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "explanation": "搜索引擎、计算器、代码执行器和数据库查询都是Agent常用工具。",
+        "知识点": [
+          "Agent工具",
+          "工具类型"
+        ]
+      },
+      {
+        "id": "L19_Q7",
+        "type": "single",
+        "question": "Function Calling的作用是？",
+        "options": [
+          "A. 定义新函数",
+          "B. 让LLM调用外部工具",
+          "C. 编译代码",
+          "D. 测试代码"
+        ],
+        "answer": "B",
+        "explanation": "Function Calling让LLM理解何时调用外部API或工具。",
+        "知识点": [
+          "Function Calling",
+          "工具调用"
+        ]
+      },
+      {
+        "id": "L19_Q8",
+        "type": "blank",
+        "question": "Agent执行复杂任务时，通过将任务分解为子目标逐个完成，这个过程称为子目标_____。",
+        "answer": "分解",
+        "explanation": "子目标分解（Subgoal Decomposition）将复杂任务分解为可管理的子任务。",
+        "知识点": [
+          "子目标分解",
+          "规划"
+        ]
+      },
+      {
+        "id": "L19_Q9",
+        "type": "single",
+        "question": "Toolschain是LangChain中的什么概念？",
+        "options": [
+          "A.工具集合",
+          "B. 工具调用链",
+          "C. 工具测试",
+          "D. 工具文档"
+        ],
+        "answer": "B",
+        "explanation": "Toolschain将多个工具按顺序连接，形成复杂的工具调用链。",
+        "知识点": [
+          "LangChain",
+          "Toolschain"
+        ]
+      },
+      {
+        "id": "L19_Q10",
+        "type": "multiple",
+        "question": "以下哪些是主流的Agent框架？",
+        "options": [
+          "A. LangChain",
+          "B. AutoGen",
+          "C. CrewAI",
+          "D. React"
+        ],
+        "answer": [
+          "A",
+          "B",
+          "C"
+        ],
+        "explanation": "LangChain、AutoGen和CrewAI都是主流Agent框架，React是推理模式。",
+        "知识点": [
+          "Agent框架",
+          "主流框架"
+        ]
+      }
+    ]
+  },
+  "L20": {
+    "title": "LLM应用开发实战",
+    "questions": [
+      {
+        "id": "L20_Q1",
+        "type": "single",
+        "question": "调用LLM API时，通常使用什么协议？",
+        "options": [
+          "A. FTP",
+          "B. HTTP",
+          "C. SSH",
+          "D. SMTP"
+        ],
+        "answer": "B",
+        "explanation": "LLM API通过HTTP协议进行调用，如OpenAI的REST API。",
+        "知识点": [
+          "LLM API",
+          "HTTP"
+        ]
+      },
+      {
+        "id": "L20_Q2",
+        "type": "multiple",
+        "question": "LLM应用开发中的流式输出（Streaming）优势是？",
+        "options": [
+          "A. 减少等待时间",
+          "B. 提升用户体验",
+          "C. 降低服务器负载",
+          "D. 增加带宽"
+        ],
+        "answer": [
+          "A",
+          "B"
+        ],
+        "explanation": "流式输出让用户即时看到生成内容，减少等待感。",
+        "知识点": [
+          "流式输出",
+          "Streaming"
+        ]
+      },
+      {
+        "id": "L20_Q3",
+        "type": "blank",
+        "question": "在使用LLM API时，为防止API密钥泄露，通常将密钥存储在环境变量中，使用_____库读取。",
+        "answer": "python-dotenv",
+        "explanation": "python-dotenv库从.env文件读取环境变量，避免硬编码密钥。",
+        "知识点": [
+          "环境变量",
+          "API密钥"
+        ]
+      },
+      {
+        "id": "L20_Q4",
+        "type": "single",
+        "question": "Token计费中，LLM的输入和输出通常是？",
+        "options": [
+          "A. 相同价格",
+          "B. 输入更贵",
+          "C. 输出更贵",
+          "D. 免费"
+        ],
+        "answer": "C",
+        "explanation": "大多数LLM提供商输出token价格高于输入，因为生成更消耗资源。",
+        "知识点": [
+          "Token计费",
+          "API成本"
+        ]
+      },
+      {
+        "id": "L20_Q5",
+        "type": "code",
+        "question": "以下代码运行后会输出什么？\n```python\nimport anthropic\nclient = anthropic.Anthropic()\nmessage = client.messages.create(model='claude-sonnet-4-20250514', max_tokens=10, messages=[{'role': 'user', 'content': 'Hi'}])  \nprint(message.content)\n```",
+        "options": [
+          "生成的文本内容",
+          "错误",
+          "None",
+          "API密钥错误"
+        ],
+        "answer": "生成的文本内容",
+        "explanation": "Anthropic API调用成功后会返回生成的内容。",
+        "知识点": [
+          "Anthropic API",
+          "Claude"
+        ]
+      },
+      {
+        "id": "L20_Q6",
+        "type": "multiple",
+        "question": "构建LLM应用时，需要考虑哪些方面？",
+        "options": [
+          "A. 提示设计",
+          "B. 错误处理",
+          "C. 成本控制",
+          "D. 用户反馈"
+        ],
+        "answer": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "explanation": "提示设计、错误处理、成本控制和用户反馈都是重要考虑方面。",
+        "知识点": [
+          "LLM开发",
+          "考虑方面"
+        ]
+      },
+      {
+        "id": "L20_Q7",
+        "type": "single",
+        "question": "LLM应用的系统级提示（System Prompt）通常放在哪里？",
+        "options": [
+          "A. 用户消息中",
+          "B. 单独的system角色消息中",
+          "C. 环境变量中",
+          "D. 代码注释中"
+        ],
+        "answer": "B",
+        "explanation": "System Prompt应放在专门的system角色消息中，而非用户消息。",
+        "知识点": [
+          "System Prompt",
+          "消息格式"
+        ]
+      },
+      {
+        "id": "L20_Q8",
+        "type": "blank",
+        "question": "在LLM应用中，限制用户输入长度可以控制成本，这叫做_____控制。",
+        "answer": "成本",
+        "explanation": "通过限制输入长度和输出token数量来控制API调用成本。",
+        "知识点": [
+          "成本控制",
+          "Token限制"
+        ]
+      },
+      {
+        "id": "L20_Q9",
+        "type": "single",
+        "question": "使用LangChain构建应用时，LCEL是指？",
+        "options": [
+          "A. 链式表达式语言",
+          "B. 链式执行日志",
+          "C. 组件嵌入语言",
+          "D. 链式评估语言"
+        ],
+        "answer": "A",
+        "explanation": "LCEL（LangChain Expression Language）是一种声明式构建链式应用的语言。",
+        "知识点": [
+          "LangChain",
+          "LCEL"
+        ]
+      },
+      {
+        "id": "L20_Q10",
+        "type": "multiple",
+        "question": "以下哪些是LLM应用的评估指标？",
+        "options": [
+          "A. 响应质量",
+          "B. 延迟",
+          "C. 成本",
+          "D. 安全性"
+        ],
+        "answer": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "explanation": "响应质量、延迟、成本和安全性都是LLM应用的重要评估指标。",
+        "知识点": [
+          "LLM评估",
+          "评估指标"
+        ]
+      }
+    ]
+  },
+  "L21": {
+    "title": "Agent系统与多Agent协作",
+    "questions": [
+      {
+        "id": "L21_Q1",
+        "type": "single",
+        "question": "多Agent系统中，Agent之间的通信方式通常是？",
+        "options": [
+          "A. 共享内存",
+          "B. 消息传递",
+          "C. 文件共享",
+          "D. 数据库共享"
+        ],
+        "answer": "B",
+        "explanation": "多Agent通过消息传递进行通信，每个Agent有独立的状态。",
+        "知识点": [
+          "多Agent通信",
+          "消息传递"
+        ]
+      },
+      {
+        "id": "L21_Q2",
+        "type": "multiple",
+        "question": "多Agent协作模式包括？",
+        "options": [
+          "A. 层级模式",
+          "B. 去中心化模式",
+          "C. 市场模式",
+          "D. 单Agent模式"
+        ],
+        "answer": [
+          "A",
+          "B",
+          "C"
+        ],
+        "explanation": "层级、去中心化和市场模式是多Agent协作的常见模式。",
+        "知识点": [
+          "多Agent模式",
+          "协作模式"
+        ]
+      },
+      {
+        "id": "L21_Q3",
+        "type": "blank",
+        "question": "在多Agent系统中，当多个Agent共同完成复杂任务时，需要进行任务_____和结果整合。",
+        "answer": "分解",
+        "explanation": "任务分解将复杂任务分配给不同Agent，最后整合各Agent的结果。",
+        "知识点": [
+          "任务分解",
+          "多Agent"
+        ]
+      },
+      {
+        "id": "L21_Q4",
+        "type": "single",
+        "question": "AutoGen框架中，默认的Agent通信模式是？",
+        "options": [
+          "A. 一对一对话",
+          "B. 组聊",
+          "C. 广播",
+          "D. 发布-订阅"
+        ],
+        "answer": "A",
+        "explanation": "AutoGen默认使用Agent之间的成对对话进行通信。",
+        "知识点": [
+          "AutoGen",
+          "通信模式"
+        ]
+      },
+      {
+        "id": "L21_Q5",
+        "type": "code",
+        "question": "以下代码运行后会输出什么？\n```python\nfrom crewai import Agent, Task, Crew\nresearcher = Agent(role='Researcher', goal='Find AI news', backstory='AI expert')\ntask = Task(description='Find latest AI news', agent=researcher)\nprint(task.description)\n```",
+        "options": [
+          "Find latest AI news",
+          "AI expert",
+          "Find AI news",
+          "Agent object"
+        ],
+        "answer": "Find latest AI news",
+        "explanation": "Task对象的description属性保存任务描述。",
+        "知识点": [
+          "CrewAI",
+          "Task"
+        ]
+      },
+      {
+        "id": "L21_Q6",
+        "type": "multiple",
+        "question": "多Agent系统中的挑战包括？",
+        "options": [
+          "A. 协调复杂性",
+          "B. 通信开销",
+          "C. 一致性保证",
+          "D. 单点故障"
+        ],
+        "answer": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "explanation": "协调复杂性、通信开销、一致性保证和单点故障都是多Agent的挑战。",
+        "知识点": [
+          "多Agent挑战",
+          "系统设计"
+        ]
+      },
+      {
+        "id": "L21_Q7",
+        "type": "single",
+        "question": "Agent系统中，状态同步的目的是？",
+        "options": [
+          "A. 增加内存使用",
+          "B. 保证Agent间信息一致性",
+          "C. 加快运行速度",
+          "D. 减少API调用"
+        ],
+        "answer": "B",
+        "explanation": "状态同步确保多Agent系统中各Agent看到的信息一致。",
+        "知识点": [
+          "状态同步",
+          "一致性"
+        ]
+      },
+      {
+        "id": "L21_Q8",
+        "type": "blank",
+        "question": "在CrewAI中，由多个Agent组成的团队称为_____（Crew）。",
+        "answer": "团队",
+        "explanation": "CrewAI中，Crew是一个由多个Agent组成的团队，共同完成任务。",
+        "知识点": [
+          "CrewAI",
+          "Crew"
+        ]
+      },
+      {
+        "id": "L21_Q9",
+        "type": "single",
+        "question": "多Agent系统中，使用什么机制避免多个Agent同时操作同一资源？",
+        "options": [
+          "A. 锁机制",
+          "B. 路由机制",
+          "C. 缓存机制",
+          "D. 负载均衡"
+        ],
+        "answer": "A",
+        "explanation": "锁机制用于避免多Agent同时操作共享资源导致冲突。",
+        "知识点": [
+          "并发控制",
+          "锁机制"
+        ]
+      },
+      {
+        "id": "L21_Q10",
+        "type": "multiple",
+        "question": "以下哪些是多Agent系统的应用场景？",
+        "options": [
+          "A. 自动化工作流",
+          "B. 虚拟助手团队",
+          "C. 复杂问题求解",
+          "D. 单Agent对话"
+        ],
+        "answer": [
+          "A",
+          "B",
+          "C"
+        ],
+        "explanation": "自动化工作流、虚拟助手团队和复杂问题求解都是多Agent的应用场景。",
+        "知识点": [
+          "多Agent应用",
+          "场景"
+        ]
+      }
+    ]
+  },
+  "L22": {
+    "title": "Claude Code生态与AI编程助手",
+    "questions": [
+      {
+        "id": "L22_Q1",
+        "type": "single",
+        "question": "Claude Code是什么类型的工具？",
+        "options": [
+          "A. 代码编辑器",
+          "B. AI编程助手",
+          "C. 版本控制系统",
+          "D. 数据库管理工具"
+        ],
+        "answer": "B",
+        "explanation": "Claude Code是Anthropic提供的AI编程助手，通过CLI与用户交互。",
+        "知识点": [
+          "Claude Code",
+          "定位"
+        ]
+      },
+      {
+        "id": "L22_Q2",
+        "type": "multiple",
+        "question": "Claude Code的主要功能包括？",
+        "options": [
+          "A. 代码生成与编辑",
+          "B. 问题调试",
+          "C. 代码审查",
+          "D. 项目理解"
+        ],
+        "answer": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "explanation": "Claude Code能生成编辑代码、调试问题、审查代码和理解项目结构。",
+        "知识点": [
+          "Claude Code功能",
+          "核心能力"
+        ]
+      },
+      {
+        "id": "L22_Q3",
+        "type": "blank",
+        "question": "Claude Code的配置文件是settings.json，可以设置模型、工具权限和_____行为。",
+        "answer": "自动",
+        "explanation": "settings.json控制Claude Code的自动行为，如自动执行命令等。",
+        "知识点": [
+          "Claude Code配置",
+          "settings.json"
+        ]
+      },
+      {
+        "id": "L22_Q4",
+        "type": "single",
+        "question": "Claude Code中使用什么命令启动？",
+        "options": [
+          "A. claude start",
+          "B. claude run",
+          "C. claude",
+          "D. claude init"
+        ],
+        "answer": "C",
+        "explanation": "在项目目录中运行claude命令启动Claude Code。",
+        "知识点": [
+          "Claude Code启动",
+          "命令"
+        ]
+      },
+      {
+        "id": "L22_Q5",
+        "type": "code",
+        "question": "以下关于Claude Code的说法正确的是？",
+        "options": [
+          "A. 可以使用MCP服务器扩展功能",
+          "B. 支持直接操作文件系统",
+          "C. 只能用于Python项目",
+          "D. 不支持代码调试"
+        ],
+        "answer": "A",
+        "explanation": "Claude Code支持MCP服务器扩展功能，支持多种语言和项目类型。",
+        "知识点": [
+          "Claude Code MCP",
+          "扩展功能"
+        ]
+      },
+      {
+        "id": "L22_Q6",
+        "type": "multiple",
+        "question": "Claude Code支持的编程语言包括？",
+        "options": [
+          "A. Python",
+          "B. JavaScript",
+          "C. Rust",
+          "D. Go"
+        ],
+        "answer": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "explanation": "Claude Code支持多种编程语言，包括Python、JS、Rust、Go等。",
+        "知识点": [
+          "Claude Code支持语言",
+          "多语言"
+        ]
+      },
+      {
+        "id": "L22_Q7",
+        "type": "single",
+        "question": "Claude Code的提示缓存（Prompt Caching）用于？",
+        "options": [
+          "A. 减少API调用",
+          "B. 降低延迟和成本",
+          "C. 增加安全性",
+          "D. 改善语法高亮"
+        ],
+        "answer": "B",
+        "explanation": "Prompt Caching通过缓存常用上下文来降低延迟和成本。",
+        "知识点": [
+          "Claude Code缓存",
+          "性能优化"
+        ]
+      },
+      {
+        "id": "L22_Q8",
+        "type": "blank",
+        "question": "Claude Code中，使用/compact命令可以压缩当前对话的_____，减少token使用。",
+        "answer": "上下文",
+        "explanation": "/compact压缩对话上下文，保留关键信息同时减少token。",
+        "知识点": [
+          "Claude Code命令",
+          "/compact"
+        ]
+      },
+      {
+        "id": "L22_Q9",
+        "type": "single",
+        "question": "在Claude Code中，哪个命令用于主动请求代码审查？",
+        "options": [
+          "A. /review",
+          "B. /debug",
+          "C. /test",
+          "D. /help"
+        ],
+        "answer": "A",
+        "explanation": "/review命令用于请求Claude Code进行代码审查。",
+        "知识点": [
+          "Claude Code命令",
+          "/review"
+        ]
+      },
+      {
+        "id": "L22_Q10",
+        "type": "multiple",
+        "question": "Claude Code的Worktree功能用于？",
+        "options": [
+          "A. 创建隔离的git工作树",
+          "B. 在多个分支间切换",
+          "C. 部署代码",
+          "D. 数据库管理"
+        ],
+        "answer": [
+          "A",
+          "B"
+        ],
+        "explanation": "Worktree创建隔离的git工作树，方便在多个分支间切换工作。",
+        "知识点": [
+          "Claude Code Worktree",
+          "分支管理"
+        ]
+      }
+    ]
+  },
+  "L23": {
+    "title": "AI安全与伦理",
+    "questions": [
+      {
+        "id": "L23_Q1",
+        "type": "single",
+        "question": "AI对齐（AI Alignment）研究的核心问题是？",
+        "options": [
+          "A. 提高AI准确率",
+          "B. 确保AI行为符合人类意图",
+          "C. 加快AI训练速度",
+          "D. 减少AI能耗"
+        ],
+        "answer": "B",
+        "explanation": "AI对齐研究确保AI系统的行为符合人类价值观和意图。",
+        "知识点": [
+          "AI对齐",
+          "安全问题"
+        ]
+      },
+      {
+        "id": "L23_Q2",
+        "type": "multiple",
+        "question": "AI大模型面临的安全威胁包括？",
+        "options": [
+          "A. 提示注入攻击",
+          "B. 数据泄露",
+          "C. 偏见放大",
+          "D. 系统过载"
+        ],
+        "answer": [
+          "A",
+          "B",
+          "C"
+        ],
+        "explanation": "提示注入、数据泄露和偏见放大都是AI面临的安全威胁。",
+        "知识点": [
+          "AI安全威胁",
+          "安全"
+        ]
+      },
+      {
+        "id": "L23_Q3",
+        "type": "blank",
+        "question": "提示注入（Prompt Injection）是一种通过恶意输入操控AI模型输出的攻击技术，其本质是注入_____指令。",
+        "answer": "对抗性",
+        "explanation": "提示注入使用对抗性指令覆盖或绕过原有关键指令。",
+        "知识点": [
+          "提示注入",
+          "对抗样本"
+        ]
+      },
+      {
+        "id": "L23_Q4",
+        "type": "single",
+        "question": "大模型中的偏见（Bias）主要来源于？",
+        "options": [
+          "A. 训练数据",
+          "B. 模型结构",
+          "C. 计算设备",
+          "D. 网络带宽"
+        ],
+        "answer": "A",
+        "explanation": "训练数据中的偏见会被模型学习并在输出中放大。",
+        "知识点": [
+          "AI偏见",
+          "数据偏见"
+        ]
+      },
+      {
+        "id": "L23_Q5",
+        "type": "code",
+        "question": "以下代码是否存在安全问题？\n```python\nuser_input = request.args.get('query')\nresult = model.predict(user_input)\n```",
+        "options": [
+          "存在提示注入风险",
+          "无安全问题",
+          "性能问题",
+          "语法错误"
+        ],
+        "answer": "存在提示注入风险",
+        "explanation": "直接使用用户输入进行预测可能遭受提示注入攻击，需要输入验证。",
+        "知识点": [
+          "安全编码",
+          "输入验证"
+        ]
+      },
+      {
+        "id": "L23_Q6",
+        "type": "multiple",
+        "question": "AI伦理关注的主要问题包括？",
+        "options": [
+          "A. 隐私保护",
+          "B. 公平性",
+          "C. 透明度",
+          "D. 责任归属"
+        ],
+        "answer": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "explanation": "隐私保护、公平性、透明度和责任归属都是AI伦理的核心问题。",
+        "知识点": [
+          "AI伦理",
+          "伦理问题"
+        ]
+      },
+      {
+        "id": "L23_Q7",
+        "type": "single",
+        "question": "深度伪造（Deepfake）技术基于什么原理？",
+        "options": [
+          "A. 强化学习",
+          "B. 生成对抗网络",
+          "C. 决策树",
+          "D. 朴素贝叶斯"
+        ],
+        "answer": "B",
+        "explanation": "Deepfake使用GAN（生成对抗网络）技术生成逼真的伪造内容。",
+        "知识点": [
+          "Deepfake",
+          "GAN"
+        ]
+      },
+      {
+        "id": "L23_Q8",
+        "type": "blank",
+        "question": "为防止AI被恶意利用，需要进行AI应用的安全审计和定期_____，及时发现和修复漏洞。",
+        "answer": "评估",
+        "explanation": "安全审计和定期评估是发现AI系统漏洞的重要手段。",
+        "知识点": [
+          "安全审计",
+          "AI安全"
+        ]
+      },
+      {
+        "id": "L23_Q9",
+        "type": "single",
+        "question": "差分隐私（Differential Privacy）的作用是？",
+        "options": [
+          "A. 提高模型准确率",
+          "B. 保护训练数据隐私",
+          "C. 加速推理",
+          "D. 减少参数"
+        ],
+        "answer": "B",
+        "explanation": "差分隐私通过添加噪声保护个体数据隐私，同时保留统计特性。",
+        "知识点": [
+          "差分隐私",
+          "隐私保护"
+        ]
+      },
+      {
+        "id": "L23_Q10",
+        "type": "multiple",
+        "question": "以下哪些措施可以提升AI系统的安全性？",
+        "options": [
+          "A. 输入过滤和验证",
+          "B. 输出内容审核",
+          "C. 限流和访问控制",
+          "D. 无限API访问"
+        ],
+        "answer": [
+          "A",
+          "B",
+          "C"
+        ],
+        "explanation": "输入过滤、输出审核和限流是提升AI安全的重要措施。",
+        "知识点": [
+          "AI安全措施",
+          "防护"
+        ]
+      }
+    ]
+  },
+  "L24": {
+    "title": "职业规划与面试指导",
+    "questions": [
+      {
+        "id": "L24_Q1",
+        "type": "single",
+        "question": "AI工程师岗位通常要求的核心技能不包括？",
+        "options": [
+          "A. 机器学习算法",
+          "B. 深度学习框架",
+          "C. 会计知识",
+          "D. 数据处理能力"
+        ],
+        "answer": "C",
+        "explanation": "AI工程师需要机器学习、深度学习、数据处理等技能，不需要会计知识。",
+        "知识点": [
+          "AI工程师技能",
+          "岗位要求"
+        ]
+      },
+      {
+        "id": "L24_Q2",
+        "type": "multiple",
+        "question": "AI岗位的面试环节通常包括？",
+        "options": [
+          "A. 算法题",
+          "B. 系统设计",
+          "C. 项目介绍",
+          "D. 财务测试"
+        ],
+        "answer": [
+          "A",
+          "B",
+          "C"
+        ],
+        "explanation": "AI岗位面试通常包括算法题、系统设计和项目经验介绍。",
+        "知识点": [
+          "AI岗位面试",
+          "面试环节"
+        ]
+      },
+      {
+        "id": "L24_Q3",
+        "type": "blank",
+        "question": "在技术面试中，解释算法思路时，应该先说明核心_____，再逐步展开细节。",
+        "answer": "思想",
+        "explanation": "先阐述核心思想和算法思路，再逐步展开实现细节。",
+        "知识点": [
+          "面试技巧",
+          "算法解释"
+        ]
+      },
+      {
+        "id": "L24_Q4",
+        "type": "single",
+        "question": "LeetCode刷题时，应该重点练习什么类型的题目？",
+        "options": [
+          "A. 图形学",
+          "B. 数据结构和算法",
+          "C. 数据库管理",
+          "D. 网络安全"
+        ],
+        "answer": "B",
+        "explanation": "技术面试主要考察数据结构和算法基础，应重点练习相关题目。",
+        "知识点": [
+          "面试准备",
+          "刷题"
+        ]
+      },
+      {
+        "id": "L24_Q5",
+        "type": "code",
+        "question": "以下关于面试准备的说法，正确的是？\n```python\n# 选项\nA. 只需刷算法题\nB. 也要准备系统设计和项目经验\nC. 不需要复习机器学习基础\nD. 英语不重要\n```",
+        "options": [
+          "B",
+          "A",
+          "C",
+          "D"
+        ],
+        "answer": "B",
+        "explanation": "面试需要全面准备，包括算法、系统设计和项目经验。",
+        "知识点": [
+          "面试准备",
+          "全面性"
+        ]
+      },
+      {
+        "id": "L24_Q6",
+        "type": "multiple",
+        "question": "AI工程师简历中应该突出什么内容？",
+        "options": [
+          "A. 项目经验",
+          "B. 技术栈",
+          "C. 成果量化",
+          "D. 爱好兴趣"
+        ],
+        "answer": [
+          "A",
+          "B",
+          "C"
+        ],
+        "explanation": "AI工程师简历应突出项目经验、技术栈和可量化的成果。",
+        "知识点": [
+          "简历优化",
+          "AI岗位"
+        ]
+      },
+      {
+        "id": "L24_Q7",
+        "type": "single",
+        "question": "在项目介绍时，使用什么结构更有条理？",
+        "options": [
+          "A. STAR法则",
+          "B. 时间线结构",
+          "C. 列表形式",
+          "D. 随意描述"
+        ],
+        "answer": "A",
+        "explanation": "STAR法则（情境、任务、行动、结果）让项目介绍更有条理。",
+        "知识点": [
+          "STAR法则",
+          "项目介绍"
+        ]
+      },
+      {
+        "id": "L24_Q8",
+        "type": "blank",
+        "question": "面试中被问到不会的问题时，应该诚实地说明不了解，同时展示自己的学习能力和问题解决_____。",
+        "answer": "思路",
+        "explanation": "诚实面对不足，展示学习能力和分析问题的思路。",
+        "知识点": [
+          "面试技巧",
+          "应对不会的问题"
+        ]
+      },
+      {
+        "id": "L24_Q9",
+        "type": "single",
+        "question": "AI行业职业发展路径通常不包括？",
+        "options": [
+          "A. 算法工程师",
+          "B. 数据科学家",
+          "C. 产品经理",
+          "D. 会计"
+        ],
+        "answer": "D",
+        "explanation": "AI行业职业发展包括算法工程师、数据科学家、产品经理等，不包括会计。",
+        "知识点": [
+          "职业发展",
+          "AI岗位"
+        ]
+      },
+      {
+        "id": "L24_Q10",
+        "type": "multiple",
+        "question": "以下哪些是AI从业者持续学习的方式？",
+        "options": [
+          "A. 读论文",
+          "B. 复现项目",
+          "C. 参加比赛",
+          "D. 不用学习"
+        ],
+        "answer": [
+          "A",
+          "B",
+          "C"
+        ],
+        "explanation": "读论文、复现项目和参加比赛都是AI从业者持续学习的方式。",
+        "知识点": [
+          "持续学习",
+          "AI学习方式"
+        ]
+      }
+    ]
+  }
+}

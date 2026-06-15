@@ -1,0 +1,1 @@
+export function normalizeLessonId(id){if(typeof id==="number")return "L"+String(id).padStart(2,"0");const m=String(id).match(/^L?(\d+)$/);return m?"L"+m[1].padStart(2,"0"):String(id);} export function lessonIdToNumber(id){const m=String(id).match(/^L?(\d+)$/);return m?parseInt(m[1],10):null;}

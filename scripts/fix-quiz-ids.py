@@ -1,0 +1,1 @@
+import json; from pathlib import Path; f=Path("/Users/Zhuanz/Desktop/workspace/1-AI教案/src/quiz/questions.json"); d=json.load(open(f)); new={}; [new.update({("L"+str(int(k[1:])).zfill(2) if k.startswith("L") and k[1:].isdigit() else k): v}) for k,v in d.items()]; json.dump(new, open(f,"w",encoding="utf-8"), ensure_ascii=False, indent=2); print("OK",len(new))

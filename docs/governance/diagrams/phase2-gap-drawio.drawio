@@ -1,0 +1,108 @@
+<mxfile host="Electron" version="29.6.6" pages="1">
+  <diagram id="phase2-gap" name="Phase 2 GAP">
+    <mxGraphModel dx="1400" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1400" pageHeight="900">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        
+        <!-- 标题 -->
+        <mxCell id="title" value="AI教案 Phase 2 开发计划 - GAP分析" style=" rounded=1;whiteSpace=wrap;html=1;fillColor=#0f172a;strokeColor=#0f172a;fontColor=#ffffff;fontSize=24;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="40" y="30" width="1320" height="60" as="geometry"/>
+        </mxCell>
+        
+        <!-- 当前基线 -->
+        <mxCell id="baseline-title" value="当前基线 (Phase 1)" style=" rounded=1;whiteSpace=wrap;html=1;fillColor=#22c55e;strokeColor=#16a34a;fontColor=#ffffff;fontSize=16;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="60" y="120" width="380" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="baseline" value="• React 18 SPA + react-router-dom&#xa;• 24 课内容 (L01-L24)&#xa;• 8 工具 v0.1 (Token/Search/ErrorBook/Playground/RAG/KG/Leaderboard/Benchmark)&#xa;• PWA + Service Worker + CI/CD&#xa;• Vitest 测试配置&#xa;• Lighthouse ≥ 80" style=" rounded=0;whiteSpace=wrap;html=1;fillColor=#dcfce7;strokeColor=#16a34a;fontSize=13;align=left;verticalAlign=top;spacingLeft=12;spacingTop=8" vertex="1" parent="1">
+          <mxGeometry x="60" y="165" width="380" height="240" as="geometry"/>
+        </mxCell>
+        
+        <!-- 目标 -->
+        <mxCell id="target-title" value="目标 (Phase 2)" style=" rounded=1;whiteSpace=wrap;html=1;fillColor=#f59e0b;strokeColor=#d97706;fontColor=#ffffff;fontSize=16;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="480" y="120" width="380" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="target" value="• React 18 SPA + react-router-dom&#xa;• 35 课内容 (L01-L35) 高质量&#xa;• 8 工具 v1.0 完善&#xa;• AI 助教 v0.1 (RAG问答/代码辅导/学习建议)&#xa;• 云端同步 (可选)&#xa;• 视频教程 (35个)&#xa;• Lighthouse ≥ 90" style=" rounded=0;whiteSpace=wrap;html=1;fillColor=#fef3c7;strokeColor=#d97706;fontSize=13;align=left;verticalAlign=top;spacingLeft=12;spacingTop=8" vertex="1" parent="1">
+          <mxGeometry x="480" y="165" width="380" height="240" as="geometry"/>
+        </mxCell>
+        
+        <!-- Gap -->
+        <mxCell id="gap-title" value="Gap (差距)" style=" rounded=1;whiteSpace=wrap;html=1;fillColor=#ef4444;strokeColor=#dc2626;fontColor=#ffffff;fontSize=16;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="900" y="120" width="380" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="gap" value="• +11 课内容 (L25-L35)&#xa;• 工具功能增强 (5个):&#xa;  - Prompt Playground 模型市场&#xa;  - RAG 多文档/多模态&#xa;  - Agent Workflow Builder&#xa;  - Knowledge Graph 35课图谱&#xa;  - Benchmark 自定义评测集&#xa;• AI 助教开发 (40h)&#xa;• 视频教程 (35个)&#xa;• 云端同步 (可选, 32h)" style=" rounded=0;whiteSpace=wrap;html=1;fillColor=#fee2e2;strokeColor=#dc2626;fontSize=13;align=left;verticalAlign=top;spacingLeft=12;spacingTop=8" vertex="1" parent="1">
+          <mxGeometry x="900" y="165" width="380" height="240" as="geometry"/>
+        </mxCell>
+        
+        <!-- 连接箭头 -->
+        <mxCell id="arrow1" style=" edgeStyle=orthogonalEdgeStyle;html=1;rounded=0;strokeColor=#64748b;strokeWidth=3;endArrow=block;dashed=1" edge="1" parent="1" source="baseline" target="target">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="arrow2" style=" edgeStyle=orthogonalEdgeStyle;html=1;rounded=0;strokeColor=#64748b;strokeWidth=3;endArrow=block;dashed=1" edge="1" parent="1" source="target" target="gap">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        
+        <!-- 开发计划 -->
+        <mxCell id="plan-title" value="开发计划 (10 周)" style=" rounded=1;whiteSpace=wrap;html=1;fillColor=#7c3aed;strokeColor=#6d28d9;fontColor=#ffffff;fontSize=16;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="60" y="440" width="1220" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="w1" value="W1-W2&#xa;工具 v1.0&#xa;32h" style=" rounded=0;whiteSpace=wrap;html=1;fillColor=#ede9fe;strokeColor=#7c3aed;fontSize=12;align=center" vertex="1" parent="1">
+          <mxGeometry x="60" y="485" width="180" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="w2" value="W3-W4&#xa;课程质量升级&#xa;40h" style=" rounded=0;whiteSpace=wrap;html=1;fillColor=#ede9fe;strokeColor=#7c3aed;fontSize=12;align=center" vertex="1" parent="1">
+          <mxGeometry x="250" y="485" width="180" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="w3" value="W5-W6&#xa;课程质量升级&#xa;40h" style=" rounded=0;whiteSpace=wrap;html=1;fillColor=#ede9fe;strokeColor=#7c3aed;fontSize=12;align=center" vertex="1" parent="1">
+          <mxGeometry x="440" y="485" width="180" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="w4" value="W7-W8&#xa;AI 助教开发&#xa;40h" style=" rounded=0;whiteSpace=wrap;html=1;fillColor=#ede9fe;strokeColor=#7c3aed;fontSize=12;align=center" vertex="1" parent="1">
+          <mxGeometry x="630" y="485" width="180" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="w5" value="W9-W10&#xa;用户系统(可选)&#xa;32h" style=" rounded=0;whiteSpace=wrap;html=1;fillColor=#ede9fe;strokeColor=#7c3aed;fontSize=12;align=center" vertex="1" parent="1">
+          <mxGeometry x="820" y="485" width="180" height="70" as="geometry"/>
+        </mxCell>
+        
+        <!-- 里程碑 -->
+        <mxCell id="milestone-title" value="里程碑" style=" rounded=1;whiteSpace=wrap;html=1;fillColor=#0891b2;strokeColor=#0e7490;fontColor=#ffffff;fontSize=16;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="1020" y="485" width="260" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="ms1" value="M8.1: 工具v1.0 (08-14)" style=" rounded=0;whiteSpace=wrap;html=1;fillColor=#22c55e;fontColor=#ffffff;fontSize=12;align=center" vertex="1" parent="1">
+          <mxGeometry x="1020" y="530" width="125" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="ms2" value="M8.2: 课程质量 (08-28)" style=" rounded=0;whiteSpace=wrap;html=1;fillColor=#f59e0b;fontColor=#ffffff;fontSize=12;align=center" vertex="1" parent="1">
+          <mxGeometry x="1155" y="530" width="125" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="ms3" value="M9.1: AI助教 (09-25)" style=" rounded=0;whiteSpace=wrap;html=1;fillColor=#ec4899;fontColor=#ffffff;fontSize=12;align=center" vertex="1" parent="1">
+          <mxGeometry x="1020" y="590" width="125" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="ms4" value="M9.2: 云端同步 (10-10)" style=" rounded=0;whiteSpace=wrap;html=1;fillColor=#8b5cf6;fontColor=#ffffff;fontSize=12;align=center" vertex="1" parent="1">
+          <mxGeometry x="1155" y="590" width="125" height="50" as="geometry"/>
+        </mxCell>
+        
+        <!-- 验收门槛 -->
+        <mxCell id="accept-title" value="验收门槛" style=" rounded=1;whiteSpace=wrap;html=1;fillColor=#0891b2;strokeColor=#0e7490;fontColor=#ffffff;fontSize=16;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="60" y="580" width="600" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="accept" value="功能: 35课内容 | 8工具v1.0 | AI助教 | 视频(35) | 云端同步(可选)&#xa;质量: Lighthouse≥90 | 测试覆盖≥80% | 构建时间&lt;3min | 首屏加载&lt;2s" style=" rounded=0;whiteSpace=wrap;html=1;fillColor=#cffafe;strokeColor=#0891b2;fontSize=12;align=left;verticalAlign=top;spacingLeft=12;spacingTop=8" vertex="1" parent="1">
+          <mxGeometry x="60" y="625" width="600" height="80" as="geometry"/>
+        </mxCell>
+        
+        <!-- 出门条件 -->
+        <mxCell id="exit-title" value="出门条件 (DoD)" style=" rounded=1;whiteSpace=wrap;html=1;fillColor=#dc2626;strokeColor=#b91c1c;fontColor=#ffffff;fontSize=16;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="690" y="580" width="590" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="exit" value="[ ] 35课内容完成&#xa;[ ] 35课视频教程&#xa;[ ] 8工具v1.0完成&#xa;[ ] AI助教可用&#xa;[ ] 云端同步(可选)&#xa;[ ] Lighthouse≥90&#xa;[ ] 测试覆盖≥80%" style=" rounded=0;whiteSpace=wrap;html=1;fillColor=#fee2e2;strokeColor=#dc2626;fontSize=12;align=left;verticalAlign=top;spacingLeft=12;spacingTop=8" vertex="1" parent="1">
+          <mxGeometry x="690" y="625" width="590" height="125" as="geometry"/>
+        </mxCell>
+        
+        <!-- 风险 -->
+        <mxCell id="risk-title" value="风险与应对" style=" rounded=1;whiteSpace=wrap;html=1;fillColor=#f97316;strokeColor=#ea580c;fontColor=#ffffff;fontSize=14;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="60" y="730" width="1220" height="35" as="geometry"/>
+        </mxCell>
+        <mxCell id="risk" value="• 视频制作量大 → 分批交付&#xa;• LLM API 成本 → 用量控制&#xa;• 云端服务 → 可选按需" style=" rounded=0;whiteSpace=wrap;html=1;fillColor=#fff7ed;strokeColor=#f97316;fontSize=12;align=left;verticalAlign=top;spacingLeft=12;spacingTop=8" vertex="1" parent="1">
+          <mxGeometry x="60" y="770" width="1220" height="60" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

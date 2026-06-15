@@ -1,0 +1,190 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800">
+  <defs>
+    <linearGradient id="bgGrad3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a2e"/>
+      <stop offset="100%" style="stop-color:#16213e"/>
+    </linearGradient>
+    <linearGradient id="trainGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#50C878"/>
+      <stop offset="100%" style="stop-color:#3CB371"/>
+    </linearGradient>
+    <linearGradient id="valGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#FF6B6B"/>
+      <stop offset="100%" style="stop-color:#E85555"/>
+    </linearGradient>
+    <filter id="shadow3" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000" flood-opacity="0.3"/>
+    </filter>
+    <marker id="arrowGreen" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#50C878"/>
+    </marker>
+    <marker id="arrowRed" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#FF6B6B"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="800" fill="url(#bgGrad3)"/>
+
+  <!-- Title -->
+  <text x="600" y="45" text-anchor="middle" fill="#fff" font-size="32" font-weight="bold" font-family="Arial, sans-serif">过拟合与正则化</text>
+  <text x="600" y="75" text-anchor="middle" fill="#888" font-size="16" font-family="Arial, sans-serif">Overfitting and Regularization</text>
+
+  <!-- Left Panel: Overfitting Visualization -->
+  <g filter="url(#shadow3)">
+    <rect x="40" y="110" width="340" height="350" rx="16" fill="#0f0f23"/>
+    <text x="210" y="145" text-anchor="middle" fill="#FF6B6B" font-size="18" font-weight="bold" font-family="Arial, sans-serif">过拟合 (Overfitting)</text>
+    <text x="210" y="170" text-anchor="middle" fill="#888" font-size="12" font-family="Arial, sans-serif">模型过于复杂，泛化能力差</text>
+
+    <!-- Overfitted curve (green) -->
+    <rect x="60" y="190" width="300" height="220" rx="8" fill="#1a1a2e"/>
+    <!-- Training curve (green) -->
+    <polyline points="75,350 100,340 125,330 150,310 175,280 200,240 225,190 250,140 275,100 300,70" fill="none" stroke="#50C878" stroke-width="3" marker-end="url(#arrowGreen)"/>
+    <!-- Validation curve (red) -->
+    <polyline points="75,350 100,355 125,360 150,375 175,395 200,420 225,450 250,470 275,485 300,495" fill="none" stroke="#FF6B6B" stroke-width="3" marker-end="url(#arrowRed)"/>
+
+    <!-- Labels -->
+    <text x="80" y="385" fill="#50C878" font-size="11" font-family="Arial, sans-serif">训练损失</text>
+    <text x="80" y="335" fill="#FF6B6B" font-size="11" font-family="Arial, sans-serif">验证损失</text>
+
+    <!-- Divergence annotation -->
+    <line x1="200" y1="250" x2="250" y2="420" stroke="#FF6B6B" stroke-width="1" stroke-dasharray="4"/>
+    <text x="255" y="340" fill="#FF6B6B" font-size="10" font-family="Arial, sans-serif">差距扩大</text>
+
+    <!-- Legend -->
+    <rect x="60" y="420" width="300" height="30" rx="6" fill="#1a1a2e"/>
+    <line x1="80" y1="435" x2="110" y2="435" stroke="#50C878" stroke-width="3"/>
+    <text x="120" y="440" fill="#ccc" font-size="10" font-family="Arial, sans-serif">训练集</text>
+    <line x1="180" y1="435" x2="210" y2="435" stroke="#FF6B6B" stroke-width="3"/>
+    <text x="220" y="440" fill="#ccc" font-size="10" font-family="Arial, sans-serif">验证集</text>
+  </g>
+
+  <!-- Center Panel: Good Fit -->
+  <g filter="url(#shadow3)">
+    <rect x="400" y="110" width="340" height="350" rx="16" fill="#0f0f23"/>
+    <text x="570" y="145" text-anchor="middle" fill="#50C878" font-size="18" font-weight="bold" font-family="Arial, sans-serif">适度拟合 (Good Fit)</text>
+    <text x="570" y="170" text-anchor="middle" fill="#888" font-size="12" font-family="Arial, sans-serif">模型复杂度适中，泛化能力强</text>
+
+    <!-- Good fit curves -->
+    <rect x="420" y="190" width="300" height="220" rx="8" fill="#1a1a2e"/>
+    <!-- Training curve (green) -->
+    <polyline points="435,350 460,340 485,330 510,315 535,295 560,265 585,235 610,200 635,170 660,145" fill="none" stroke="#50C878" stroke-width="3" marker-end="url(#arrowGreen)"/>
+    <!-- Validation curve (red) -->
+    <polyline points="435,350 460,345 485,340 510,330 535,315 560,295 585,280 610,265 635,255 660,250" fill="none" stroke="#FF6B6B" stroke-width="3" marker-end="url(#arrowRed)"/>
+
+    <!-- Labels -->
+    <text x="440" y="385" fill="#50C878" font-size="11" font-family="Arial, sans-serif">训练损失</text>
+    <text x="440" y="335" fill="#FF6B6B" font-size="11" font-family="Arial, sans-serif">验证损失</text>
+
+    <!-- Gap annotation -->
+    <text x="570" y="300" text-anchor="middle" fill="#888" font-size="10" font-family="Arial, sans-serif">小差距</text>
+    <line x1="550" y1="200" x2="590" y2="280" stroke="#888" stroke-width="1" stroke-dasharray="3"/>
+
+    <!-- Legend -->
+    <rect x="420" y="420" width="300" height="30" rx="6" fill="#1a1a2e"/>
+    <line x1="440" y1="435" x2="470" y2="435" stroke="#50C878" stroke-width="3"/>
+    <text x="480" y="440" fill="#ccc" font-size="10" font-family="Arial, sans-serif">训练集</text>
+    <line x1="540" y1="435" x2="570" y2="435" stroke="#FF6B6B" stroke-width="3"/>
+    <text x="580" y="440" fill="#ccc" font-size="10" font-family="Arial, sans-serif">验证集</text>
+  </g>
+
+  <!-- Right Panel: Underfitting -->
+  <g filter="url(#shadow3)">
+    <rect x="760" y="110" width="340" height="350" rx="16" fill="#0f0f23"/>
+    <text x="930" y="145" text-anchor="middle" fill="#FF9500" font-size="18" font-weight="bold" font-family="Arial, sans-serif">欠拟合 (Underfitting)</text>
+    <text x="930" y="170" text-anchor="middle" fill="#888" font-size="12" font-family="Arial, sans-serif">模型过于简单，无法捕捉模式</text>
+
+    <!-- Underfit curves -->
+    <rect x="780" y="190" width="300" height="220" rx="8" fill="#1a1a2e"/>
+    <!-- Both curves start high and converge but stay high -->
+    <polyline points="795,360 820,355 845,350 870,345 895,340 920,335 945,330 970,325 995,320 1020,315" fill="none" stroke="#50C878" stroke-width="3"/>
+    <polyline points="795,365 820,360 845,355 870,350 895,345 920,340 945,335 970,330 995,325 1020,320" fill="none" stroke="#FF6B6B" stroke-width="3"/>
+
+    <!-- Labels -->
+    <text x="800" y="385" fill="#50C878" font-size="11" font-family="Arial, sans-serif">训练损失</text>
+    <text x="800" y="365" fill="#FF6B6B" font-size="11" font-family="Arial, sans-serif">验证损失</text>
+
+    <!-- High loss annotation -->
+    <text x="930" y="400" text-anchor="middle" fill="#FF9500" font-size="11" font-family="Arial, sans-serif">损失都很高</text>
+
+    <!-- Legend -->
+    <rect x="780" y="420" width="300" height="30" rx="6" fill="#1a1a2e"/>
+    <line x1="800" y1="435" x2="830" y2="435" stroke="#50C878" stroke-width="3"/>
+    <text x="840" y="440" fill="#ccc" font-size="10" font-family="Arial, sans-serif">训练集</text>
+    <line x1="900" y1="435" x2="930" y2="435" stroke="#FF6B6B" stroke-width="3"/>
+    <text x="940" y="440" fill="#ccc" font-size="10" font-family="Arial, sans-serif">验证集</text>
+  </g>
+
+  <!-- Bottom Section: Regularization Methods -->
+  <text x="600" y="485" text-anchor="middle" fill="#fff" font-size="20" font-weight="bold" font-family="Arial, sans-serif">正则化方法 Regularization Methods</text>
+
+  <!-- L1 Regularization (Lasso) -->
+  <g filter="url(#shadow3)">
+    <rect x="40" y="510" width="360" height="240" rx="16" fill="#0f0f23"/>
+    <rect x="40" y="510" width="360" height="50" rx="16" fill="#9B59B6"/>
+    <rect x="40" y="540" width="360" height="20" fill="#9B59B6"/>
+    <text x="220" y="542" text-anchor="middle" fill="#fff" font-size="18" font-weight="bold" font-family="Arial, sans-serif">L1 正则化 (Lasso)</text>
+
+    <text x="220" y="590" text-anchor="middle" fill="#9B59B6" font-size="14" font-family="Arial, sans-serif">L = Loss + λ Σ|wᵢ|</text>
+    <text x="220" y="620" text-anchor="middle" fill="#888" font-size="11" font-family="Arial, sans-serif">促使权重稀疏化</text>
+    <text x="220" y="640" text-anchor="middle" fill="#888" font-size="11" font-family="Arial, sans-serif">可用于特征选择</text>
+    <text x="220" y="665" text-anchor="middle" fill="#666" font-size="10" font-family="Arial, sans-serif">产生稀疏权重矩阵</text>
+    <text x="220" y="685" text-anchor="middle" fill="#666" font-size="10" font-family="Arial, sans-serif">某些权重变为零</text>
+
+    <!-- L1 visualization: diamond constraint -->
+    <rect x="100" y="700" width="240" height="35" rx="6" fill="#1a1a2e"/>
+    <path d="M130,717 L220,717 L130,695 L220,695 Z" fill="none" stroke="#9B59B6" stroke-width="1.5"/>
+    <circle cx="175" cy="706" r="4" fill="#9B59B6"/>
+    <text x="270" y="720" fill="#888" font-size="9" font-family="Arial, sans-serif">L1约束区域(菱形)</text>
+  </g>
+
+  <!-- L2 Regularization (Ridge) -->
+  <g filter="url(#shadow3)">
+    <rect x="420" y="510" width="360" height="240" rx="16" fill="#0f0f23"/>
+    <rect x="420" y="510" width="360" height="50" rx="16" fill="#4A90E2"/>
+    <rect x="420" y="540" width="360" height="20" fill="#4A90E2"/>
+    <text x="600" y="542" text-anchor="middle" fill="#fff" font-size="18" font-weight="bold" font-family="Arial, sans-serif">L2 正则化 (Ridge)</text>
+
+    <text x="600" y="590" text-anchor="middle" fill="#4A90E2" font-size="14" font-family="Arial, sans-serif">L = Loss + λ Σwᵢ²</text>
+    <text x="600" y="620" text-anchor="middle" fill="#888" font-size="11" font-family="Arial, sans-serif">惩罚大的权重值</text>
+    <text x="600" y="640" text-anchor="middle" fill="#888" font-size="11" font-family="Arial, sans-serif">权重平滑不过激</text>
+    <text x="600" y="665" text-anchor="middle" fill="#666" font-size="10" font-family="Arial, sans-serif">权重缩小但不为零</text>
+    <text x="600" y="685" text-anchor="middle" fill="#666" font-size="10" font-family="Arial, sans-serif">适合多重共线性问题</text>
+
+    <!-- L2 visualization: circle constraint -->
+    <rect x="480" y="700" width="240" height="35" rx="6" fill="#1a1a2e"/>
+    <ellipse cx="600" cy="717" rx="50" ry="18" fill="none" stroke="#4A90E2" stroke-width="1.5"/>
+    <circle cx="600" cy="706" r="4" fill="#4A90E2"/>
+    <text x="650" y="720" fill="#888" font-size="9" font-family="Arial, sans-serif">L2约束区域(圆形)</text>
+  </g>
+
+  <!-- Dropout -->
+  <g filter="url(#shadow3)">
+    <rect x="800" y="510" width="360" height="240" rx="16" fill="#0f0f23"/>
+    <rect x="800" y="510" width="360" height="50" rx="16" fill="#50C878"/>
+    <rect x="800" y="540" width="360" height="20" fill="#50C878"/>
+    <text x="980" y="542" text-anchor="middle" fill="#fff" font-size="18" font-weight="bold" font-family="Arial, sans-serif">Dropout</text>
+
+    <text x="980" y="590" text-anchor="middle" fill="#50C878" font-size="14" font-family="Arial, sans-serif">训练时随机丢弃神经元</text>
+    <text x="980" y="620" text-anchor="middle" fill="#888" font-size="11" font-family="Arial, sans-serif">防止特征共适应</text>
+    <text x="980" y="640" text-anchor="middle" fill="#888" font-size="11" font-family="Arial, sans-serif">增强模型鲁棒性</text>
+    <text x="980" y="665" text-anchor="middle" fill="#666" font-size="10" font-family="Arial, sans-serif">推理时使用全部神经元</text>
+    <text x="980" y="685" text-anchor="middle" fill="#666" font-size="10" font-family="Arial, sans-serif">典型丢弃率: 0.2 - 0.5</text>
+
+    <!-- Dropout visualization: neural network with some nodes grayed out -->
+    <rect x="860" y="700" width="240" height="35" rx="6" fill="#1a1a2e"/>
+    <!-- Input layer -->
+    <circle cx="885" cy="717" r="6" fill="#50C878"/>
+    <circle cx="905" cy="717" r="6" fill="#50C878"/>
+    <circle cx="925" cy="717" r="6" fill="#666"/>
+    <!-- Hidden layer -->
+    <circle cx="960" cy="710" r="6" fill="#50C878"/>
+    <circle cx="960" cy="725" r="6" fill="#666"/>
+    <!-- Output layer -->
+    <circle cx="995" cy="717" r="6" fill="#50C878"/>
+    <text x="1060" y="720" fill="#888" font-size="9" font-family="Arial, sans-serif">x 被丢弃</text>
+  </g>
+
+  <!-- Footer -->
+  <text x="600" y="775" text-anchor="middle" fill="#555" font-size="12" font-family="Arial, sans-serif">机器学习核心 Week 3-4</text>
+</svg>

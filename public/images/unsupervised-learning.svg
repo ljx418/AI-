@@ -1,0 +1,165 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800">
+  <defs>
+    <linearGradient id="bgGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a2e"/>
+      <stop offset="100%" style="stop-color:#16213e"/>
+    </linearGradient>
+    <filter id="shadow2" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000" flood-opacity="0.3"/>
+    </filter>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="800" fill="url(#bgGrad2)"/>
+
+  <!-- Title -->
+  <text x="600" y="50" text-anchor="middle" fill="#fff" font-size="32" font-weight="bold" font-family="Arial, sans-serif">无监督学习 - K-Means 聚类</text>
+  <text x="600" y="80" text-anchor="middle" fill="#888" font-size="16" font-family="Arial, sans-serif">Unsupervised Learning - K-Means Clustering</text>
+
+  <!-- Left Panel: K-Means Visualization -->
+  <g filter="url(#shadow2)">
+    <rect x="40" y="110" width="680" height="500" rx="16" fill="#0f0f23"/>
+    <text x="380" y="145" text-anchor="middle" fill="#fff" font-size="18" font-weight="bold" font-family="Arial, sans-serif">K-Means 聚类可视化</text>
+
+    <!-- Cluster 1 (Red) -->
+    <circle cx="140" cy="280" r="12" fill="#FF6B6B" filter="url(#glow)"/>
+    <circle cx="120" cy="320" r="8" fill="#FF6B6B" opacity="0.7"/>
+    <circle cx="160" cy="310" r="8" fill="#FF6B6B" opacity="0.7"/>
+    <circle cx="130" cy="350" r="8" fill="#FF6B6B" opacity="0.7"/>
+    <circle cx="170" cy="340" r="8" fill="#FF6B6B" opacity="0.7"/>
+    <circle cx="150" cy="380" r="8" fill="#FF6B6B" opacity="0.7"/>
+    <circle cx="110" cy="290" r="8" fill="#FF6B6B" opacity="0.7"/>
+    <circle cx="180" cy="370" r="8" fill="#FF6B6B" opacity="0.7"/>
+    <text x="140" y="420" text-anchor="middle" fill="#FF6B6B" font-size="12" font-family="Arial, sans-serif">簇 1</text>
+
+    <!-- Cluster 2 (Blue) -->
+    <circle cx="340" cy="260" r="12" fill="#4A90E2" filter="url(#glow)"/>
+    <circle cx="320" cy="300" r="8" fill="#4A90E2" opacity="0.7"/>
+    <circle cx="360" cy="290" r="8" fill="#4A90E2" opacity="0.7"/>
+    <circle cx="330" cy="330" r="8" fill="#4A90E2" opacity="0.7"/>
+    <circle cx="370" cy="320" r="8" fill="#4A90E2" opacity="0.7"/>
+    <circle cx="310" cy="270" r="8" fill="#4A90E2" opacity="0.7"/>
+    <circle cx="380" cy="350" r="8" fill="#4A90E2" opacity="0.7"/>
+    <circle cx="350" cy="360" r="8" fill="#4A90E2" opacity="0.7"/>
+    <text x="340" y="420" text-anchor="middle" fill="#4A90E2" font-size="12" font-family="Arial, sans-serif">簇 2</text>
+
+    <!-- Cluster 3 (Green) -->
+    <circle cx="540" cy="320" r="12" fill="#50C878" filter="url(#glow)"/>
+    <circle cx="520" cy="360" r="8" fill="#50C878" opacity="0.7"/>
+    <circle cx="560" cy="350" r="8" fill="#50C878" opacity="0.7"/>
+    <circle cx="530" cy="400" r="8" fill="#50C878" opacity="0.7"/>
+    <circle cx="570" cy="390" r="8" fill="#50C878" opacity="0.7"/>
+    <circle cx="510" cy="340" r="8" fill="#50C878" opacity="0.7"/>
+    <circle cx="580" cy="420" r="8" fill="#50C878" opacity="0.7"/>
+    <circle cx="550" cy="440" r="8" fill="#50C878" opacity="0.7"/>
+    <text x="540" y="480" text-anchor="middle" fill="#50C878" font-size="12" font-family="Arial, sans-serif">簇 3</text>
+
+    <!-- Cluster centers (larger, white border) -->
+    <circle cx="140" cy="280" r="18" fill="none" stroke="#fff" stroke-width="3"/>
+    <circle cx="340" cy="260" r="18" fill="none" stroke="#fff" stroke-width="3"/>
+    <circle cx="540" cy="320" r="18" fill="none" stroke="#fff" stroke-width="3"/>
+    <text x="140" y="260" text-anchor="middle" fill="#fff" font-size="10" font-family="Arial, sans-serif">中心点</text>
+    <text x="340" y="240" text-anchor="middle" fill="#fff" font-size="10" font-family="Arial, sans-serif">中心点</text>
+    <text x="540" y="300" text-anchor="middle" fill="#fff" font-size="10" font-family="Arial, sans-serif">中心点</text>
+
+    <!-- Legend -->
+    <rect x="60" y="510" width="640" height="80" rx="8" fill="#1a1a2e"/>
+    <circle cx="100" cy="545" r="10" fill="#FF6B6B"/>
+    <text x="120" y="550" fill="#ccc" font-size="12" font-family="Arial, sans-serif">簇成员</text>
+    <circle cx="220" cy="545" r="14" fill="none" stroke="#fff" stroke-width="2"/>
+    <text x="240" y="550" fill="#ccc" font-size="12" font-family="Arial, sans-serif">聚类中心</text>
+    <line x1="340" y1="545" x2="380" y2="545" stroke="#fff" stroke-width="2" stroke-dasharray="4"/>
+    <text x="395" y="550" fill="#ccc" font-size="12" font-family="Arial, sans-serif">距离边界</text>
+  </g>
+
+  <!-- Right Panel: Elbow Method -->
+  <g filter="url(#shadow2)">
+    <rect x="740" y="110" width="400" height="500" rx="16" fill="#0f0f23"/>
+    <text x="940" y="145" text-anchor="middle" fill="#fff" font-size="18" font-weight="bold" font-family="Arial, sans-serif">肘部法则 - 确定最佳K值</text>
+    <text x="940" y="170" text-anchor="middle" fill="#888" font-size="12" font-family="Arial, sans-serif">Elbow Method for Optimal K</text>
+
+    <!-- Axes -->
+    <line x1="800" y1="480" x2="1100" y2="480" stroke="#666" stroke-width="2"/>
+    <line x1="800" y1="480" x2="800" y2="200" stroke="#666" stroke-width="2"/>
+    <text x="950" y="510" text-anchor="middle" fill="#888" font-size="12" font-family="Arial, sans-serif">聚类数量 K</text>
+    <text x="770" y="340" text-anchor="middle" fill="#888" font-size="12" font-family="Arial, sans-serif" transform="rotate(-90, 770, 340)">SSE / 损失值</text>
+
+    <!-- Y-axis labels -->
+    <text x="790" y="480" text-anchor="end" fill="#666" font-size="10" font-family="Arial, sans-serif">0</text>
+    <text x="790" y="400" text-anchor="end" fill="#666" font-size="10" font-family="Arial, sans-serif">50</text>
+    <text x="790" y="320" text-anchor="end" fill="#666" font-size="10" font-family="Arial, sans-serif">100</text>
+    <text x="790" y="240" text-anchor="end" fill="#666" font-size="10" font-family="Arial, sans-serif">150</text>
+    <text x="790" y="200" text-anchor="end" fill="#666" font-size="10" font-family="Arial, sans-serif">200</text>
+
+    <!-- X-axis labels -->
+    <text x="820" y="495" text-anchor="middle" fill="#666" font-size="10" font-family="Arial, sans-serif">1</text>
+    <text x="880" y="495" text-anchor="middle" fill="#666" font-size="10" font-family="Arial, sans-serif">2</text>
+    <text x="940" y="495" text-anchor="middle" fill="#666" font-size="10" font-family="Arial, sans-serif">3</text>
+    <text x="1000" y="495" text-anchor="middle" fill="#666" font-size="10" font-family="Arial, sans-serif">4</text>
+    <text x="1060" y="495" text-anchor="middle" fill="#666" font-size="10" font-family="Arial, sans-serif">5</text>
+
+    <!-- Elbow curve -->
+    <polyline points="820,210 880,290 940,330 1000,380 1060,420" fill="none" stroke="#4A90E2" stroke-width="3"/>
+
+    <!-- Data points on curve -->
+    <circle cx="820" cy="210" r="6" fill="#4A90E2"/>
+    <circle cx="880" cy="290" r="6" fill="#4A90E2"/>
+    <circle cx="940" cy="330" r="6" fill="#FF6B6B" stroke="#fff" stroke-width="2"/>
+    <circle cx="1000" cy="380" r="6" fill="#4A90E2"/>
+    <circle cx="1060" cy="420" r="6" fill="#4A90E2"/>
+
+    <!-- Elbow point annotation -->
+    <line x1="940" y1="330" x2="940" y2="380" stroke="#FF6B6B" stroke-width="1" stroke-dasharray="4"/>
+    <circle cx="940" cy="330" r="10" fill="none" stroke="#FF6B6B" stroke-width="2"/>
+    <text x="960" y="325" fill="#FF6B6B" font-size="12" font-weight="bold" font-family="Arial, sans-serif">最佳K=3</text>
+    <text x="960" y="345" fill="#888" font-size="10" font-family="Arial, sans-serif">肘部拐点</text>
+
+    <!-- Formula box -->
+    <rect x="800" y="520" width="340" height="70" rx="8" fill="#1a1a2e"/>
+    <text x="820" y="545" fill="#ccc" font-size="11" font-family="Arial, sans-serif">SSE = Σ ||xᵢ - cₖ||²</text>
+    <text x="820" y="565" fill="#888" font-size="10" font-family="Arial, sans-serif">其中 xᵢ 是样本点, cₖ 是第k个簇中心</text>
+    <text x="820" y="580" fill="#666" font-size="9" font-family="Arial, sans-serif">选择K值使SSE下降速度明显变缓的点</text>
+  </g>
+
+  <!-- Algorithm Steps -->
+  <g filter="url(#shadow2)">
+    <rect x="40" y="630" width="1100" height="120" rx="12" fill="#0f0f23"/>
+    <text x="590" y="665" text-anchor="middle" fill="#fff" font-size="16" font-weight="bold" font-family="Arial, sans-serif">K-Means 算法步骤</text>
+
+    <!-- Step boxes -->
+    <rect x="80" y="685" width="200" height="45" rx="8" fill="#4A90E2"/>
+    <text x="180" y="700" text-anchor="middle" fill="#fff" font-size="11" font-weight="bold" font-family="Arial, sans-serif">Step 1: 初始化</text>
+    <text x="180" y="718" text-anchor="middle" fill="#ddd" font-size="10" font-family="Arial, sans-serif">随机选择K个中心点</text>
+
+    <line x1="290" y1="707" x2="330" y2="707" stroke="#666" stroke-width="2"/>
+    <polygon points="330,703 340,707 330,711" fill="#666"/>
+
+    <rect x="350" y="685" width="200" height="45" rx="8" fill="#50C878"/>
+    <text x="450" y="700" text-anchor="middle" fill="#fff" font-size="11" font-weight="bold" font-family="Arial, sans-serif">Step 2: 分配</text>
+    <text x="450" y="718" text-anchor="middle" fill="#ddd" font-size="10" font-family="Arial, sans-serif">计算距离并分配到最近簇</text>
+
+    <line x1="560" y1="707" x2="600" y2="707" stroke="#666" stroke-width="2"/>
+    <polygon points="600,703 610,707 600,711" fill="#666"/>
+
+    <rect x="620" y="685" width="200" height="45" rx="8" fill="#FF9500"/>
+    <text x="720" y="700" text-anchor="middle" fill="#fff" font-size="11" font-weight="bold" font-family="Arial, sans-serif">Step 3: 更新</text>
+    <text x="720" y="718" text-anchor="middle" fill="#ddd" font-size="10" font-family="Arial, sans-serif">重新计算簇中心</text>
+
+    <line x1="830" y1="707" x2="870" y2="707" stroke="#666" stroke-width="2"/>
+    <polygon points="870,703 880,707 870,711" fill="#666"/>
+
+    <rect x="890" y="685" width="200" height="45" rx="8" fill="#9B59B6"/>
+    <text x="990" y="700" text-anchor="middle" fill="#fff" font-size="11" font-weight="bold" font-family="Arial, sans-serif">Step 4: 迭代</text>
+    <text x="990" y="718" text-anchor="middle" fill="#ddd" font-size="10" font-family="Arial, sans-serif">重复直至收敛</text>
+  </g>
+
+  <!-- Footer -->
+  <text x="600" y="775" text-anchor="middle" fill="#555" font-size="12" font-family="Arial, sans-serif">机器学习核心 Week 3-4</text>
+</svg>

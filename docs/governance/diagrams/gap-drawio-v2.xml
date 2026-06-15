@@ -1,0 +1,377 @@
+<mxGraphModel>
+  <root>
+    <mxCell id="0"/>
+    <mxCell id="1" parent="0"/>
+
+    <!-- 图5：系统架构图 -->
+    <mxCell id="title5" value="图5：系统架构图 (System Architecture)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=18;fontStyle=1" vertex="1" parent="1">
+      <mxGeometry x="40" y="20" width="1200" height="30" as="geometry"/>
+    </mxCell>
+
+    <!-- 浏览器 -->
+    <mxCell id="browser" value="浏览器 (Chrome/Edge/Safari)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dbeafe;strokeColor=#3b82f6;fontSize=14;fontStyle=1" vertex="1" parent="1">
+      <mxGeometry x="60" y="70" width="1180" height="40" as="geometry"/>
+    </mxCell>
+
+    <!-- 应用层 -->
+    <mxCell id="app" value="React 18 SPA (Vite Build → dist/)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dcfce7;strokeColor=#10b981;fontSize=13;fontStyle=1" vertex="1" parent="1">
+      <mxGeometry x="60" y="130" width="1180" height="40" as="geometry"/>
+    </mxCell>
+
+    <!-- 路由层 -->
+    <mxCell id="routing" value="BrowserRouter (App.jsx)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fef3c7;strokeColor=#f59e0b;fontSize=12" vertex="1" parent="1">
+      <mxGeometry x="60" y="190" width="1180" height="30" as="geometry"/>
+    </mxCell>
+
+    <!-- 视图层 -->
+    <mxCell id="home" value="HomePage&#10;/" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#64748b;fontSize=11" vertex="1" parent="1">
+      <mxGeometry x="60" y="240" width="120" height="50" as="geometry"/>
+    </mxCell>
+    <mxCell id="lesson" value="LessonPage&#10;/lesson/:id" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#64748b;fontSize=11" vertex="1" parent="1">
+      <mxGeometry x="200" y="240" width="120" height="50" as="geometry"/>
+    </mxCell>
+    <mxCell id="editor" value="CodeEditor&#10;/editor/:id" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#64748b;fontSize=11" vertex="1" parent="1">
+      <mxGeometry x="340" y="240" width="120" height="50" as="geometry"/>
+    </mxCell>
+    <mxCell id="quiz" value="QuizPanel&#10;/quiz/:id" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#64748b;fontSize=11" vertex="1" parent="1">
+      <mxGeometry x="480" y="240" width="120" height="50" as="geometry"/>
+    </mxCell>
+    <mxCell id="progress" value="ProgressPage&#10;/progress" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#64748b;fontSize=11" vertex="1" parent="1">
+      <mxGeometry x="620" y="240" width="120" height="50" as="geometry"/>
+    </mxCell>
+    <mxCell id="static" value="StaticPages (iframe)&#10;/outline /plan /standalone /jupyter" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#64748b;fontSize=10" vertex="1" parent="1">
+      <mxGeometry x="760" y="240" width="220" height="50" as="geometry"/>
+    </mxCell>
+    <mxCell id="theme" value="ThemeToggle&#10;全局组件" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#64748b;fontSize=11" vertex="1" parent="1">
+      <mxGeometry x="1000" y="240" width="120" height="50" as="geometry"/>
+    </mxCell>
+    <mxCell id="nav" value="Navigation / Footer&#10;全局组件" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#64748b;fontSize=11" vertex="1" parent="1">
+      <mxGeometry x="1140" y="240" width="100" height="50" as="geometry"/>
+    </mxCell>
+
+    <!-- Utilities 层 -->
+    <mxCell id="utils_label" value="Utilities Layer" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ede9fe;strokeColor=#7c3aed;fontSize=12;fontStyle=1" vertex="1" parent="1">
+      <mxGeometry x="60" y="310" width="1180" height="30" as="geometry"/>
+    </mxCell>
+
+    <mxCell id="u_pyodide" value="pyodide-loader.js&#10;Worker 池管理" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#7c3aed;fontSize=10" vertex="1" parent="1">
+      <mxGeometry x="80" y="360" width="160" height="50" as="geometry"/>
+    </mxCell>
+    <mxCell id="u_storage" value="storage.js&#10;IndexedDB 封装" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#7c3aed;fontSize=10" vertex="1" parent="1">
+      <mxGeometry x="260" y="360" width="160" height="50" as="geometry"/>
+    </mxCell>
+    <mxCell id="u_idnorm" value="id-normalizer.js&#10;L01 ↔ L1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#7c3aed;fontSize=10" vertex="1" parent="1">
+      <mxGeometry x="440" y="360" width="160" height="50" as="geometry"/>
+    </mxCell>
+    <mxCell id="u_sm2" value="spaced-repetition.js&#10;SM-2 算法 (备用)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#7c3aed;fontSize=10" vertex="1" parent="1">
+      <mxGeometry x="620" y="360" width="160" height="50" as="geometry"/>
+    </mxCell>
+    <mxCell id="u_react" value="react / react-dom /&#10;react-router-dom" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#7c3aed;fontSize=10" vertex="1" parent="1">
+      <mxGeometry x="800" y="360" width="180" height="50" as="geometry"/>
+    </mxCell>
+    <mxCell id="u_syntax" value="react-syntax-highlighter&#10;代码高亮" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#7c3aed;fontSize=10" vertex="1" parent="1">
+      <mxGeometry x="1000" y="360" width="160" height="50" as="geometry"/>
+    </mxCell>
+    <mxCell id="u_idb" value="idb (IndexedDB 封装)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#7c3aed;fontSize=10" vertex="1" parent="1">
+      <mxGeometry x="1180" y="360" width="60" height="50" as="geometry"/>
+    </mxCell>
+
+    <!-- Data 层 -->
+    <mxCell id="data_label" value="Data Layer (静态资源)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fce7f3;strokeColor=#db2777;fontSize=12;fontStyle=1" vertex="1" parent="1">
+      <mxGeometry x="60" y="430" width="1180" height="30" as="geometry"/>
+    </mxCell>
+
+    <mxCell id="d_lessons" value="lessons_new.jsx&#10;24 课 JSON 数据" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#db2777;fontSize=10" vertex="1" parent="1">
+      <mxGeometry x="80" y="480" width="180" height="50" as="geometry"/>
+    </mxCell>
+    <mxCell id="d_questions" value="questions.json&#10;240 题测验" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#db2777;fontSize=10" vertex="1" parent="1">
+      <mxGeometry x="280" y="480" width="180" height="50" as="geometry"/>
+    </mxCell>
+    <mxCell id="d_static" value="public/static/*.html&#10;4 个静态页" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#db2777;fontSize=10" vertex="1" parent="1">
+      <mxGeometry x="480" y="480" width="180" height="50" as="geometry"/>
+    </mxCell>
+    <mxCell id="d_images" value="images/*.svg&#10;24 张配图" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#db2777;fontSize=10" vertex="1" parent="1">
+      <mxGeometry x="680" y="480" width="180" height="50" as="geometry"/>
+    </mxCell>
+    <mxCell id="d_worker" value="workers/&#10;pyodide.worker.js" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#db2777;fontSize=10" vertex="1" parent="1">
+      <mxGeometry x="880" y="480" width="180" height="50" as="geometry"/>
+    </mxCell>
+    <mxCell id="d_wasm" value="Pyodide WASM&#10;(jsdelivr CDN, ~10MB)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fee2e2;strokeColor=#dc2626;fontSize=10;dashed=1" vertex="1" parent="1">
+      <mxGeometry x="1080" y="480" width="160" height="50" as="geometry"/>
+    </mxCell>
+
+    <!-- 数据流箭头 -->
+    <mxCell id="arr_lesson_data" style="endArrow=classic;html=1;strokeColor=#64748b" edge="1" parent="1" source="lesson" target="d_lessons"/>
+    <mxCell id="arr_quiz_data" style="endArrow=classic;html=1;strokeColor=#64748b" edge="1" parent="1" source="quiz" target="d_questions"/>
+    <mxCell id="arr_progress_storage" style="endArrow=classic;html=1;strokeColor=#64748b" edge="1" parent="1" source="progress" target="u_storage"/>
+    <mxCell id="arr_pyodide_loader" style="endArrow=classic;html=1;strokeColor=#64748b" edge="1" parent="1" source="editor" target="u_pyodide"/>
+    <mxCell id="arr_pyodide_worker" style="endArrow=classic;html=1;strokeColor=#64748b" edge="1" parent="1" source="u_pyodide" target="d_worker"/>
+    <mxCell id="arr_worker_wasm" style="endArrow=classic;html=1;strokeColor=#dc2626;dashed=1" edge="1" parent="1" source="d_worker" target="d_wasm"/>
+    <mxCell id="arr_quiz_idnorm" style="endArrow=classic;html=1;strokeColor=#64748b" edge="1" parent="1" source="quiz" target="u_idnorm"/>
+
+    <!-- 图6：数据流图（用户行为） -->
+    <mxCell id="title6" value="图6：用户数据流图 (User Data Flow)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=18;fontStyle=1" vertex="1" parent="1">
+      <mxGeometry x="40" y="560" width="1200" height="30" as="geometry"/>
+    </mxCell>
+
+    <!-- 用户行为泳道 -->
+    <mxCell id="lane_user" value="用户行为" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fef3c7;strokeColor=#f59e0b;fontSize=13;fontStyle=1;verticalAlign=top" vertex="1" parent="1">
+      <mxGeometry x="60" y="610" width="200" height="380" as="geometry"/>
+    </mxCell>
+    <mxCell id="lane_app" value="应用响应" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dbeafe;strokeColor=#3b82f6;fontSize=13;fontStyle=1;verticalAlign=top" vertex="1" parent="1">
+      <mxGeometry x="280" y="610" width="320" height="380" as="geometry"/>
+    </mxCell>
+    <mxCell id="lane_storage" value="数据持久化" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dcfce7;strokeColor=#10b981;fontSize=13;fontStyle=1;verticalAlign=top" vertex="1" parent="1">
+      <mxGeometry x="620" y="610" width="300" height="380" as="geometry"/>
+    </mxCell>
+    <mxCell id="lane_external" value="外部依赖" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ede9fe;strokeColor=#7c3aed;fontSize=13;fontStyle=1;verticalAlign=top" vertex="1" parent="1">
+      <mxGeometry x="940" y="610" width="300" height="380" as="geometry"/>
+    </mxCell>
+
+    <!-- 步骤 -->
+    <mxCell id="step1_u" value="1. 打开首页" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#f59e0b;fontSize=11" vertex="1" parent="1">
+      <mxGeometry x="80" y="660" width="160" height="40" as="geometry"/>
+    </mxCell>
+    <mxCell id="step1_a" value="渲染 24 课网格&#10;读 LESSONS" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#3b82f6;fontSize=10" vertex="1" parent="1">
+      <mxGeometry x="300" y="660" width="280" height="40" as="geometry"/>
+    </mxCell>
+
+    <mxCell id="step2_u" value="2. 点击 L01" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#f59e0b;fontSize=11" vertex="1" parent="1">
+      <mxGeometry x="80" y="720" width="160" height="40" as="geometry"/>
+    </mxCell>
+    <mxCell id="step2_a" value="路由跳转&#10;/lesson/L01" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#3b82f6;fontSize=10" vertex="1" parent="1">
+      <mxGeometry x="300" y="720" width="280" height="40" as="geometry"/>
+    </mxCell>
+
+    <mxCell id="step3_u" value="3. 点击「代码练习」" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#f59e0b;fontSize=11" vertex="1" parent="1">
+      <mxGeometry x="80" y="780" width="160" height="40" as="geometry"/>
+    </mxCell>
+    <mxCell id="step3_a" value="路由到 CodeEditor&#10;/editor/L01" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#3b82f6;fontSize=10" vertex="1" parent="1">
+      <mxGeometry x="300" y="780" width="280" height="40" as="geometry"/>
+    </mxCell>
+
+    <mxCell id="step4_u" value="4. 写代码 + 点击运行" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#f59e0b;fontSize=11" vertex="1" parent="1">
+      <mxGeometry x="80" y="840" width="160" height="40" as="geometry"/>
+    </mxCell>
+    <mxCell id="step4_a" value="postMessage 到&#10;pyodide.worker" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#3b82f6;fontSize=10" vertex="1" parent="1">
+      <mxGeometry x="300" y="840" width="280" height="40" as="geometry"/>
+    </mxCell>
+    <mxCell id="step4_e" value="Pyodide WASM&#10;执行 Python" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#7c3aed;fontSize=10" vertex="1" parent="1">
+      <mxGeometry x="960" y="840" width="260" height="40" as="geometry"/>
+    </mxCell>
+
+    <mxCell id="step5_u" value="5. 返回 + 点击「开始测验」" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#f59e0b;fontSize=11" vertex="1" parent="1">
+      <mxGeometry x="80" y="900" width="160" height="40" as="geometry"/>
+    </mxCell>
+    <mxCell id="step5_a" value="渲染 10 题&#10;读 questions.json" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#3b82f6;fontSize=10" vertex="1" parent="1">
+      <mxGeometry x="300" y="900" width="280" height="40" as="geometry"/>
+    </mxCell>
+
+    <mxCell id="step6_a" value="提交测验&#10;saveProgress()" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#3b82f6;fontSize=10" vertex="1" parent="1">
+      <mxGeometry x="300" y="960" width="280" height="40" as="geometry"/>
+    </mxCell>
+    <mxCell id="step6_s" value="写入 IndexedDB&#10;progress/quiz stores" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#10b981;fontSize=10" vertex="1" parent="1">
+      <mxGeometry x="640" y="960" width="260" height="40" as="geometry"/>
+    </mxCell>
+
+    <!-- 箭头 -->
+    <mxCell id="d_arr1" style="endArrow=classic;html=1;strokeColor=#64748b" edge="1" parent="1" source="step1_u" target="step1_a"/>
+    <mxCell id="d_arr2" style="endArrow=classic;html=1;strokeColor=#64748b" edge="1" parent="1" source="step2_u" target="step2_a"/>
+    <mxCell id="d_arr3" style="endArrow=classic;html=1;strokeColor=#64748b" edge="1" parent="1" source="step3_u" target="step3_a"/>
+    <mxCell id="d_arr4u" style="endArrow=classic;html=1;strokeColor=#64748b" edge="1" parent="1" source="step4_u" target="step4_a"/>
+    <mxCell id="d_arr4e" style="endArrow=classic;html=1;strokeColor=#7c3aed" edge="1" parent="1" source="step4_a" target="step4_e"/>
+    <mxCell id="d_arr5" style="endArrow=classic;html=1;strokeColor=#64748b" edge="1" parent="1" source="step5_u" target="step5_a"/>
+    <mxCell id="d_arr6a" style="endArrow=classic;html=1;strokeColor=#64748b" edge="1" parent="1" source="step5_a" target="step6_a"/>
+    <mxCell id="d_arr6s" style="endArrow=classic;html=1;strokeColor=#10b981" edge="1" parent="1" source="step6_a" target="step6_s"/>
+
+    <!-- 图7：组件依赖图 -->
+    <mxCell id="title7" value="图7：组件依赖图 (Component Dependencies)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=18;fontStyle=1" vertex="1" parent="1">
+      <mxGeometry x="40" y="1020" width="1200" height="30" as="geometry"/>
+    </mxCell>
+
+    <!-- 中心：App.jsx -->
+    <mxCell id="app_center" value="App.jsx" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dc2626;strokeColor=#7f1d1d;fontSize=14;fontStyle=1;fontColor=#ffffff" vertex="1" parent="1">
+      <mxGeometry x="560" y="1070" width="120" height="50" as="geometry"/>
+    </mxCell>
+
+    <!-- 一级依赖 -->
+    <mxCell id="dep_router" value="react-router-dom" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fef3c7;strokeColor=#f59e0b;fontSize=11" vertex="1" parent="1">
+      <mxGeometry x="560" y="1130" width="120" height="40" as="geometry"/>
+    </mxCell>
+
+    <!-- 路由 -->
+    <mxCell id="dep_home" value="HomePage" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dbeafe;strokeColor=#3b82f6;fontSize=11" vertex="1" parent="1">
+      <mxGeometry x="80" y="1070" width="100" height="40" as="geometry"/>
+    </mxCell>
+    <mxCell id="dep_lesson" value="LessonContent" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dbeafe;strokeColor=#3b82f6;fontSize=11" vertex="1" parent="1">
+      <mxGeometry x="200" y="1070" width="120" height="40" as="geometry"/>
+    </mxCell>
+    <mxCell id="dep_editor" value="CodeEditor" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dbeafe;strokeColor=#3b82f6;fontSize=11" vertex="1" parent="1">
+      <mxGeometry x="340" y="1070" width="120" height="40" as="geometry"/>
+    </mxCell>
+    <mxCell id="dep_quiz" value="QuizPanel" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dbeafe;strokeColor=#3b82f6;fontSize=11" vertex="1" parent="1">
+      <mxGeometry x="480" y="1070" width="100" height="40" as="geometry"/>
+    </mxCell>
+    <mxCell id="dep_progress" value="Progress" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dbeafe;strokeColor=#3b82f6;fontSize=11" vertex="1" parent="1">
+      <mxGeometry x="700" y="1070" width="100" height="40" as="geometry"/>
+    </mxCell>
+    <mxCell id="dep_static" value="StaticPages" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dbeafe;strokeColor=#3b82f6;fontSize=11" vertex="1" parent="1">
+      <mxGeometry x="820" y="1070" width="120" height="40" as="geometry"/>
+    </mxCell>
+    <mxCell id="dep_theme" value="ThemeToggle" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dbeafe;strokeColor=#3b82f6;fontSize=11" vertex="1" parent="1">
+      <mxGeometry x="960" y="1070" width="120" height="40" as="geometry"/>
+    </mxCell>
+
+    <!-- 二级依赖 -->
+    <mxCell id="dep_lessons_data" value="lessons_new.jsx&#10;LESSONS / IMAGE_MAP" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dcfce7;strokeColor=#10b981;fontSize=10" vertex="1" parent="1">
+      <mxGeometry x="60" y="1190" width="160" height="40" as="geometry"/>
+    </mxCell>
+    <mxCell id="dep_pyodide" value="pyodide-loader" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dcfce7;strokeColor=#10b981;fontSize=10" vertex="1" parent="1">
+      <mxGeometry x="240" y="1190" width="120" height="40" as="geometry"/>
+    </mxCell>
+    <mxCell id="dep_syntax" value="react-syntax-highlighter" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dcfce7;strokeColor=#10b981;fontSize=10" vertex="1" parent="1">
+      <mxGeometry x="380" y="1190" width="140" height="40" as="geometry"/>
+    </mxCell>
+    <mxCell id="dep_questions" value="questions.json" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dcfce7;strokeColor=#10b981;fontSize=10" vertex="1" parent="1">
+      <mxGeometry x="540" y="1190" width="120" height="40" as="geometry"/>
+    </mxCell>
+    <mxCell id="dep_storage" value="storage.js&#10;(IndexedDB)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dcfce7;strokeColor=#10b981;fontSize=10" vertex="1" parent="1">
+      <mxGeometry x="680" y="1190" width="120" height="40" as="geometry"/>
+    </mxCell>
+    <mxCell id="dep_idnorm" value="id-normalizer" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dcfce7;strokeColor=#10b981;fontSize=10" vertex="1" parent="1">
+      <mxGeometry x="820" y="1190" width="120" height="40" as="geometry"/>
+    </mxCell>
+    <mxCell id="dep_static_html" value="public/static/*.html" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dcfce7;strokeColor=#10b981;fontSize=10" vertex="1" parent="1">
+      <mxGeometry x="960" y="1190" width="120" height="40" as="geometry"/>
+    </mxCell>
+    <mxCell id="dep_localstorage" value="localStorage&#10;(dark/checkbox)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dcfce7;strokeColor=#10b981;fontSize=10" vertex="1" parent="1">
+      <mxGeometry x="1100" y="1190" width="120" height="40" as="geometry"/>
+    </mxCell>
+
+    <!-- 箭头 -->
+    <mxCell id="c_arr1" style="endArrow=classic;html=1;strokeColor=#7f1d1d" edge="1" parent="1" source="app_center" target="dep_home"/>
+    <mxCell id="c_arr2" style="endArrow=classic;html=1;strokeColor=#7f1d1d" edge="1" parent="1" source="app_center" target="dep_lesson"/>
+    <mxCell id="c_arr3" style="endArrow=classic;html=1;strokeColor=#7f1d1d" edge="1" parent="1" source="app_center" target="dep_editor"/>
+    <mxCell id="c_arr4" style="endArrow=classic;html=1;strokeColor=#7f1d1d" edge="1" parent="1" source="app_center" target="dep_quiz"/>
+    <mxCell id="c_arr5" style="endArrow=classic;html=1;strokeColor=#7f1d1d" edge="1" parent="1" source="app_center" target="dep_progress"/>
+    <mxCell id="c_arr6" style="endArrow=classic;html=1;strokeColor=#7f1d1d" edge="1" parent="1" source="app_center" target="dep_static"/>
+    <mxCell id="c_arr7" style="endArrow=classic;html=1;strokeColor=#7f1d1d" edge="1" parent="1" source="app_center" target="dep_theme"/>
+    <mxCell id="c_arr8" style="endArrow=classic;html=1;strokeColor=#7f1d1d" edge="1" parent="1" source="app_center" target="dep_router"/>
+
+    <mxCell id="c_arr_h1" style="endArrow=classic;html=1;strokeColor=#10b981" edge="1" parent="1" source="dep_home" target="dep_lessons_data"/>
+    <mxCell id="c_arr_l1" style="endArrow=classic;html=1;strokeColor=#10b981" edge="1" parent="1" source="dep_lesson" target="dep_lessons_data"/>
+    <mxCell id="c_arr_l2" style="endArrow=classic;html=1;strokeColor=#10b981" edge="1" parent="1" source="dep_lesson" target="dep_localstorage"/>
+    <mxCell id="c_arr_e1" style="endArrow=classic;html=1;strokeColor=#10b981" edge="1" parent="1" source="dep_editor" target="dep_pyodide"/>
+    <mxCell id="c_arr_e2" style="endArrow=classic;html=1;strokeColor=#10b981" edge="1" parent="1" source="dep_editor" target="dep_syntax"/>
+    <mxCell id="c_arr_q1" style="endArrow=classic;html=1;strokeColor=#10b981" edge="1" parent="1" source="dep_quiz" target="dep_questions"/>
+    <mxCell id="c_arr_q2" style="endArrow=classic;html=1;strokeColor=#10b981" edge="1" parent="1" source="dep_quiz" target="dep_idnorm"/>
+    <mxCell id="c_arr_q3" style="endArrow=classic;html=1;strokeColor=#10b981" edge="1" parent="1" source="dep_quiz" target="dep_storage"/>
+    <mxCell id="c_arr_p1" style="endArrow=classic;html=1;strokeColor=#10b981" edge="1" parent="1" source="dep_progress" target="dep_storage"/>
+    <mxCell id="c_arr_s1" style="endArrow=classic;html=1;strokeColor=#10b981" edge="1" parent="1" source="dep_static" target="dep_static_html"/>
+    <mxCell id="c_arr_t1" style="endArrow=classic;html=1;strokeColor=#10b981" edge="1" parent="1" source="dep_theme" target="dep_localstorage"/>
+
+    <!-- 图8：部署架构图 -->
+    <mxCell id="title8" value="图8：部署架构图 (Deployment Architecture)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=18;fontStyle=1" vertex="1" parent="1">
+      <mxGeometry x="40" y="1260" width="1200" height="30" as="geometry"/>
+    </mxCell>
+
+    <mxCell id="dev_box" value="开发者" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dbeafe;strokeColor=#3b82f6;fontSize=12;fontStyle=1" vertex="1" parent="1">
+      <mxGeometry x="60" y="1310" width="120" height="50" as="geometry"/>
+    </mxCell>
+    <mxCell id="github_box" value="GitHub Repo&#10;(main branch)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dcfce7;strokeColor=#10b981;fontSize=12;fontStyle=1" vertex="1" parent="1">
+      <mxGeometry x="240" y="1310" width="160" height="50" as="geometry"/>
+    </mxCell>
+    <mxCell id="ci_box" value="CI: Vite Build&#10;npm run build&#10;→ dist/" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fef3c7;strokeColor=#f59e0b;fontSize=11" vertex="1" parent="1">
+      <mxGeometry x="460" y="1310" width="160" height="50" as="geometry"/>
+    </mxCell>
+    <mxCell id="cdn_box" value="静态托管&#10;(Vercel / Netlify / Nginx)&#10;HTTPS + HTTP/2" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fce7f3;strokeColor=#db2777;fontSize=11" vertex="1" parent="1">
+      <mxGeometry x="680" y="1310" width="180" height="50" as="geometry"/>
+    </mxCell>
+    <mxCell id="browser_box" value="用户浏览器&#10;Chrome/Edge/Safari" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ede9fe;strokeColor=#7c3aed;fontSize=12;fontStyle=1" vertex="1" parent="1">
+      <mxGeometry x="920" y="1310" width="160" height="50" as="geometry"/>
+    </mxCell>
+    <mxCell id="pyodide_cdn" value="jsdelivr CDN&#10;Pyodide WASM" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fee2e2;strokeColor=#dc2626;fontSize=11" vertex="1" parent="1">
+      <mxGeometry x="1120" y="1310" width="120" height="50" as="geometry"/>
+    </mxCell>
+
+    <mxCell id="dep_arr1" style="endArrow=classic;html=1;strokeColor=#64748b" edge="1" parent="1" source="dev_box" target="github_box"/>
+    <mxCell id="dep_arr2" style="endArrow=classic;html=1;strokeColor=#64748b" edge="1" parent="1" source="github_box" target="ci_box"/>
+    <mxCell id="dep_arr3" style="endArrow=classic;html=1;strokeColor=#64748b" edge="1" parent="1" source="ci_box" target="cdn_box"/>
+    <mxCell id="dep_arr4" style="endArrow=classic;html=1;strokeColor=#64748b" edge="1" parent="1" source="cdn_box" target="browser_box"/>
+    <mxCell id="dep_arr5" style="endArrow=classic;html=1;strokeColor=#dc2626;dashed=1" edge="1" parent="1" source="browser_box" target="pyodide_cdn"/>
+
+    <!-- 缓存策略 -->
+    <mxCell id="cache_label" value="缓存策略:" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;fontStyle=1" vertex="1" parent="1">
+      <mxGeometry x="60" y="1380" width="100" height="20" as="geometry"/>
+    </mxCell>
+    <mxCell id="cache_body" value="• /assets/* → Cache-Control: max-age=31536000 (1年, 带 hash)&#10;• /static/* → Cache-Control: max-age=3600 (1小时)&#10;• / → Cache-Control: no-cache (HTML)&#10;• Pyodide WASM → 浏览器 HTTP cache + Service Worker (可选)" style="text;html=1;strokeColor=#e2e8f0;fillColor=#f8fafc;align=left;verticalAlign=top;whiteSpace=wrap;rounded=1;fontSize=11;spacing=8" vertex="1" parent="1">
+      <mxGeometry x="60" y="1405" width="1180" height="80" as="geometry"/>
+    </mxCell>
+
+    <!-- 图9：M5 甘特图 -->
+    <mxCell id="title9" value="图9：M5 甘特图 (Gantt Chart with Dependencies)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=18;fontStyle=1" vertex="1" parent="1">
+      <mxGeometry x="40" y="1510" width="1200" height="30" as="geometry"/>
+    </mxCell>
+
+    <!-- 时间轴 -->
+    <mxCell id="gantt_t1" value="06-10" style="text;html=1;strokeColor=#cbd5e1;fillColor=#f1f5f9;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;fontStyle=1" vertex="1" parent="1">
+      <mxGeometry x="200" y="1560" width="120" height="30" as="geometry"/>
+    </mxCell>
+    <mxCell id="gantt_t2" value="06-15" style="text;html=1;strokeColor=#cbd5e1;fillColor=#f1f5f9;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;fontStyle=1" vertex="1" parent="1">
+      <mxGeometry x="320" y="1560" width="120" height="30" as="geometry"/>
+    </mxCell>
+    <mxCell id="gantt_t3" value="06-20" style="text;html=1;strokeColor=#cbd5e1;fillColor=#f1f5f9;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;fontStyle=1" vertex="1" parent="1">
+      <mxGeometry x="440" y="1560" width="120" height="30" as="geometry"/>
+    </mxCell>
+    <mxCell id="gantt_t4" value="06-25" style="text;html=1;strokeColor=#cbd5e1;fillColor=#f1f5f9;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;fontStyle=1" vertex="1" parent="1">
+      <mxGeometry x="560" y="1560" width="120" height="30" as="geometry"/>
+    </mxCell>
+    <mxCell id="gantt_t5" value="06-30" style="text;html=1;strokeColor=#cbd5e1;fillColor=#f1f5f9;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;fontStyle=1" vertex="1" parent="1">
+      <mxGeometry x="680" y="1560" width="120" height="30" as="geometry"/>
+    </mxCell>
+
+    <!-- 任务甘特条 -->
+    <mxCell id="g_t1" value="T1 L19 JSON" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dc2626;strokeColor=#7f1d1d;fontSize=10;fontColor=#ffffff" vertex="1" parent="1">
+      <mxGeometry x="200" y="1600" width="60" height="20" as="geometry"/>
+    </mxCell>
+    <mxCell id="g_t6" value="T6 drawio v2" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dc2626;strokeColor=#7f1d1d;fontSize=10;fontColor=#ffffff" vertex="1" parent="1">
+      <mxGeometry x="200" y="1625" width="80" height="20" as="geometry"/>
+    </mxCell>
+    <mxCell id="g_t7" value="T7 L17/21/24 深化 ✓" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#86efac;strokeColor=#10b981;fontSize=10" vertex="1" parent="1">
+      <mxGeometry x="200" y="1650" width="120" height="20" as="geometry"/>
+    </mxCell>
+    <mxCell id="g_t8" value="T8 L18/20/22/23 深化" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f59e0b;strokeColor=#92400e;fontSize=10" vertex="1" parent="1">
+      <mxGeometry x="320" y="1600" width="240" height="20" as="geometry"/>
+    </mxCell>
+    <mxCell id="g_t9" value="T9 Pyodide 暴露入口" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f59e0b;strokeColor=#92400e;fontSize=10" vertex="1" parent="1">
+      <mxGeometry x="380" y="1625" width="180" height="20" as="geometry"/>
+    </mxCell>
+    <mxCell id="g_t10" value="T10 L19 内容" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f59e0b;strokeColor=#92400e;fontSize=10" vertex="1" parent="1">
+      <mxGeometry x="260" y="1650" width="160" height="20" as="geometry"/>
+    </mxCell>
+    <mxCell id="g_t11" value="T11 链接验证脚本" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f59e0b;strokeColor=#92400e;fontSize=10" vertex="1" parent="1">
+      <mxGeometry x="560" y="1600" width="120" height="20" as="geometry"/>
+    </mxCell>
+    <mxCell id="g_t12" value="T12 Playwright" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f59e0b;strokeColor=#92400e;fontSize=10" vertex="1" parent="1">
+      <mxGeometry x="620" y="1625" width="180" height="20" as="geometry"/>
+    </mxCell>
+    <mxCell id="g_t13" value="T13 响应式" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f59e0b;strokeColor=#92400e;fontSize=10" vertex="1" parent="1">
+      <mxGeometry x="500" y="1650" width="200" height="20" as="geometry"/>
+    </mxCell>
+    <mxCell id="g_final" value="M5 验收 ⭐" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#7c3aed;strokeColor=#5b21b6;fontSize=11;fontStyle=1;fontColor=#ffffff" vertex="1" parent="1">
+      <mxGeometry x="780" y="1600" width="120" height="70" as="geometry"/>
+    </mxCell>
+
+    <!-- 依赖箭头 -->
+    <mxCell id="g_dep1" style="endArrow=classic;html=1;strokeColor=#dc2626;dashed=1" edge="1" parent="1" source="g_t1" target="g_t10"/>
+    <mxCell id="g_dep2" style="endArrow=classic;html=1;strokeColor=#dc2626;dashed=1" edge="1" parent="1" source="g_t9" target="g_t11"/>
+    <mxCell id="g_dep3" style="endArrow=classic;html=1;strokeColor=#dc2626;dashed=1" edge="1" parent="1" source="g_t11" target="g_t12"/>
+    <mxCell id="g_dep4" style="endArrow=classic;html=1;strokeColor=#dc2626;dashed=1" edge="1" parent="1" source="g_t12" target="g_final"/>
+
+    <!-- 任务标签 -->
+    <mxCell id="g_labels" value="任务" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11;fontStyle=1" vertex="1" parent="1">
+      <mxGeometry x="60" y="1625" width="100" height="20" as="geometry"/>
+    </mxCell>
+
+  </root>
+</mxGraphModel>

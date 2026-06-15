@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a2e"/>
+      <stop offset="100%" style="stop-color:#16213e"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="400" height="300" fill="url(#bg)" rx="10"/>
+
+  <!-- Title -->
+  <text x="200" y="25" text-anchor="middle" fill="#fff" font-size="16" font-weight="bold">AI 大模型行业案例</text>
+
+  <!-- Company Cards -->
+  <g transform="translate(20, 50)">
+    <!-- DeepSeek -->
+    <rect x="0" y="0" width="170" height="60" fill="#2d3436" rx="6"/>
+    <text x="15" y="20" fill="#fff" font-size="12" font-weight="bold">DeepSeek V3</text>
+    <text x="15" y="38" fill="#888" font-size="9">671B MoE · $557万</text>
+    <text x="15" y="52" fill="#4ecdc4" font-size="9">MMLU: 86.5%</text>
+
+    <!-- 字节 -->
+    <rect x="185" y="0" width="170" height="60" fill="#2d3436" rx="6"/>
+    <text x="200" y="20" fill="#fff" font-size="12" font-weight="bold">字节豆包</text>
+    <text x="200" y="38" fill="#888" font-size="9">场景化 · 低成本</text>
+    <text x="200" y="52" fill="#4ecdc4" font-size="9">$0.003/千 token</text>
+  </g>
+
+  <g transform="translate(20, 120)">
+    <!-- 阿里 -->
+    <rect x="0" y="0" width="170" height="60" fill="#2d3436" rx="6"/>
+    <text x="15" y="20" fill="#fff" font-size="12" font-weight="bold">阿里 Qwen</text>
+    <text x="15" y="38" fill="#888" font-size="9">开源生态 · 72B</text>
+    <text x="15" y="52" fill="#4ecdc4" font-size="9">MMLU: 84.1%</text>
+
+    <!-- 腾讯 -->
+    <rect x="185" y="0" width="170" height="60" fill="#2d3436" rx="6"/>
+    <text x="200" y="20" fill="#fff" font-size="12" font-weight="bold">腾讯混元</text>
+    <text x="200" y="38" fill="#888" font-size="9">微信生态 · 企业服务</text>
+    <text x="200" y="52" fill="#4ecdc4" font-size="9">128K 上下文</text>
+  </g>
+
+  <g transform="translate(20, 190)">
+    <!-- 百度 -->
+    <rect x="0" y="0" width="170" height="60" fill="#2d3436" rx="6"/>
+    <text x="15" y="20" fill="#fff" font-size="12" font-weight="bold">百度文心</text>
+    <text x="15" y="38" fill="#888" font-size="9">企业级 · 搜索增强</text>
+    <text x="15" y="52" fill="#4ecdc4" font-size="9">ERNIE 4.0</text>
+  </g>
+
+  <!-- Cost Comparison -->
+  <g transform="translate(200, 190)">
+    <text x="0" y="0" fill="#a0a0a0" font-size="11">成本对比 ($/M tokens)</text>
+    <g transform="translate(0, 15)">
+      <rect x="0" y="0" width="170" height="20" fill="#1a1a2e" rx="3"/>
+      <text x="10" y="14" fill="#fff" font-size="9">GPT-4</text>
+      <text x="130" y="14" fill="#e74c3c" font-size="9" text-anchor="end">$15.00</text>
+    </g>
+    <g transform="translate(0, 38)">
+      <rect x="0" y="0" width="170" height="20" fill="#1a1a2e" rx="3"/>
+      <text x="10" y="14" fill="#fff" font-size="9">DeepSeek</text>
+      <text x="130" y="14" fill="#4ecdc4" font-size="9" text-anchor="end">$0.27</text>
+    </g>
+    <g transform="translate(0, 61)">
+      <rect x="0" y="0" width="170" height="20" fill="#1a1a2e" rx="3"/>
+      <text x="10" y="14" fill="#fff" font-size="9">豆包</text>
+      <text x="130" y="14" fill="#4ecdc4" font-size="9" text-anchor="end">$0.003</text>
+    </g>
+  </g>
+
+  <!-- Bottom Note -->
+  <text x="200" y="285" text-anchor="middle" fill="#666" font-size="9">数据来源：各厂商公开技术报告 (2024)</text>
+</svg>

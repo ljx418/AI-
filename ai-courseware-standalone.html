@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI人工智能系统教程 - 24课完整版</title>
+    <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-python.min.js"></script>
+    <style>
+        :root {
+            --primary: #4F46E5;
+            --secondary: #7C3AED;
+            --accent: #10B981;
+            --warning: #F59E0B;
+            --danger: #EF4444;
+            --bg: #F8FAFC;
+            --card-bg: #FFFFFF;
+            --text: #1E293B;
+            --text-light: #64748B;
+            --border: #E2E8F0;
+            --week1-bg: #DBEAFE;
+            --week2-bg: #DCFCE7;
+            --week3-bg: #FEF3C7;
+            --week4-bg: #FCE7F3;
+            --week5-bg: #EDE9FE;
+            --week6-bg: #FEE2E2;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+
+        .header { background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); color: white; padding: 40px 20px; text-align: center; }
+        .header h1 { font-size: 2rem; margin-bottom: 10px; }
+        .header p { opacity: 0.9; }
+
+        .install-box { background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%); color: #e2e8f0; padding: 20px; margin: 20px; border-radius: 12px; }
+        .install-box h3 { color: #10b981; margin-bottom: 12px; }
+        .install-box code { background: #334155; padding: 2px 8px; border-radius: 4px; color: #fbbf24; }
+
+        .container { display: flex; max-width: 1400px; margin: 0 auto; padding: 20px; gap: 20px; }
+
+        .sidebar { width: 280px; position: sticky; top: 20px; height: fit-content; background: var(--card-bg); border-radius: 12px; padding: 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+        .sidebar h3 { font-size: 0.9rem; color: var(--text-light); margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.5px; }
+
+        .week-section { margin-bottom: 16px; }
+        .week-title { font-weight: 600; font-size: 0.85rem; padding: 8px 12px; border-radius: 6px; margin-bottom: 6px; color: white; cursor: pointer; }
+        .week-title:hover { opacity: 0.9; }
+        .week1 .week-title { background: var(--week1-bg); color: #1d4ed8; }
+        .week2 .week-title { background: var(--week2-bg); color: #15803d; }
+        .week3 .week-title { background: var(--week3-bg); color: #b45309; }
+        .week4 .week-title { background: var(--week4-bg); color: #be185d; }
+        .week5 .week-title { background: var(--week5-bg); color: #6d28d9; }
+        .week6 .week-title { background: var(--week6-bg); color: #b91c1c; }
+
+        .lesson-list { display: none; padding-left: 12px; }
+        .lesson-list.show { display: block; }
+        .lesson-link { display: block; padding: 6px 12px; color: var(--text); text-decoration: none; font-size: 0.85rem; border-radius: 4px; margin-bottom: 4px; transition: all 0.2s; }
+        .lesson-link:hover { background: var(--primary); color: white; }
+        .lesson-link.active { background: var(--primary); color: white; }
+
+        .main-content { flex: 1; min-width: 0; }
+
+        .lesson-card { background: var(--card-bg); border-radius: 16px; padding: 32px; margin-bottom: 24px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+        .lesson-header { display: flex; align-items: center; gap: 16px; margin-bottom: 24px; padding-bottom: 16px; border-bottom: 1px solid var(--border); }
+        .lesson-id { width: 48px; height: 48px; border-radius: 12px; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 1.2rem; }
+        .lesson-title { font-size: 1.5rem; font-weight: 700; }
+        .lesson-week { font-size: 0.85rem; color: var(--text-light); }
+
+        .section-title { font-size: 1.1rem; font-weight: 600; color: var(--primary); margin: 24px 0 12px; padding-bottom: 8px; border-bottom: 2px solid var(--primary); display: inline-block; }
+        .section-title:first-child { margin-top: 0; }
+
+        ul, ol { padding-left: 24px; margin-bottom: 16px; }
+        li { margin-bottom: 8px; }
+
+        pre { background: #1e293b; border-radius: 8px; padding: 16px; overflow-x: auto; margin: 16px 0; position: relative; }
+        pre code { font-family: 'Monaco', 'Consolas', monospace; font-size: 0.85rem; line-height: 1.6; }
+        .copy-btn { position: absolute; top: 8px; right: 8px; background: #475569; color: white; border: none; padding: 4px 12px; border-radius: 4px; cursor: pointer; font-size: 0.75rem; }
+        .copy-btn:hover { background: #64748b; }
+
+        code { background: #f1f5f9; padding: 2px 6px; border-radius: 4px; font-family: 'Monaco', 'Consolas', monospace; font-size: 0.9em; color: var(--danger); }
+
+        table { width: 100%; border-collapse: collapse; margin: 16px 0; }
+        th, td { padding: 12px; text-align: left; border-bottom: 1px solid var(--border); }
+        th { background: #f8fafc; font-weight: 600; }
+
+        .back-to-top { position: fixed; bottom: 20px; right: 20px; background: var(--primary); color: white; width: 48px; height: 48px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; font-size: 1.5rem; box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3); }
+        .back-to-top:hover { background: var(--secondary); }
+
+        .progress-bar { position: fixed; top: 0; left: 0; height: 3px; background: var(--accent); z-index: 1000; transition: width 0.3s; }
+
+        @media (max-width: 768px) {
+            .container { flex-direction: column; }
+            .sidebar { width: 100%; position: relative; top: 0; }
+            .lesson-header { flex-direction: column; align-items: flex-start; }
+        }
+
+        .objective { background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%); padding: 16px; border-radius: 8px; margin: 16px 0; }
+        .exercise { background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); padding: 16px; border-radius: 8px; margin: 16px 0; }
+        .exercise h4 { color: #92400e; margin-bottom: 8px; }
+
+        .week-nav { display: flex; gap: 8px; flex-wrap: wrap; margin: 20px 0; }
+        .week-btn { padding: 8px 16px; border-radius: 20px; text-decoration: none; font-size: 0.85rem; transition: all 0.2s; }
+        .week-btn:hover { transform: translateY(-2px); }
+    </style>
+</head>
+<body>
+    <div class="progress-bar" id="progressBar"></div>
+
+    <header class="header">
+        <h1>🤖 AI人工智能系统教程</h1>
+        <p>24课完整版 · 覆盖ML/DL/NLP/LLM/Agent全链路 · 面向就业导向</p>
+    </header>
+
+    <div class="install-box">
+        <h3>⚡ 快速开始 - 安装依赖</h3>
+        <p>在开始学习之前，建议先安装以下Python包：</p>
+        <br>
+        <code>pip install numpy pandas matplotlib scikit-learn torch torchvision transformers</code>
+        <br><br>
+        <p>完整安装（包含所有示例依赖）：</p>
+        <code>pip install numpy pandas matplotlib scikit-learn torch torchvision transformers langchain openai crewai autogen jupyterlab</code>
+    </div>
+
+    <div class="week-nav">
+        <a href="#week1" class="week-btn" style="background: var(--week1-bg); color: #1d4ed8;">Week 1-2 基础</a>
+        <a href="#week3" class="week-btn" style="background: var(--week2-bg); color: #15803d;">Week 3-4 ML</a>
+        <a href="#week5" class="week-btn" style="background: var(--week3-bg); color: #b45309;">Week 5-6 DL</a>
+        <a href="#week7" class="week-btn" style="background: var(--week4-bg); color: #be185d;">Week 7-8 NLP</a>
+        <a href="#week9" class="week-btn" style="background: var(--week5-bg); color: #6d28d9;">Week 9-10 LLM</a>
+        <a href="#week11" class="week-btn" style="background: var(--week6-bg); color: #b91c1c;">Week 11-12 前沿</a>
+    </div>
+
+    <div class="container">
+        <aside class="sidebar">
+            <h3>📚 课程目录</h3>
+
+            <div class="week-section week1">
+                <div class="week-title" onclick="toggleWeek(this)">📗 Week 1-2 基础</div>
+                <div class="lesson-list show">
+                    <a href="#l1" class="lesson-link">L1 AI概述与历史</a>
+                    <a href="#l2" class="lesson-link">L2 开发环境搭建</a>
+                    <a href="#l3" class="lesson-link">L3 数学基础回顾</a>
+                    <a href="#l4" class="lesson-link">L4 Python进阶</a>
+                </div>
+            </div>
+
+            <div class="week-section week2">
+                <div class="week-title" onclick="toggleWeek(this)">📗 Week 3-4 ML</div>
+                <div class="lesson-list">
+                    <a href="#l5" class="lesson-link">L5 ML核心概念</a>
+                    <a href="#l6" class="lesson-link">L6 监督学习算法</a>
+                    <a href="#l7" class="lesson-link">L7 无监督学习算法</a>
+                    <a href="#l8" class="lesson-link">L8 ML实战项目</a>
+                </div>
+            </div>
+
+            <div class="week-section week3">
+                <div class="week-title" onclick="toggleWeek(this)">📗 Week 5-6 DL</div>
+                <div class="lesson-list">
+                    <a href="#l9" class="lesson-link">L9 神经网络基础</a>
+                    <a href="#l10" class="lesson-link">L10 CNN卷积神经网络</a>
+                    <a href="#l11" class="lesson-link">L11 RNN序列处理</a>
+                    <a href="#l12" class="lesson-link">L12 深度学习实战</a>
+                </div>
+            </div>
+
+            <div class="week-section week4">
+                <div class="week-title" onclick="toggleWeek(this)">📗 Week 7-8 NLP</div>
+                <div class="lesson-list">
+                    <a href="#l13" class="lesson-link">L13 NLP基础</a>
+                    <a href="#l14" class="lesson-link">L14 Transformer</a>
+                    <a href="#l15" class="lesson-link">L15 预训练模型</a>
+                    <a href="#l16" class="lesson-link">L16 NLP实战</a>
+                </div>
+            </div>
+
+            <div class="week-section week5">
+                <div class="week-title" onclick="toggleWeek(this)">📗 Week 9-10 LLM</div>
+                <div class="lesson-list">
+                    <a href="#l17" class="lesson-link">L17 LLM基础与提示工程</a>
+                    <a href="#l18" class="lesson-link">L18 RAG与向量数据库</a>
+                    <a href="#l19" class="lesson-link">L19 Agent架构</a>
+                    <a href="#l20" class="lesson-link">L20 LLM应用开发</a>
+                </div>
+            </div>
+
+            <div class="week-section week6">
+                <div class="week-title" onclick="toggleWeek(this)">📗 Week 11-12 前沿</div>
+                <div class="lesson-list">
+                    <a href="#l21" class="lesson-link">L21 多Agent协作</a>
+                    <a href="#l22" class="lesson-link">L22 Claude Code生态</a>
+                    <a href="#l23" class="lesson-link">L23 AI安全与伦理</a>
+                    <a href="#l24" class="lesson-link">L24 职业规划</a>
+                </div>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <!-- L1 -->
+            <article class="lesson-card" id="l1">
+                <div class="lesson-header">
+                    <div class="lesson-id" style="background: #3b82f6;">L1</div>
+                    <div>
+                        <h2 class="lesson-title">AI概述与历史</h2>
+                        <div class="lesson-week">Week 1-2 · 课时 2课时</div>
+                    </div>
+                </div>
+
+                <h3 class="section-title">学习目标</h3>
+                <ol>
+                    <li>准确陈述AI的定义，并区分「狭义AI」「通用AI」「超级AI」三个层次</li>
+                    <li>按时间顺序叙述AI发展史上的三次浪潮及其核心技术标志</li>
+                    <li>解释GOFAI（符号主义人工智能）的核心假设与方法论局限</li>
+                    <li>说明深度学习崛起的技术背景——数据、算力、算法三要素</li>
+                    <li>评估当前主流AI系统的能力边界与固有缺陷</li>
+                </ol>
+
+                <h3 class="section-title">核心知识点</h3>
+
+                <h4>人工智能三个层次</h4>
+                <ul>
+                    <li><strong>强人工智能（AGI）</strong>：具备通用认知能力，能在任意领域自主学习与推理（尚未实现）</li>
+                    <li><strong>弱人工智能（Narrow AI）</strong>：在特定任务上达到或超越人类水平（当前主流）</li>
+                    <li><strong>超级人工智能（ASI）</strong>：在几乎所有领域远超人类智能（理论假设）</li>
+                </ul>
+
+                <h4>AI发展简史</h4>
+                <table>
+                    <tr><th>年代</th><th>阶段</th><th>核心技术</th><th>代表成果</th></tr>
+                    <tr><td>1956-1974</td><td>第一次浪潮</td><td>逻辑推理、搜索树</td><td>ELIZA、Shakey机器人</td></tr>
+                    <tr><td>1980-1987</td><td>第二次浪潮</td><td>专家系统、规则引擎</td><td>MYCIN、XCON</td></tr>
+                    <tr><td>1990-2012</td><td>统计学习</td><td>SVM、随机森林</td><td>垃圾邮件过滤</td></tr>
+                    <tr><td>2012至今</td><td>深度学习</td><td>CNN、Transformer</td><td>AlexNet、GPT系列</td></tr>
+                </table>
+
+                <h4>深度学习崛起三要素</h4>
+                <ul>
+                    <li><strong>数据</strong>：互联网时代产生的海量标注数据（ImageNet百万级）</li>
+                    <li><strong>算力</strong>：GPU/TPU并行计算突破，训练时间从数周压缩到数小时</li>
+                    <li><strong>算法</strong>：ReLU激活函数、Dropout、Batch Norm、迁移学习</li>
+                </ul>
+
+                <h3 class="section-title">代码示例</h3>
+                <pre><button class="copy-btn" onclick="copyCode(this)">复制</button><code class="language-python">"""
+L1-demo-ai-history.py
+AI发展时间线可视化
+安装依赖: pip install matplotlib numpy
+"""
+
+import matplotlib.pyplot as plt
+import matplotlib.patches as mpatches
+
+# AI发展时间线数据
+eras = [
+    {"name": "第一次浪潮\n(1956-1974)", "start": 1956, "end": 1974,
+     "color": "#3498db", "desc": "逻辑推理·搜索树·ELIZA"},
+    {"name": "第二次浪潮\n(1980-1987)", "start": 1980, "end": 1987,
+     "color": "#e74c3c", "desc": "专家系统·知识表示"},
+    {"name": "统计学习时期\n(1990-2012)", "start": 1990, "end": 2012,
+     "color": "#2ecc71", "desc": "SVM·随机森林·HMM"},
+    {"name": "深度学习时代\n(2012-至今)", "start": 2012, "end": 2026,
+     "color": "#9b59b6", "desc": "CNN·Transformer·GPT"},
+]
+
+fig, ax = plt.subplots(figsize=(14, 5))
+ax.set_xlim(1950, 2030)
+ax.set_ylim(0, 1)
+ax.set_xlabel("年份", fontsize=12)
+ax.set_title("人工智能发展史", fontsize=16, fontweight="bold")
+
+for era in eras:
+    width = era["end"] - era["start"]
+    rect = mpatches.FancyBboxPatch(
+        (era["start"], 0.35), width, 0.3,
+        boxstyle="round,pad=0.02",
+        facecolor=era["color"], alpha=0.7
+    )
+    ax.add_patch(rect)
+    ax.text(era["start"] + width/2, 0.5, era["name"],
+            ha="center", va="center", fontsize=9, color="white", fontweight="bold")
+
+ax.axvline(x=2017, color="orange", linestyle="--", linewidth=1.5)
+ax.text(2017, 0.85, "Transformer (2017)", fontsize=9, color="orange")
+ax.axvline(x=2022, color="red", linestyle="--", linewidth=1.5)
+ax.text(2022, 0.9, "ChatGPT (2022)", fontsize=9, color="red")
+
+ax.set_yticks([])
+ax.spines['top'].set_visible(False)
+ax.spines['right'].set_visible(False)
+ax.spines['left'].set_visible(False)
+plt.tight_layout()
+plt.savefig("l1_ai_timeline.png", dpi=150)
+plt.show()
+print("时间线图已保存至 l1_ai_timeline.png")</code></pre>
+
+                <h3 class="section-title">练习题</h3>
+                <div class="exercise">
+                    <h4>📝 思考与实践</h4>
+                    <ol>
+                        <li>解释「狭义AI」与「通用AI（AGI）」的本质区别，并各举一个应用实例</li>
+                        <li>将以下事件按时间排序：Deep Blue战胜卡斯帕罗夫、ELIZA诞生、Transformer论文发表、GPT-4发布</li>
+                        <li>专家系统为何在1980年代末走向衰落？至少列出两个根本原因</li>
+                        <li>深度学习在2012年突然崛起，从数据、算力、算法三维度分析原因</li>
+                        <li>当前LLM在哪些任务上表现出色？又在哪些任务上存在明显缺陷？</li>
+                    </ol>
+                </div>
+
+                <h3 class="section-title">延伸阅读</h3>
+                <ul>
+                    <li>📚 Stuart Russell & Peter Norvig, <em>Artificial Intelligence: A Modern Approach</em>（第4版）</li>
+                    <li>📚 尼克, 《人工智能简史》, 人民邮电出版社</li>
+                    <li>🎬 AlphaGo (2017) - 讲述AlphaGo vs 李世石的故事</li>
+                    <li>📺 3Blue1Brown, <em>Neural Networks</em>系列视频（B站有中文翻译）</li>
+                </ul>
+            </article>
+
+            <!-- L2 -->
+            <article class="lesson-card" id="l2">
+                <div class="lesson-header">
+                    <div class="lesson-id" style="background: #3b82f6;">L2</div>
+                    <div>
+                        <h2 class="lesson-title">开发环境搭建</h2>
+                        <div class="lesson-week">Week 1-2 · 课时 2课时</div>
+                    </div>
+                </div>
+
+                <h3 class="section-title">学习目标</h3>
+                <ol>
+                    <li>在本地计算机上完成Anaconda发行版的安装与验证</li>
+                    <li>使用conda创建、激活、切换、删除独立的Python环境</li>
+                    <li>独立启动Jupyter Notebook并完成基本的单元格操作</li>
+                    <li>至少安装并使用两个AI开发常用的第三方库</li>
+                    <li>掌握pip/conda两种包管理工具的基本命令</li>
+                </ol>
+
+                <h3 class="section-title">核心知识点</h3>
+
+                <h4>为什么选择Anaconda</h4>
+                <ul>
+                    <li>预装250+科学计算包，避免逐一安装的依赖地狱</li>
+                    <li>conda环境管理：隔离不同项目的Python版本和依赖</li>
+                    <li>Jupyter内置：Notebook、QtConsole、Spyder开箱即用</li>
+                </ul>
+
+                <h4>conda常用命令</h4>
+                <pre><button class="copy-btn" onclick="copyCode(this)">复制</button><code class="language-bash"># 创建新环境
+conda create -n ai-course python=3.11 -y
+
+# 激活环境
+conda activate ai-course
+
+# 安装包
+conda install numpy pandas matplotlib scikit-learn
+
+# 或使用pip
+pip install torch torchvision
+
+# 导出环境依赖
+conda env export > environment.yml
+
+# 删除环境
+conda env remove -n ai-course</code></pre>
+
+                <h4>Jupyter Notebook快捷键</h4>
+                <table>
+                    <tr><th>操作</th><th>快捷键</th></tr>
+                    <tr><td>运行单元格</td><td><code>Shift + Enter</code></td></tr>
+                    <tr><td>添加单元格（上）</td><td><code>A</code></td></tr>
+                    <tr><td>添加单元格（下）</td><td><code>B</code></td></tr>
+                    <tr><td>删除单元格</td><td><code>DD</code></td></tr>
+                    <tr><td>切换代码/Markdown</td><td><code>Y / M</code></td></tr>
+                    <tr><td>命令模式/编辑模式</td><td><code>Esc / Enter</code></td></tr>
+                </table>
+
+                <h3 class="section-title">代码示例</h3>
+                <pre><button class="copy-btn" onclick="copyCode(this)">复制</button><code class="language-python">"""
+L2-setup-check.py
+环境验证脚本
+安装依赖: pip install numpy pandas matplotlib
+"""
+
+import sys
+print(f"Python版本: {sys.version}")
+print(f"可执行文件: {sys.executable}")
+
+# 验证NumPy
+import numpy as np
+print(f"NumPy版本: {np.__version__}")
+arr = np.array([1, 2, 3, 4, 5])
+print(f"数组运算 (arr * 2): {arr * 2}")
+
+# 验证Matplotlib
+import matplotlib.pyplot as plt
+import numpy as np
+x = np.linspace(0, 2 * np.pi, 100)
+y = np.sin(x)
+plt.figure(figsize=(8, 4))
+plt.plot(x, y, label="sin(x)", color="#3498db")
+plt.title("Jupyter环境验证")
+plt.legend()
+plt.show()
+print("Matplotlib绑定成功!")
+
+# 验证Pandas
+import pandas as pd
+df = pd.DataFrame({
+    "课程": ["L1", "L2", "L3", "L4"],
+    "名称": ["AI概述", "环境搭建", "数学基础", "Python进阶"]
+})
+print(df)</code></pre>
+
+                <h3 class="section-title">练习题</h3>
+                <div class="exercise">
+                    <h4>📝 思考与实践</h4>
+                    <ol>
+                        <li>安装Anaconda，创建一个名为<code>ai-learning</code>的Python 3.11环境</li>
+                        <li>在刚创建的环境中安装numpy、pandas、matplotlib三个包</li>
+                        <li>导出环境为environment.yml，然后在另一台机器上重建</li>
+                        <li>在Jupyter Notebook中创建包含标题和代码的单元格并运行</li>
+                        <li>比较pip install和conda install的输出差异</li>
+                    </ol>
+                </div>
+            </article>
+
+            <!-- L3 -->
+            <article class="lesson-card" id="l3">
+                <div class="lesson-header">
+                    <div class="lesson-id" style="background: #3b82f6;">L3</div>
+                    <div>
+                        <h2 class="lesson-title">数学基础回顾</h2>
+                        <div class="lesson-week">Week 1-2 · 课时 2课时</div>
+                    </div>
+                </div>
+
+                <h3 class="section-title">学习目标</h3>
+                <ol>
+                    <li>理解向量、矩阵的几何意义，能用NumPy进行基本线性代数运算</li>
+                    <li>解释概率论中的条件概率、贝叶斯定理，并应用于简单场景</li>
+                    <li>说明信息熵、交叉熵的数学含义，理解在ML损失函数中的应用</li>
+                    <li>能读懂并手动推导梯度下降的单步更新公式</li>
+                    <li>对积分、导数、极值有直观理解</li>
+                </ol>
+
+                <h3 class="section-title">核心知识点</h3>
+
+                <h4>矩阵运算</h4>
+                <ul>
+                    <li><strong>矩阵乘法</strong>：(m×n)·(n×p) = (m×p)</li>
+                    <li><strong>转置</strong>：行列互换，记作Aᵀ</li>
+                    <li><strong>逆矩阵</strong>：A⁻¹，满足AA⁻¹ = I</li>
+                </ul>
+
+                <h4>贝叶斯定理</h4>
+                <p>P(A|B) = P(B|A)·P(A) / P(B)</p>
+                <ul>
+                    <li>P(A)：先验概率</li>
+                    <li>P(A|B)：后验概率</li>
+                    <li>P(B|A)：似然度</li>
+                </ul>
+
+                <h4>信息熵</h4>
+                <p>H(X) = -∑ p(x) log₂ p(x)（单位：比特）</p>
+                <p>交叉熵：CE(p, q) = -∑ p(x) log q(x)</p>
+
+                <h3 class="section-title">代码示例</h3>
+                <pre><button class="copy-btn" onclick="copyCode(this)">复制</button><code class="language-python">"""
+L3-math-review.py
+数学基础综合演示
+安装依赖: pip install numpy matplotlib
+"""
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+print("=" * 50)
+print("L3 数学基础综合演示")
+print("=" * 50)
+
+# Part 1: 矩阵运算
+A = np.array([[2, 1], [1, 2]])
+eigenvalues, eigenvectors = np.linalg.eig(A)
+print(f"\n矩阵A:\n{A}")
+print(f"特征值: {eigenvalues.round(4)}")
+
+# Part 2: 贝叶斯定理 - 医疗诊断
+P_disease = 0.01
+P_positive_given_disease = 0.99
+P_positive_given_healthy = 0.01
+
+# P(阳性) = P(阳性|疾病)P(疾病) + P(阳性|健康)P(健康)
+P_positive = P_positive_given_disease * P_disease + P_positive_given_healthy * (1 - P_disease)
+
+# P(疾病|阳性)
+P_disease_given_positive = P_positive_given_disease * P_disease / P_positive
+print(f"\n贝叶斯诊断:")
+print(f"P(疾病|阳性) = {P_disease_given_positive:.4f}")
+print(f"即使检测99%准确，患病率1%时，阳性结果真正患病概率仅50%!")
+
+# Part 3: 熵的计算
+def entropy(p):
+    p = np.array(p)
+    return -np.sum(p * np.log2(p + 1e-10))
+
+p_coin = [0.5, 0.5]
+print(f"\n均匀硬币熵: {entropy(p_coin):.4f} bits")
+
+# Part 4: 梯度下降
+def f(x): return x**2 + 2*x + 1
+def df(x): return 2*x + 2
+
+x = 10.0
+lr = 0.1
+trajectory = [x]
+for _ in range(50):
+    x = x - lr * df(x)
+    trajectory.append(x)
+print(f"\n梯度下降: 最优点 x ≈ {x:.6f}")</code></pre>
+
+                <h3 class="section-title">练习题</h3>
+                <div class="exercise">
+                    <h4>📝 思考与实践</h4>
+                    <ol>
+                        <li>给定矩阵A=[[1,2],[3,4]]和向量x=[1,1]，计算A·x、Aᵀ、A的行列式和逆矩阵</li>
+                        <li>计算均匀六面骰子的香农熵，以及偏置骰子（6出现概率50%）的熵</li>
+                        <li>用Python实现梯度下降算法，找到f(x)=x⁴-4x²的局部最小值</li>
+                    </ol>
+                </div>
+            </article>
+
+            <!-- L4 -->
+            <article class="lesson-card" id="l4">
+                <div class="lesson-header">
+                    <div class="lesson-id" style="background: #3b82f6;">L4</div>
+                    <div>
+                        <h2 class="lesson-title">Python进阶</h2>
+                        <div class="lesson-week">Week 1-2 · 课时 2课时</div>
+                    </div>
+                </div>
+
+                <h3 class="section-title">学习目标</h3>
+                <ol>
+                    <li>熟练使用NumPy进行向量化数组操作，避免Python循环的性能瓶颈</li>
+                    <li>使用Pandas完成数据读取、清洗、聚合与基本统计分析</li>
+                    <li>用Matplotlib绘制高质量数据可视化图表</li>
+                    <li>理解面向对象编程的核心概念，能设计简单的神经网络类</li>
+                    <li>将数据处理、可视化与OOP三者结合完成小型项目</li>
+                </ol>
+
+                <h3 class="section-title">代码示例</h3>
+                <pre><button class="copy-btn" onclick="copyCode(this)">复制</button><code class="language-python">"""
+L4-numpy-vectorization.py
+NumPy向量化演示
+安装依赖: pip install numpy
+"""
+
+import numpy as np
+import time
+
+n = 10_000_000
+a = np.random.rand(n)
+b = np.random.rand(n)
+
+# Python循环（慢）
+start = time.time()
+result_loop = sum(a[i] * b[i] for i in range(n))
+loop_time = time.time() - start
+
+# NumPy向量化（快）
+start = time.time()
+result_vec = np.dot(a, b)
+vec_time = time.time() - start
+
+print(f"循环耗时: {loop_time:.4f}s")
+print(f"向量化耗时: {vec_time:.4f}s")
+print(f"加速比: {loop_time/vec_time:.1f}x")</code></pre>
+
+                <pre><button class="copy-btn" onclick="copyCode(this)">复制</button><code class="language-python">"""
+L4-oop-neural-network.py
+面向对象神经网络
+安装依赖: pip install numpy
+"""
+
+import numpy as np
+
+class Layer:
+    def forward(self, x): raise NotImplementedError
+    def backward(self, grad): raise NotImplementedError
+
+class Dense(Layer):
+    def __init__(self, input_dim, output_dim):
+        self.W = np.random.randn(input_dim, output_dim) * np.sqrt(2.0/input_dim)
+        self.b = np.zeros((1, output_dim))
+        self.x = None
+
+    def forward(self, x):
+        self.x = x
+        return x @ self.W + self.b
+
+    def backward(self, grad):
+        self.grad_W = self.x.T @ grad
+        self.grad_b = np.sum(grad, axis=0, keepdims=True)
+        return grad @ self.W.T
+
+class ReLU(Layer):
+    def __init__(self): self.mask = None
+    def forward(self, x):
+        self.mask = (x > 0)
+        return np.maximum(0, x)
+    def backward(self, grad):
+        return grad * self.mask
+
+# 演示
+net = Dense(4, 8)
+relu = ReLU()
+x = np.random.randn(32, 4)
+h = relu.forward(net.forward(x))
+print(f"输入形状: {x.shape}")
+print(f"隐层输出形状: {h.shape}")</code></pre>
+
+                <h3 class="section-title">练习题</h3>
+                <div class="exercise">
+                    <h4>📝 思考与实践</h4>
+                    <ol>
+                        <li>使用NumPy生成100×100矩阵，求解线性方程组Ax=b</li>
+                        <li>使用Pandas完成数据清洗：处理缺失值、编码类别特征</li>
+                        <li>用Matplotlib绑制4子图：正弦波、余弦波、叠加、误差棒</li>
+                        <li>设计一个简单神经网络类，包含全连接层和激活函数</li>
+                    </ol>
+                </div>
+            </article>
+
+            <!-- L5-L8 简要展示 -->
+            <article class="lesson-card" id="l5">
+                <div class="lesson-header">
+                    <div class="lesson-id" style="background: #10b981;">L5</div>
+                    <div>
+                        <h2 class="lesson-title">ML核心概念</h2>
+                        <div class="lesson-week">Week 3-4 · 机器学习核心</div>
+                    </div>
+                </div>
+                <p><strong>本课完整内容请查看：</strong> <code>AI教材_L5-L8_详细教学内容.md</code></p>
+                <h3 class="section-title">学习目标</h3>
+                <ul>
+                    <li>区分监督学习、无监督学习、半监督学习与强化学习四类范式</li>
+                    <li>解释训练集、验证集、测试集的作用与划分原则</li>
+                    <li>理解偏差-方差权衡的数学本质</li>
+                    <li>掌握过拟合、欠拟合的概念及正则化等缓解策略</li>
+                </ul>
+                <h3 class="section-title">代码示例</h3>
+                <pre><button class="copy-btn" onclick="copyCode(this)">复制</button><code class="language-python">"""
+L5-bias-variance.py
+安装依赖: pip install numpy matplotlib scikit-learn
+"""
+
+import numpy as np
+import matplotlib.pyplot as plt
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import PolynomialFeatures
+from sklearn.linear_model import LinearRegression
+from sklearn.metrics import mean_squared_error
+
+np.random.seed(42)
+X = np.linspace(0, 4, 50).reshape(-1, 1)
+y = np.sin(X.flatten()) + np.random.normal(0, 0.3, 50)
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3)
+
+# 演示不同复杂度模型
+degrees = [1, 10, 30]
+for degree in degrees:
+    poly = PolynomialFeatures(degree=degree)
+    X_train_poly = poly.fit_transform(X_train)
+    X_test_poly = poly.transform(X_test)
+
+    model = LinearRegression()
+    model.fit(X_train_poly, y_train)
+
+    train_mse = mean_squared_error(y_train, model.predict(X_train_poly))
+    test_mse = mean_squared_error(y_test, model.predict(X_test_poly))
+
+    print(f"degree={degree}: 训练MSE={train_mse:.4f}, 测试MSE={test_mse:.4f}")</code></pre>
+            </article>
+
+            <!-- L6-L8 链接卡片 -->
+            <article class="lesson-card" id="l6">
+                <div class="lesson-header">
+                    <div class="lesson-id" style="background: #10b981;">L6-8</div>
+                    <div>
+                        <h2 class="lesson-title">监督学习/无监督学习/ML实战</h2>
+                        <div class="lesson-week">Week 3-4 · ML核心</div>
+                    </div>
+                </div>
+                <p>📚 <strong>详细内容包括：</strong></p>
+                <ul>
+                    <li><strong>L6 监督学习算法</strong>：线性回归、逻辑回归、决策树、SVM（含代码演示）</li>
+                    <li><strong>L7 无监督学习算法</strong>：K-Means、PCA、异常检测（含代码演示）</li>
+                    <li><strong>L8 ML实战项目</strong>：完整Titanic实战、Kaggle入门（含代码演示）</li>
+                </ul>
+                <p style="margin-top: 16px;">📖 请查看完整文件：<code>AI教材_L5-L8_详细教学内容.md</code></p>
+            </article>
+
+            <!-- L9-L12 链接卡片 -->
+            <article class="lesson-card" id="l9">
+                <div class="lesson-header">
+                    <div class="lesson-id" style="background: #f59e0b;">L9-12</div>
+                    <div>
+                        <h2 class="lesson-title">神经网络基础 / CNN / RNN / DL实战</h2>
+                        <div class="lesson-week">Week 5-6 · 深度学习</div>
+                    </div>
+                </div>
+                <p>📚 <strong>详细内容包括：</strong></p>
+                <ul>
+                    <li><strong>L9 神经网络基础</strong>：感知机、反向传播、激活函数、损失函数</li>
+                    <li><strong>L10 CNN</strong>：卷积运算、池化、LeNet/AlexNet/VGG/ResNet</li>
+                    <li><strong>L11 RNN</strong>：LSTM、GRU、Seq2Seq、注意力机制</li>
+                    <li><strong>L12 DL实战</strong>：图像分类、迁移学习、CIFAR-10实战</li>
+                </ul>
+                <p style="margin-top: 16px;">📖 请查看完整文件：<code>AI教材_L9-L12_详细教学内容.md</code></p>
+                <p>安装依赖：<code>pip install torch torchvision numpy matplotlib</code></p>
+            </article>
+
+            <!-- L13-L16 链接卡片 -->
+            <article class="lesson-card" id="l13">
+                <div class="lesson-header">
+                    <div class="lesson-id" style="background: #ec4899;">L13-16</div>
+                    <div>
+                        <h2 class="lesson-title">NLP基础 / Transformer / 预训练模型 / NLP实战</h2>
+                        <div class="lesson-week">Week 7-8 · NLP与大模型</div>
+                    </div>
+                </div>
+                <p>📚 <strong>详细内容包括：</strong></p>
+                <ul>
+                    <li><strong>L13 NLP基础</strong>：分词、词向量、TF-IDF、BERT Embedding</li>
+                    <li><strong>L14 Transformer</strong>：自注意力、多头注意力、位置编码、PyTorch实现</li>
+                    <li><strong>L15 预训练模型</strong>：BERT MLM、GPT、Word2Vec、HuggingFace Transformers</li>
+                    <li><strong>L16 NLP实战</strong>：文本分类、NER、模型部署</li>
+                </ul>
+                <p style="margin-top: 16px;">📖 请查看完整文件：<code>AI教材_L13-L16_详细教学内容.md</code></p>
+                <p>安装依赖：<code>pip install transformers torch numpy jieba</code></p>
+            </article>
+
+            <!-- L17-L20 链接卡片 -->
+            <article class="lesson-card" id="l17">
+                <div class="lesson-header">
+                    <div class="lesson-id" style="background: #8b5cf6;">L17-20</div>
+                    <div>
+                        <h2 class="lesson-title">LLM基础 / RAG / Agent / LLM应用开发</h2>
+                        <div class="lesson-week">Week 9-10 · LLM应用</div>
+                    </div>
+                </div>
+                <p>📚 <strong>详细内容包括：</strong></p>
+                <ul>
+                    <li><strong>L17 LLM基础</strong>：GPT原理、提示工程、思维链、少样本学习</li>
+                    <li><strong>L18 RAG</strong>：检索增强生成、向量数据库、Chroma、LangChain</li>
+                    <li><strong>L19 Agent</strong>：ReAct、工具调用、LangChain Agent、自定义工具</li>
+                    <li><strong>L20 LLM开发</strong>：完整应用构建、流式输出、API集成</li>
+                </ul>
+                <p style="margin-top: 16px;">📖 请查看完整文件：<code>AI教材_L17-L20_详细教学内容.md</code></p>
+                <p>安装依赖：<code>pip install langchain openai chromadb</code></p>
+            </article>
+
+            <!-- L21-L24 链接卡片 -->
+            <article class="lesson-card" id="l21">
+                <div class="lesson-header">
+                    <div class="lesson-id" style="background: #ef4444;">L21-24</div>
+                    <div>
+                        <h2 class="lesson-title">多Agent / Claude Code / AI安全 / 职业规划</h2>
+                        <div class="lesson-week">Week 11-12 · 前沿技术</div>
+                    </div>
+                </div>
+                <p>📚 <strong>详细内容包括：</strong></p>
+                <ul>
+                    <li><strong>L21 多Agent协作</strong>：CrewAI、AutoGen、多Agent系统设计</li>
+                    <li><strong>L22 Claude Code</strong>：AI编程助手、代码生成、调试技巧</li>
+                    <li><strong>L23 AI安全</strong>：Prompt注入、对齐、安全AI开发</li>
+                    <li><strong>L24 职业规划</strong>：AI岗位分析、面试题、简历优化</li>
+                </ul>
+                <p style="margin-top: 16px;">📖 请查看完整文件：<code>AI教材_L21-L24_详细教学内容.md</code></p>
+                <p>安装依赖：<code>pip install crewai autogen anthropic</code></p>
+            </article>
+
+        </main>
+    </div>
+
+    <a href="#" class="back-to-top" title="返回顶部">↑</a>
+
+    <script>
+        // 折叠/展开周
+        function toggleWeek(el) {
+            const list = el.nextElementSibling;
+            list.classList.toggle('show');
+        }
+
+        // 复制代码
+        function copyCode(btn) {
+            const code = btn.nextElementSibling.textContent;
+            navigator.clipboard.writeText(code).then(() => {
+                btn.textContent = '已复制!';
+                setTimeout(() => btn.textContent = '复制', 2000);
+            });
+        }
+
+        // 滚动进度条
+        window.addEventListener('scroll', () => {
+            const scrollTop = document.documentElement.scrollTop;
+            const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const progress = (scrollTop / scrollHeight) * 100;
+            document.getElementById('progressBar').style.width = progress + '%';
+        });
+
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // 语法高亮
+        Prism.highlightAll();
+    </script>
+</body>
+</html>

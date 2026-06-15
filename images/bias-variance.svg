@@ -1,0 +1,213 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800">
+  <defs>
+    <linearGradient id="bgGrad3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0a14"/>
+      <stop offset="100%" style="stop-color:#1a1a2e"/>
+    </linearGradient>
+    <linearGradient id="trainGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#4facfe"/>
+      <stop offset="100%" style="stop-color:#00f2fe"/>
+    </linearGradient>
+    <linearGradient id="testGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#f472b6"/>
+      <stop offset="100%" style="stop-color:#ec4899"/>
+    </linearGradient>
+    <linearGradient id="biasGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#ef4444"/>
+      <stop offset="100%" style="stop-color:#f97316"/>
+    </linearGradient>
+    <linearGradient id="varGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#a855f7"/>
+      <stop offset="100%" style="stop-color:#ec4899"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="800" fill="url(#bgGrad3)"/>
+
+  <!-- Title -->
+  <text x="600" y="45" text-anchor="middle" font-family="Arial, sans-serif" font-size="32" font-weight="bold" fill="#ffffff">偏差-方差分解与泛化误差</text>
+
+  <!-- Left Panel: Error vs Complexity -->
+  <g transform="translate(50, 80)">
+    <rect x="0" y="0" width="500" height="380" rx="15" fill="#0d1525" stroke="#2a3a5e" stroke-width="2"/>
+    <text x="250" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#ffffff">误差随模型复杂度变化</text>
+
+    <!-- Y-axis -->
+    <line x1="60" y1="60" x2="60" y2="320" stroke="#6a7a9a" stroke-width="2"/>
+    <text x="30" y="190" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#8a9aba" transform="rotate(-90, 30, 190)">误差</text>
+
+    <!-- X-axis -->
+    <line x1="60" y1="320" x2="450" y2="320" stroke="#6a7a9a" stroke-width="2"/>
+    <text x="255" y="360" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#8a9aba">模型复杂度 →</text>
+
+    <!-- Grid lines -->
+    <line x1="60" y1="140" x2="450" y2="140" stroke="#2a3a5e" stroke-width="1" stroke-dasharray="4"/>
+    <line x1="60" y1="200" x2="450" y2="200" stroke="#2a3a5e" stroke-width="1" stroke-dasharray="4"/>
+    <line x1="60" y1="260" x2="450" y2="260" stroke="#2a3a5e" stroke-width="1" stroke-dasharray="4"/>
+
+    <!-- Bias^2 Curve (Red) -->
+    <path d="M 80 100 Q 150 95 220 120 Q 280 160 340 240 Q 380 290 420 310" stroke="url(#biasGrad)" stroke-width="4" fill="none"/>
+
+    <!-- Variance Curve (Purple) -->
+    <path d="M 80 300 Q 150 280 220 200 Q 280 140 340 90 Q 380 75 420 70" stroke="url(#varGrad)" stroke-width="4" fill="none"/>
+
+    <!-- Total Error Curve (Blue) -->
+    <path d="M 80 280 Q 150 220 220 140 Q 280 110 340 100 Q 380 98 420 100" stroke="url(#trainGrad)" stroke-width="4" fill="none"/>
+
+    <!-- Optimal point marker -->
+    <circle cx="260" cy="125" r="8" fill="#ffffff"/>
+    <line x1="260" y1="125" x2="260" y2="320" stroke="#ffffff" stroke-width="2" stroke-dasharray="5"/>
+    <text x="260" y="380" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#ffffff">最优复杂度</text>
+
+    <!-- Legend -->
+    <g transform="translate(280, 70)">
+      <line x1="0" y1="8" x2="30" y2="8" stroke="#ef4444" stroke-width="3"/>
+      <text x="40" y="12" font-family="Arial, sans-serif" font-size="11" fill="#ef4444">偏差²</text>
+
+      <line x1="0" y1="28" x2="30" y2="28" stroke="#a855f7" stroke-width="3"/>
+      <text x="40" y="32" font-family="Arial, sans-serif" font-size="11" fill="#a855f7">方差</text>
+
+      <line x1="0" y1="48" x2="30" y2="48" stroke="#4facfe" stroke-width="3"/>
+      <text x="40" y="52" font-family="Arial, sans-serif" font-size="11" fill="#4facfe">总误差</text>
+    </g>
+
+    <!-- Labels for regions -->
+    <text x="130" y="90" font-family="Arial, sans-serif" font-size="10" fill="#6a7a9a">欠拟合</text>
+    <text x="310" y="90" font-family="Arial, sans-serif" font-size="10" fill="#6a7a9a">过拟合</text>
+  </g>
+
+  <!-- Right Panel: Bias-Variance Decomposition -->
+  <g transform="translate(600, 80)">
+    <rect x="0" y="0" width="550" height="380" rx="15" fill="#0d1525" stroke="#2a3a5e" stroke-width="2"/>
+    <text x="275" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#ffffff">泛化误差分解</text>
+
+    <!-- Main equation box -->
+    <g transform="translate(50, 60)">
+      <rect x="0" y="0" width="450" height="80" rx="10" fill="#1a2a4a" stroke="#4facfe" stroke-width="2"/>
+      <text x="225" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#ffffff">泛化误差 = 偏差² + 方差 + 噪声</text>
+      <text x="225" y="60" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#6a8aba">Generalization Error = Bias² + Variance + Irreducible Noise</text>
+    </g>
+
+    <!-- Bias component -->
+    <g transform="translate(50, 170)">
+      <rect x="0" y="0" width="130" height="100" rx="10" fill="#3d1a1a" stroke="#ef4444" stroke-width="2"/>
+      <text x="65" y="25" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#ef4444">偏差²</text>
+      <text x="65" y="50" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#f8a8a8">High Bias:</text>
+      <text x="65" y="68" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#c88888">• 欠拟合</text>
+      <text x="65" y="82" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#c88888">• 简单模型</text>
+      <text x="65" y="94" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#8a6a6a">系统误差</text>
+    </g>
+
+    <!-- Plus sign -->
+    <text x="195" y="220" text-anchor="middle" font-family="Arial, sans-serif" font-size="36" fill="#6a7a9a">+</text>
+
+    <!-- Variance component -->
+    <g transform="translate(220, 170)">
+      <rect x="0" y="0" width="130" height="100" rx="10" fill="#2a1a3d" stroke="#a855f7" stroke-width="2"/>
+      <text x="65" y="25" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#a855f7">方差</text>
+      <text x="65" y="50" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#c8a8f8">High Variance:</text>
+      <text x="65" y="68" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#a888c8">• 过拟合</text>
+      <text x="65" y="82" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#a888c8">• 复杂模型</text>
+      <text x="65" y="94" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#7a6a8a">对数据敏感</text>
+    </g>
+
+    <!-- Plus sign -->
+    <text x="365" y="220" text-anchor="middle" font-family="Arial, sans-serif" font-size="36" fill="#6a7a9a">+</text>
+
+    <!-- Noise component -->
+    <g transform="translate(390, 170)">
+      <rect x="0" y="0" width="130" height="100" rx="10" fill="#1a3d2a" stroke="#16c79a" stroke-width="2"/>
+      <text x="65" y="25" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#16c79a">噪声</text>
+      <text x="65" y="50" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#7de8c8">Irreducible:</text>
+      <text x="65" y="68" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#6ab898">• 数据固有噪声</text>
+      <text x="65" y="82" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#6ab898">• 标注误差</text>
+      <text x="65" y="94" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#5a8a78">无法消除</text>
+    </g>
+
+    <!-- Trade-off explanation -->
+    <g transform="translate(50, 290)">
+      <rect x="0" y="0" width="470" height="70" rx="10" fill="#1a2a3a" stroke="#4a6a8a" stroke-width="1"/>
+      <text x="235" y="25" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#ffffff">偏差-方差权衡 (Bias-Variance Tradeoff)</text>
+      <text x="235" y="48" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#8a9aba">简单模型 → 高偏差，低方差 | 复杂模型 → 低偏差，高方差</text>
+    </g>
+  </g>
+
+  <!-- Bottom: Three scenarios comparison -->
+  <g transform="translate(50, 490)">
+    <rect x="0" y="0" width="1100" height="280" rx="15" fill="#0d1525" stroke="#2a3a5e" stroke-width="2"/>
+    <text x="550" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#ffffff">欠拟合 vs 过拟合 vs 适度拟合</text>
+
+    <!-- Underfitting -->
+    <g transform="translate(80, 60)">
+      <rect x="0" y="0" width="300" height="180" rx="10" fill="#2a1a1a" stroke="#ef4444" stroke-width="2"/>
+      <text x="150" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#ef4444">欠拟合 (Underfitting)</text>
+
+      <!-- Simple model visualization -->
+      <g transform="translate(30, 50)">
+        <rect x="0" y="0" width="240" height="100" rx="5" fill="#1a0d0d"/>
+        <text x="120" y="20" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#6a5a5a">训练数据</text>
+        <!-- Scattered points -->
+        <circle cx="30" cy="70" r="5" fill="#4facfe"/>
+        <circle cx="60" cy="60" r="5" fill="#4facfe"/>
+        <circle cx="90" cy="75" r="5" fill="#4facfe"/>
+        <circle cx="120" cy="55" r="5" fill="#4facfe"/>
+        <circle cx="150" cy="65" r="5" fill="#4facfe"/>
+        <circle cx="180" cy="70" r="5" fill="#4facfe"/>
+        <circle cx="210" cy="60" r="5" fill="#4facfe"/>
+        <!-- Simple line -->
+        <line x1="20" y1="50" x2="220" y2="50" stroke="#ef4444" stroke-width="3"/>
+      </g>
+
+      <text x="150" y="170" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#c88888">高偏差 + 低方差</text>
+    </g>
+
+    <!-- Optimal -->
+    <g transform="translate(400, 60)">
+      <rect x="0" y="0" width="300" height="180" rx="10" fill="#1a2a1a" stroke="#16c79a" stroke-width="2"/>
+      <text x="150" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#16c79a">适度拟合 (Good Fit)</text>
+
+      <!-- Good model visualization -->
+      <g transform="translate(30, 50)">
+        <rect x="0" y="0" width="240" height="100" rx="5" fill="#0d1a0d"/>
+        <text x="120" y="20" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#5a6a5a">训练数据</text>
+        <!-- Scattered points -->
+        <circle cx="30" cy="75" r="5" fill="#4facfe"/>
+        <circle cx="60" cy="65" r="5" fill="#4facfe"/>
+        <circle cx="90" cy="70" r="5" fill="#4facfe"/>
+        <circle cx="120" cy="45" r="5" fill="#4facfe"/>
+        <circle cx="150" cy="55" r="5" fill="#4facfe"/>
+        <circle cx="180" cy="60" r="5" fill="#4facfe"/>
+        <circle cx="210" cy="50" r="5" fill="#4facfe"/>
+        <!-- Good curve -->
+        <path d="M 20 80 Q 70 30 120 45 Q 170 60 220 45" stroke="#16c79a" stroke-width="3" fill="none"/>
+      </g>
+
+      <text x="150" y="170" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#7de8c8">低偏差 + 低方差</text>
+    </g>
+
+    <!-- Overfitting -->
+    <g transform="translate(720, 60)">
+      <rect x="0" y="0" width="300" height="180" rx="10" fill="#1a1a3a" stroke="#a855f7" stroke-width="2"/>
+      <text x="150" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#a855f7">过拟合 (Overfitting)</text>
+
+      <!-- Complex model visualization -->
+      <g transform="translate(30, 50)">
+        <rect x="0" y="0" width="240" height="100" rx="5" fill="#0d0d1a"/>
+        <text x="120" y="20" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#5a5a6a">训练数据</text>
+        <!-- Scattered points -->
+        <circle cx="30" cy="75" r="5" fill="#4facfe"/>
+        <circle cx="60" cy="65" r="5" fill="#4facfe"/>
+        <circle cx="90" cy="70" r="5" fill="#4facfe"/>
+        <circle cx="120" cy="45" r="5" fill="#4facfe"/>
+        <circle cx="150" cy="55" r="5" fill="#4facfe"/>
+        <circle cx="180" cy="60" r="5" fill="#4facfe"/>
+        <circle cx="210" cy="50" r="5" fill="#4facfe"/>
+        <!-- Wiggly complex curve -->
+        <path d="M 15 85 Q 35 30 50 75 Q 70 20 90 65 Q 110 25 130 50 Q 150 80 170 45 Q 190 70 215 40 Q 225 55 230 50" stroke="#a855f7" stroke-width="3" fill="none"/>
+      </g>
+
+      <text x="150" y="170" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#c8a8f8">低偏差 + 高方差</text>
+    </g>
+  </g>
+</svg>

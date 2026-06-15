@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a2e"/>
+      <stop offset="100%" style="stop-color:#16213e"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="400" height="300" fill="url(#bg)" rx="10"/>
+
+  <text x="200" y="25" text-anchor="middle" fill="#fff" font-size="16" font-weight="bold">高级 Multi-Agent</text>
+
+  <g transform="translate(20, 50)">
+    <rect x="0" y="0" width="170" height="45" fill="#2d3436" rx="6"/>
+    <text x="15" y="18" fill="#4ecdc4" font-size="11" font-weight="bold">ACP/A2A</text>
+    <text x="15" y="35" fill="#888" font-size="9">Agent 通信协议</text>
+
+    <rect x="185" y="0" width="170" height="45" fill="#2d3436" rx="6"/>
+    <text x="200" y="18" fill="#f39c12" font-size="11" font-weight="bold">MemGPT</text>
+    <text x="200" y="35" fill="#888" font-size="9">持久记忆系统</text>
+  </g>
+
+  <g transform="translate(20, 105)">
+    <rect x="0" y="0" width="170" height="45" fill="#2d3436" rx="6"/>
+    <text x="15" y="18" fill="#e74c3c" font-size="11" font-weight="bold">ToT / GoT</text>
+    <text x="15" y="35" fill="#888" font-size="9">思维链/树/图</text>
+
+    <rect x="185" y="0" width="170" height="45" fill="#2d3436" rx="6"/>
+    <text x="200" y="18" fill="#9b59b6" font-size="11" font-weight="bold">多模态 Agent</text>
+    <text x="200" y="35" fill="#888" font-size="9">视觉+语言</text>
+  </g>
+
+  <g transform="translate(20, 160)">
+    <rect x="0" y="0" width="170" height="45" fill="#2d3436" rx="6"/>
+    <text x="15" y="18" fill="#3498db" font-size="11" font-weight="bold">SWE-bench</text>
+    <text x="15" y="35" fill="#888" font-size="9">软件工程评测</text>
+
+    <rect x="185" y="0" width="170" height="45" fill="#2d3436" rx="6"/>
+    <text x="200" y="18" fill="#2ecc71" font-size="11" font-weight="bold">Agent 安全</text>
+    <text x="200" y="35" fill="#888" font-size="9">红队与防御</text>
+  </g>
+
+  <g transform="translate(30, 230)">
+    <text x="0" y="0" fill="#a0a0a0" font-size="11">arXiv 论文</text>
+    <text x="0" y="18" fill="#4ecdc4" font-size="9">2310.11511 (Self-RAG)</text>
+    <text x="0" y="32" fill="#4ecdc4" font-size="9">2210.03629 (ReAct)</text>
+  </g>
+
+  <g transform="translate(200, 230)">
+    <text x="0" y="0" fill="#a0a0a0" font-size="11">代码示例</text>
+    <text x="0" y="18" fill="#888" font-size="9">• Agent (ReAct)</text>
+    <text x="0" y="32" fill="#888" font-size="9">• ToT 规划</text>
+  </g>
+</svg>

@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI教材详细课程大纲 - 24课完整内容</title>
+    <style>
+        :root {
+            --primary: #4F46E5;
+            --secondary: #7C3AED;
+            --accent: #10B981;
+            --warning: #F59E0B;
+            --danger: #EF4444;
+            --bg: #F8FAFC;
+            --card-bg: #FFFFFF;
+            --text: #1E293B;
+            --text-light: #64748B;
+            --border: #E2E8F0;
+            --week1-bg: #dbeafe;
+            --week2-bg: #dcfce7;
+            --week3-bg: #fef3c7;
+            --week4-bg: #fce7f3;
+            --week5-bg: #ede9fe;
+            --week6-bg: #fee2e2;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+        .container { max-width: 1400px; margin: 0 auto; padding: 20px; }
+
+        .header { text-align: center; padding: 40px 20px; background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); color: white; border-radius: 0 0 32px 32px; margin-bottom: 40px; }
+        .header h1 { font-size: 2rem; font-weight: 700; margin-bottom: 12px; }
+        .header p { font-size: 1rem; opacity: 0.9; }
+
+        .nav { position: sticky; top: 0; background: var(--card-bg); border-bottom: 1px solid var(--border); padding: 12px 0; z-index: 100; margin-bottom: 30px; overflow-x: auto; }
+        .nav ul { display: flex; gap: 6px; list-style: none; padding: 0 12px; }
+        .nav a { display: block; padding: 6px 12px; color: var(--text); text-decoration: none; border-radius: 6px; font-weight: 500; font-size: 0.8rem; transition: all 0.2s; white-space: nowrap; }
+        .nav a:hover, .nav a.active { background: var(--primary); color: white; }
+
+        .module-section { margin-bottom: 50px; }
+        .module-title { font-size: 1.5rem; font-weight: 700; padding: 16px 24px; border-radius: 12px; margin-bottom: 20px; color: white; }
+        .module-title.week1 { background: linear-gradient(135deg, #3b82f6, #1d4ed8); }
+        .module-title.week2 { background: linear-gradient(135deg, #10b981, #059669); }
+        .module-title.week3 { background: linear-gradient(135deg, #f59e0b, #d97706); }
+        .module-title.week4 { background: linear-gradient(135deg, #ec4899, #db2777); }
+        .module-title.week5 { background: linear-gradient(135deg, #8b5cf6, #7c3aed); }
+        .module-title.week6 { background: linear-gradient(135deg, #ef4444, #dc2626); }
+
+        .lessons-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 16px; }
+
+        .lesson-card { background: var(--card-bg); border-radius: 12px; padding: 20px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); border: 1px solid var(--border); }
+        .lesson-header { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+        .lesson-id { width: 36px; height: 36px; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 0.9rem; }
+        .lesson-title { font-size: 1rem; font-weight: 600; flex: 1; }
+
+        .topics { margin-bottom: 12px; }
+        .topic-tag { display: inline-block; padding: 3px 10px; background: #f1f5f9; border-radius: 4px; font-size: 0.75rem; margin: 2px; color: var(--text); }
+        .topic-tag:hover { background: var(--primary); color: white; }
+
+        .project-box { background: linear-gradient(135deg, #f0fdf4, #ecfdf5); border: 1px solid #86efac; border-radius: 8px; padding: 10px 12px; margin-bottom: 12px; }
+        .project-label { font-size: 0.75rem; color: #166534; font-weight: 600; text-transform: uppercase; }
+        .project-name { font-size: 0.9rem; color: #15803d; font-weight: 500; }
+
+        .resources { border-top: 1px solid var(--border); padding-top: 12px; }
+        .resources-title { font-size: 0.8rem; font-weight: 600; color: var(--text-light); margin-bottom: 8px; }
+        .resource-item { display: flex; align-items: center; gap: 8px; padding: 6px 0; font-size: 0.8rem; }
+        .resource-item a { color: var(--primary); text-decoration: none; }
+        .resource-item a:hover { text-decoration: underline; }
+        .star-badge { background: #fef3c7; color: #92400e; padding: 2px 6px; border-radius: 4px; font-size: 0.7rem; font-weight: 600; }
+
+        .section-divider { margin: 40px 0; padding: 20px; background: linear-gradient(135deg, #fef3c7, #fffbeb); border-radius: 12px; border: 2px solid #fcd34d; }
+        .section-divider h3 { color: #92400e; margin-bottom: 8px; }
+        .section-divider p { color: #a16207; font-size: 0.9rem; }
+
+        .footer { text-align: center; padding: 30px; color: var(--text-light); font-size: 0.85rem; border-top: 1px solid var(--border); margin-top: 50px; }
+
+        .anchor { scroll-margin-top: 70px; }
+   </style>
+</head>
+<body>
+    <header class="header">
+        <h1>📚 AI教材详细课程大纲</h1>
+        <p>24课完整内容 · 12周学习路径 · GitHub开源项目参考</p>
+    </header>
+
+    <nav class="nav">
+        <ul>
+            <li><a href="#week1">Week 1-2 基础</a></li>
+            <li><a href="#week2">Week 3-4 ML</a></li>
+            <li><a href="#week3">Week 5-6 DL</a></li>
+            <li><a href="#week4">Week 7-8 NLP</a></li>
+            <li><a href="#week5">Week 9-10 LLM</a></li>
+            <li><a href="#week6">Week 11-12 前沿</a></li>
+            <li><a href="#resources">参考资料</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+
+        <!-- Week 1-2: AI基础与开发环境 -->
+        <section id="week1" class="module-section anchor">
+            <h2 class="module-title week1">📗 Week 1-2 | AI基础与开发环境</h2>
+            <div class="lessons-grid">
+
+                <div class="lesson-card">
+                    <div class="lesson-header">
+                        <div class="lesson-id" style="background: #3b82f6;">L1</div>
+                        <div class="lesson-title">AI概述与历史</div>
+                    </div>
+                    <div class="topics">
+                        <span class="topic-tag">AI定义</span>
+                        <span class="topic-tag">AI历史</span>
+                        <span class="topic-tag">GOFAI vs 深度学习</span>
+                        <span class="topic-tag">当前AI格局</span>
+                    </div>
+                    <div class="resources">
+                        <div class="resources-title">📂 参考资源</div>
+                        <div class="resource-item"><span class="star-badge">⭐86k</span><a href="https://github.com/microsoft/AI-For-Beginners" target="_blank">Microsoft AI-For-Beginners</a></div>
+                        <div class="resource-item"><span class="star-badge">⭐14k</span><a href="https://github.com/owainlewis/awesome-artificial-intelligence" target="_blank">Awesome AI Courses List</a></div>
+                    </div>
+                </div>
+
+                <div class="lesson-card">
+                    <div class="lesson-header">
+                        <div class="lesson-id" style="background: #3b82f6;">L2</div>
+                        <div class="lesson-title">开发环境搭建</div>
+                    </div>
+                    <div class="topics">
+                        <span class="topic-tag">Anaconda</span>
+                        <span class="topic-tag">Jupyter</span>
+                        <span class="topic-tag">Python基础</span>
+                        <span class="topic-tag">AI工具链</span>
+                    </div>
+                    <div class="project-box">
+                        <div class="project-label">🛠️ 实战项目</div>
+                        <div class="project-name">开发环境搭建与验证</div>
+                    </div>
+                    <div class="resources">
+                        <div class="resources-title">📂 参考资源</div>
+                        <div class="resource-item"><span class="star-badge">⭐48k</span><a href="https://github.com/jakevdp/PythonDataScienceHandbook" target="_blank">Python Data Science Handbook</a></div>
+                        <div class="resource-item"><span class="star-badge">⭐29k</span><a href="https://github.com/donnemartin/data-science-ipython-notebooks" target="_blank">Data Science Notebooks</a></div>
+                    </div>
+                </div>
+
+                <div class="lesson-card">
+                    <div class="lesson-header">
+                        <div class="lesson-id" style="background: #3b82f6;">L3</div>
+                        <div class="lesson-title">数学基础回顾</div>
+                    </div>
+                    <div class="topics">
+                        <span class="topic-tag">线性代数</span>
+                        <span class="topic-tag">概率统计</span>
+                        <span class="topic-tag">信息论</span>
+                        <span class="topic-tag">优化基础</span>
+                    </div>
+                    <div class="resources">
+                        <div class="resources-title">📂 参考资源</div>
+                        <div class="resource-item"><span class="star-badge">⭐13k</span><a href="https://github.com/ageron/handson-ml3" target="_blank">Hands-On ML (3rd Ed)</a></div>
+                    </div>
+                </div>
+
+                <div class="lesson-card">
+                    <div class="lesson-header">
+                        <div class="lesson-id" style="background: #3b82f6;">L4</div>
+                        <div class="lesson-title">Python进阶</div>
+                    </div>
+                    <div class="topics">
+                        <span class="topic-tag">NumPy</span>
+                        <span class="topic-tag">Pandas</span>
+                        <span class="topic-tag">Matplotlib</span>
+                        <span class="topic-tag">OOP编程</span>
+                    </div>
+                    <div class="project-box">
+                        <div class="project-label">🛠️ 实战项目</div>
+                        <div class="project-name">数据分析基础项目</div>
+                    </div>
+                    <div class="resources">
+                        <div class="resources-title">📂 参考资源</div>
+                        <div class="resource-item"><span class="star-badge">⭐3.3k</span><a href="https://github.com/tirthajyoti/Machine-Learning-with-Python" target="_blank">ML with Python</a></div>
+                        <div class="resource-item"><span class="star-badge">⭐2.4k</span><a href="https://github.com/shibing624/python-tutorial" target="_blank">Python Tutorial</a></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Week 3-4: 机器学习核心 -->
+        <section id="week2" class="module-section anchor">
+            <h2 class="module-title week2">📗 Week 3-4 | 机器学习核心</h2>
+            <div class="lessons-grid">
+
+                <div class="lesson-card">
+                    <div class="lesson-header">
+                        <div class="lesson-id" style="background: #10b981;">L5</div>
+                        <div class="lesson-title">ML核心概念</div>
+                    </div>
+                    <div class="topics">
+                        <span class="topic-tag">监督/无监督/强化学习</span>
+                        <span class="topic-tag">训练/验证/测试集</span>
+                        <span class="topic-tag">偏差方差</span>
+                        <span class="topic-tag">过拟合正则化</span>
+                    </div>
+                    <div class="resources">
+                        <div class="resources-title">📂 参考资源</div>
+                        <div class="resource-item"><span class="star-badge">⭐86k</span><a href="https://github.com/microsoft/ML-For-Beginners" target="_blank">ML-For-Beginners</a></div>
+                        <div class="resource-item"><span class="star-badge">⭐5k</span><a href="https://github.com/Nyandwi/machine_learning_complete" target="_blank">ML Complete Course</a></div>
+                    </div>
+                </div>
+
+                <div class="lesson-card">
+                    <div class="lesson-header">
+                        <div class="lesson-id" style="background: #10b981;">L6</div>
+                        <div class="lesson-title">监督学习算法</div>
+                    </div>
+                    <div class="topics">
+                        <span class="topic-tag">线性回归</span>
+                        <span class="topic-tag">逻辑回归</span>
+                        <span class="topic-tag">决策树</span>
+                        <span class="topic-tag">SVM</span>
+                    </div>
+                    <div class="project-box">
+                        <div class="project-label">🛠️ 实战项目</div>
+                        <div class="project-name">房价预测系统</div>
+                    </div>
+                    <div class="resources">
+                        <div class="resources-title">📂 参考资源</div>
+                        <div class="resource-item"><span class="star-badge">⭐10k</span><a href="https://github.com/Yorko/mlcourse.ai" target="_blank">Open ML Course</a></div>
+                        <div class="resource-item"><span class="star-badge">⭐296</span><a href="https://github.com/sayantann11/all-classification-templetes-for-ML" target="_blank">Classification Templates</a></div>
+                    </div>
+                </div>
+
+                <div class="lesson-card">
+                    <div class="lesson-header">
+                        <div class="lesson-id" style="background: #10b981;">L7</div>
+                        <div class="lesson-title">无监督学习算法</div>
+                    </div>
+                    <div class="topics">
+                        <span class="topic-tag">K-Means</span>
+                        <span class="topic-tag">PCA</span>
+                        <span class="topic-tag">异常检测</span>
+                        <span class="topic-tag">推荐系统基础</span>
+                    </div>
+                    <div class="project-box">
+                        <div class="project-label">🛠️ 实战项目</div>
+                        <div class="project-name">客户分群分析</div>
+                    </div>
+                    <div class="resources">
+                        <div class="resources-title">📂 参考资源</div>
+                        <div class="resource-item"><span class="star-badge">⭐10k</span><a href="https://github.com/Yorko/mlcourse.ai" target="_blank">mlcourse.ai</a></div>
+                    </div>
+                </div>
+
+                <div class="lesson-card">
+                    <div class="lesson-header">
+                        <div class="lesson-id" style="background: #10b981;">L8</div>
+                        <div class="lesson-title">ML实战项目</div>
+                    </div>
+                    <div class="topics">
+                        <span class="topic-tag">特征工程</span>
+                        <span class="topic-tag">模型调参</span>
+                        <span class="topic-tag">交叉验证</span>
+                        <span class="topic-tag">评估指标</span>
+                    </div>
+                    <div class="project-box">
+                        <div class="project-label">🛠️ 实战项目</div>
+                        <div class="project-name">Kaggle入门竞赛</div>
+                    </div>
+                    <div class="resources">
+                        <div class="resources-title">📂 参考资源</div>
+                        <div class="resource-item"><span class="star-badge">⭐1.9k</span><a href="https://github.com/szilard/benchm-ml" target="_blank">ML Benchmarks</a></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Week 5-6: 深度学习基础 -->
+        <section id="week3" class="module-section anchor">
+            <h2 class="module-title week3">📗 Week 5-6 | 深度学习基础</h2>
+            <div class="lessons-grid">
+
+                <div class="lesson-card">
+                    <div class="lesson-header">
+                        <div class="lesson-id" style="background: #f59e0b;">L9</div>
+                        <div class="lesson-title">神经网络基础</div>
+                    </div>
+                    <div class="topics">
+                        <span class="topic-tag">感知机</span>
+                        <span class="topic-tag">反向传播</span>
+                        <span class="topic-tag">激活函数</span>
+                        <span class="topic-tag">损失函数</span>
+                    </div>
+                    <div class="resources">
+                        <div class="resources-title">📂 参考资源</div>
+                        <div class="resource-item"><span class="star-badge">⭐67k</span><a href="https://github.com/labmlai/annotated_deep_learning_paper_implementations" target="_blank">Annotated DL Papers</a></div>
+                    </div>
+                </div>
+
+                <div class="lesson-card">
+                    <div class="lesson-header">
+                        <div class="lesson-id" style="background: #f59e0b;">L10</div>
+                        <div class="lesson-title">CNN卷积神经网络</div>
+                    </div>
+                    <div class="topics">
+                        <span class="topic-tag">卷积/池化</span>
+                        <span class="topic-tag">经典架构</span>
+                        <span class="topic-tag">图像特征</span>
+                        <span class="topic-tag">迁移学习</span>
+                    </div>
+                    <div class="project-box">
+                        <div class="project-label">🛠️ 实战项目</div>
+                        <div class="project-name">猫狗图像分类</div>
+                    </div>
+                    <div class="resources">
+                        <div class="resources-title">📂 参考资源</div>
+                        <div class="resource-item"><span class="star-badge">⭐27k</span><a href="https://github.com/yunjey/pytorch-tutorial" target="_blank">PyTorch Tutorial</a></div>
+                        <div class="resource-item"><span class="star-badge">⭐12k</span><a href="https://github.com/kuangliu/pytorch-cifar" target="_blank">PyTorch CIFAR</a></div>
+                    </div>
+                </div>
+
+                <div class="lesson-card">
+                    <div class="lesson-header">
+                        <div class="lesson-id" style="background: #f59e0b;">L11</div>
+                        <div class="lesson-title">RNN与LSTM</div>
+                    </div>
+                    <div class="topics">
+                        <span class="topic-tag">序列建模</span>
+                        <span class="topic-tag">梯度消失</span>
+                        <span class="topic-tag">LSTM/GRU</span>
+                        <span class="topic-tag">文本序列</span>
+                    </div>
+                    <div class="project-box">
+                        <div class="project-label">🛠️ 实战项目</div>
+                        <div class="project-name">文本分类实战</div>
+                    </div>
+                    <div class="resources">
+                        <div class="resources-title">📂 参考资源</div>
+                        <div class="resource-item"><span class="star-badge">⭐5.7k</span><a href="https://github.com/bentrevett/pytorch-seq2seq" target="_blank">PyTorch Seq2Seq</a></div>
+                        <div class="resource-item"><span class="star-badge">⭐4.6k</span><a href="https://github.com/bentrevett/pytorch-sentiment-analysis" target="_blank">Sentiment Analysis</a></div>
+                    </div>
+                </div>
+
+                <div class="lesson-card">
+                    <div class="lesson-header">
+                        <div class="lesson-id" style="background: #f59e0b;">L12</div>
+                        <div class="lesson-title">DL实战项目</div>
+                    </div>
+                    <div class="topics">
+                        <span class="topic-tag">PyTorch入门</span>
+                        <span class="topic-tag">训练技巧</span>
+                        <span class="topic-tag">超参数调优</span>
+                        <span class="topic-tag">部署基础</span>
+                    </div>
+                    <div class="project-box">
+                        <div class="project-label">🛠️ 实战项目</div>
+                        <div class="project-name">图像分类模型部署</div>
+                    </div>
+                    <div class="resources">
+                        <div class="resources-title">📂 参考资源</div>
+                        <div class="resource-item"><span class="star-badge">⭐75k</span><a href="https://github.com/pytorch/pytorch" target="_blank">PyTorch Official</a></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Week 7-8: NLP与大模型 -->
+        <section id="week4" class="module-section anchor">
+            <h2 class="module-title week4">📗 Week 7-8 | NLP与大模型</h2>
+            <div class="lessons-grid">
+
+                <div class="lesson-card">
+                    <div class="lesson-header">
+                        <div class="lesson-id" style="background: #ec4899;">L13</div>
+                        <div class="lesson-title">文本处理基础</div>
+                    </div>
+                    <div class="topics">
+                        <span class="topic-tag">分词/词性标注</span>
+                        <span class="topic-tag">词向量</span>
+                        <span class="topic-tag">TF-IDF</span>
+                        <span class="topic-tag">文本清洗</span>
+                    </div>
+                    <div class="resources">
+                        <div class="resources-title">📂 参考资源</div>
+                        <div class="resource-item"><span class="star-badge">⭐81k</span><a href="https://github.com/fighting41love/funNLP" target="_blank">funNLP</a></div>
+                        <div class="resource-item"><span class="star-badge">⭐10k</span><a href="https://github.com/stanfordnlp/CoreNLP" target="_blank">Stanford CoreNLP</a></div>
+                    </div>
+                </div>
+
+                <div class="lesson-card">
+                    <div class="lesson-header">
+                        <div class="lesson-id" style="background: #ec4899;">L14</div>
+                        <div class="lesson-title">Transformer架构</div>
+                    </div>
+                    <div class="topics">
+                        <span class="topic-tag">自注意力</span>
+                        <span class="topic-tag">位置编码</span>
+                        <span class="topic-tag">多头注意力</span>
+                        <span class="topic-tag">BERT/GPT原理</span>
+                    </div>
+                    <div class="resources">
+                        <div class="resources-title">📂 参考资源</div>
+                        <div class="resource-item"><span class="star-badge">⭐67k</span><a href="https://github.com/labmlai/annotated_deep_learning_paper_implementations" target="_blank">Annotated DL Papers</a></div>
+                        <div class="resource-item"><span class="star-badge">⭐25k</span><a href="https://github.com/lucidrains/vit-pytorch" target="_blank">ViT-PyTorch</a></div>
+                        <div class="resource-item"><span class="star-badge">⭐25k</span><a href="https://github.com/karpathy/minGPT" target="_blank">minGPT</a></div>
+                    </div>
+                </div>
+
+                <div class="lesson-card">
+                    <div class="lesson-header">
+                        <div class="lesson-id" style="background: #ec4899;">L15</div>
+                        <div class="lesson-title">预训练模型</div>
+                    </div>
+                    <div class="topics">
+                        <span class="topic-tag">BERT</span>
+                        <span class="topic-tag">GPT</span>
+                        <span class="topic-tag">T5</span>
+                        <span class="topic-tag">模型微调</span>
+                    </div>
+                    <div class="project-box">
+                        <div class="project-label">🛠️ 实战项目</div>
+                        <div class="project-name">情感分析系统</div>
+                    </div>
+                    <div class="resources">
+                        <div class="resources-title">📂 参考资源</div>
+                        <div class="resource-item"><span class="star-badge">⭐8k</span><a href="https://github.com/brightmart/text_classification" target="_blank">Text Classification</a></div>
+                        <div class="resource-item"><span class="star-badge">⭐2.4k</span><a href="https://github.com/HarderThenHarder/transformers_tasks" target="_blank">Transformers Tasks</a></div>
+                    </div>
+                </div>
+
+                <div class="lesson-card">
+                    <div class="lesson-header">
+                        <div class="lesson-id" style="background: #ec4899;">L16</div>
+                        <div class="lesson-title">NLP实战项目</div>
+                    </div>
+                    <div class="topics">
+                        <span class="topic-tag">Hugging Face</span>
+                        <span class="topic-tag">任务适配</span>
+                        <span class="topic-tag">模型选择</span>
+                        <span class="topic-tag">服务化部署</span>
+                    </div>
+                    <div class="project-box">
+                        <div class="project-label">🛠️ 实战项目</div>
+                        <div class="project-name">智能问答机器人</div>
+                    </div>
+                    <div class="resources">
+                        <div class="resources-title">📂 参考资源</div>
+                        <div class="resource-item"><span class="star-badge">⭐81k</span><a href="https://github.com/fighting41love/funNLP" target="_blank">funNLP</a></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Week 9-10: LLM应用开发 -->
+        <section id="week5" class="module-section anchor">
+            <h2 class="module-title week5">📗 Week 9-10 | LLM应用开发</h2>
+            <div class="lessons-grid">
+
+                <div class="lesson-card">
+                    <div class="lesson-header">
+                        <div class="lesson-id" style="background: #8b5cf6;">L17</div>
+                        <div class="lesson-title">RAG技术开发</div>
+                    </div>
+                    <div class="topics">
+                        <span class="topic-tag">向量检索</span>
+                        <span class="topic-tag">Embedding模型</span>
+                        <span class="topic-tag">Naive RAG</span>
+                        <span class="topic-tag">Advanced RAG</span>
+                    </div>
+                    <div class="project-box">
+                        <div class="project-label">🛠️ 实战项目</div>
+                        <div class="project-name">RAG知识库问答</div>
+                    </div>
+                    <div class="resources">
+                        <div class="resources-title">📂 参考资源</div>
+                        <div class="resource-item"><span class="star-badge">⭐82k</span><a href="https://github.com/infiniflow/ragflow" target="_blank">RAGFlow</a></div>
+                        <div class="resource-item"><span class="star-badge">⭐39k</span><a href="https://github.com/QuivrHQ/quivr" target="_blank">Quivr RAG</a></div>
+                        <div class="resource-item"><span class="star-badge">⭐75k</span><a href="https://github.com/dair-ai/Prompt-Engineering-Guide" target="_blank">Prompt Engineering Guide</a></div>
+                    </div>
+                </div>
+
+                <div class="lesson-card">
+                    <div class="lesson-header">
+                        <div class="lesson-id" style="background: #8b5cf6;">L18</div>
+                        <div class="lesson-title">LangChain开发</div>
+                    </div>
+                    <div class="topics">
+                        <span class="topic-tag">LCEL</span>
+                        <span class="topic-tag">Chain构建</span>
+                        <span class="topic-tag">Tool调用</span>
+                        <span class="topic-tag">Memory</span>
+                    </div>
+                    <div class="project-box">
+                        <div class="project-label">🛠️ 实战项目</div>
+                        <div class="project-name">LangChain应用开发</div>
+                    </div>
+                    <div class="resources">
+                        <div class="resources-title">📂 参考资源</div>
+                        <div class="resource-item"><span class="star-badge">⭐139k</span><a href="https://github.com/langchain-ai/langchain" target="_blank">LangChain</a></div>
+                        <div class="resource-item"><span class="star-badge">⭐34k</span><a href="https://github.com/langchain-ai/langgraph" target="_blank">LangGraph</a></div>
+                        <div class="resource-item"><span class="star-badge">⭐38k</span><a href="https://github.com/chatchat-space/Langchain-Chatchat" target="_blank">Langchain-Chatchat</a></div>
+                    </div>
+                </div>
+
+                <div class="lesson-card">
+                    <div class="lesson-header">
+                        <div class="lesson-id" style="background: #8b5cf6;">L19</div>
+                        <div class="lesson-title">向量数据库</div>
+                    </div>
+                    <div class="topics">
+                        <span class="topic-tag">Milvus</span>
+                        <span class="topic-tag">Pinecone</span>
+                        <span class="topic-tag">Chroma</span>
+                        <span class="topic-tag">Weaviate</span>
+                    </div>
+                    <div class="resources">
+                        <div class="resources-title">📂 参考资源</div>
+                        <div class="resource-item"><span class="star-badge">⭐45k</span><a href="https://github.com/milvus-io/milvus" target="_blank">Milvus</a></div>
+                        <div class="resource-item"><span class="star-badge">⭐32k</span><a href="https://github.com/qdrant/qdrant" target="_blank">Qdrant</a></div>
+                        <div class="resource-item"><span class="star-badge">⭐16k</span><a href="https://github.com/weaviate/weaviate" target="_blank">Weaviate</a></div>
+                    </div>
+                </div>
+
+                <div class="lesson-card">
+                    <div class="lesson-header">
+                        <div class="lesson-id" style="background: #8b5cf6;">L20</div>
+                        <div class="lesson-title">Prompt工程</div>
+                    </div>
+                    <div class="topics">
+                        <span class="topic-tag">零样本/少样本</span>
+                        <span class="topic-tag">Chain-of-Thought</span>
+                        <span class="topic-tag">结构化输出</span>
+                        <span class="topic-tag">安全注入</span>
+                    </div>
+                    <div class="project-box">
+                        <div class="project-label">🛠️ 实战项目</div>
+                        <div class="project-name">Prompt优化实践</div>
+                    </div>
+                    <div class="resources">
+                        <div class="resources-title">📂 参考资源</div>
+                        <div class="resource-item"><span class="star-badge">⭐75k</span><a href="https://github.com/dair-ai/Prompt-Engineering-Guide" target="_blank">Prompt Engineering Guide</a></div>
+                        <div class="resource-item"><span class="star-badge">⭐112k</span><a href="https://github.com/microsoft/generative-ai-for-beginners" target="_blank">GenAI for Beginners</a></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Week 11-12: AI前沿与综合 -->
+        <section id="week6" class="module-section anchor">
+            <h2 class="module-title week6">📗 Week 11-12 | AI前沿与综合</h2>
+            <div class="lessons-grid">
+
+                <div class="lesson-card">
+                    <div class="lesson-header">
+                        <div class="lesson-id" style="background: #ef4444;">L21</div>
+                        <div class="lesson-title">Agent开发</div>
+                    </div>
+                    <div class="topics">
+                        <span class="topic-tag">ReAct</span>
+                        <span class="topic-tag">Tool Agent</span>
+                        <span class="topic-tag">规划Agent</span>
+                        <span class="topic-tag">Claude Agent</span>
+                    </div>
+                    <div class="project-box">
+                        <div class="project-label">🛠️ 实战项目</div>
+                        <div class="project-name">Agent开发实战</div>
+                    </div>
+                    <div class="resources">
+                        <div class="resources-title">📂 参考资源</div>
+                        <div class="resource-item"><span class="star-badge">⭐139k</span><a href="https://github.com/langchain-ai/langchain" target="_blank">LangChain</a></div>
+                        <div class="resource-item"><span class="star-badge">⭐53k</span><a href="https://github.com/crewAIInc/crewAI" target="_blank">CrewAI</a></div>
+                        <div class="resource-item"><span class="star-badge">⭐59k</span><a href="https://github.com/microsoft/autogen" target="_blank">AutoGen</a></div>
+                        <div class="resource-item"><span class="star-badge">⭐29k</span><a href="https://github.com/huggingface/agents-course" target="_blank">HuggingFace Agents Course</a></div>
+                    </div>
+                </div>
+
+                <div class="lesson-card">
+                    <div class="lesson-header">
+                        <div class="lesson-id" style="background: #ef4444;">L22</div>
+                        <div class="lesson-title">Multi-Agent协作</div>
+                    </div>
+                    <div class="topics">
+                        <span class="topic-tag">Supervisor模式</span>
+                        <span class="topic-tag">Executor模式</span>
+                        <span class="topic-tag">Graph RAG</span>
+                        <span class="topic-tag">Agent通信</span>
+                    </div>
+                    <div class="project-box">
+                        <div class="project-label">🛠️ 实战项目</div>
+                        <div class="project-name">Multi-Agent协作系统</div>
+                    </div>
+                    <div class="resources">
+                        <div class="resources-title">📂 参考资源</div>
+                        <div class="resource-item"><span class="star-badge">⭐69k</span><a href="https://github.com/FoundationAgents/MetaGPT" target="_blank">MetaGPT</a></div>
+                        <div class="resource-item"><span class="star-badge">⭐34k</span><a href="https://github.com/langchain-ai/langgraph" target="_blank">LangGraph</a></div>
+                        <div class="resource-item"><span class="star-badge">⭐71k</span><a href="https://github.com/bytebot/deer-flow" target="_blank">Deer Flow</a></div>
+                    </div>
+                </div>
+
+                <div class="lesson-card">
+                    <div class="lesson-header">
+                        <div class="lesson-id" style="background: #ef4444;">L23</div>
+                        <div class="lesson-title">综合项目</div>
+                    </div>
+                    <div class="topics">
+                        <span class="topic-tag">端到端设计</span>
+                        <span class="topic-tag">系统集成</span>
+                        <span class="topic-tag">性能优化</span>
+                        <span class="topic-tag">监控日志</span>
+                    </div>
+                    <div class="project-box">
+                        <div class="project-label">🛠️ 实战项目</div>
+                        <div class="project-name">端到端AI产品开发</div>
+                    </div>
+                    <div class="resources">
+                        <div class="resources-title">📂 参考资源</div>
+                        <div class="resource-item"><span class="star-badge">⭐114k</span><a href="https://github.com/Shubhamsaboo/awesome-llm-apps" target="_blank">100+ LLM Apps</a></div>
+                        <div class="resource-item"><span class="star-badge">⭐144k</span><a href="https://github.com/langgenius/dify" target="_blank">Dify</a></div>
+                    </div>
+                </div>
+
+                <div class="lesson-card">
+                    <div class="lesson-header">
+                        <div class="lesson-id" style="background: #ef4444;">L24</div>
+                        <div class="lesson-title">职业规划</div>
+                    </div>
+                    <div class="topics">
+                        <span class="topic-tag">简历优化</span>
+                        <span class="topic-tag">面试准备</span>
+                        <span class="topic-tag">AI岗位分析</span>
+                        <span class="topic-tag">持续学习</span>
+                    </div>
+                    <div class="project-box">
+                        <div class="project-label">🛠️ 实战项目</div>
+                        <div class="project-name">AI简历优化与面试准备</div>
+                    </div>
+                    <div class="resources">
+                        <div class="resources-title">📂 参考资源</div>
+                        <div class="resource-item"><span class="star-badge">⭐10k</span><a href="https://github.com/alexeygrigorev/data-science-interviews" target="_blank">DS Interview Questions</a></div>
+                        <div class="resource-item"><span class="star-badge">⭐10k</span><a href="https://github.com/Engineer1999/A-Curated-List-of-ML-System-Design-Case-Studies" target="_blank">ML System Design</a></div>
+                        <div class="resource-item"><span class="star-badge">⭐1.7k</span><a href="https://github.com/amitshekhariitbhu/ai-engineering-interview-questions" target="_blank">AI Engineering Interview</a></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 参考资料汇总 -->
+        <section id="resources" class="anchor">
+            <h2 class="module-title" style="background: linear-gradient(135deg, #1e293b, #334155);">📚 参考资料汇总</h2>
+
+            <div class="section-divider">
+                <h3>🔥 高优先级学习资源</h3>
+                <p>以下资源按Stars排序，建议优先学习</p>
+            </div>
+
+            <div class="lessons-grid">
+                <div class="lesson-card">
+                    <div class="resources-title">📚 课程与教材</div>
+                    <div class="resource-item"><span class="star-badge">⭐86k</span><a href="https://github.com/microsoft/ML-For-Beginners" target="_blank">ML-For-Beginners</a> - 12周26课</div>
+                    <div class="resource-item"><span class="star-badge">⭐48k</span><a href="https://github.com/microsoft/AI-For-Beginners" target="_blank">AI-For-Beginners</a> - 12周24课</div>
+                    <div class="resource-item"><span class="star-badge">⭐112k</span><a href="https://github.com/microsoft/generative-ai-for-beginners" target="_blank">GenAI for Beginners</a> - 21课</div>
+                    <div class="resource-item"><span class="star-badge">⭐29k</span><a href="https://github.com/huggingface/agents-course" target="_blank">HuggingFace Agents Course</a></div>
+                    <div class="resource-item"><span class="star-badge">⭐75k</span><a href="https://github.com/dair-ai/Prompt-Engineering-Guide" target="_blank">Prompt Engineering Guide</a></div>
+                </div>
+
+                <div class="lesson-card">
+                    <div class="resources-title">🛠️ 核心框架</div>
+                    <div class="resource-item"><span class="star-badge">⭐139k</span><a href="https://github.com/langchain-ai/langchain" target="_blank">LangChain</a></div>
+                    <div class="resource-item"><span class="star-badge">⭐50k</span><a href="https://github.com/run-llama/llama_index" target="_blank">LlamaIndex</a></div>
+                    <div class="resource-item"><span class="star-badge">⭐53k</span><a href="https://github.com/crewAIInc/crewAI" target="_blank">CrewAI</a></div>
+                    <div class="resource-item"><span class="star-badge">⭐59k</span><a href="https://github.com/microsoft/autogen" target="_blank">AutoGen</a></div>
+                    <div class="resource-item"><span class="star-badge">⭐144k</span><a href="https://github.com/langgenius/dify" target="_blank">Dify</a></div>
+                </div>
+
+                <div class="lesson-card">
+                    <div class="resources-title">🗄️ 向量数据库</div>
+                    <div class="resource-item"><span class="star-badge">⭐45k</span><a href="https://github.com/milvus-io/milvus" target="_blank">Milvus</a></div>
+                    <div class="resource-item"><span class="star-badge">⭐32k</span><a href="https://github.com/qdrant/qdrant" target="_blank">Qdrant</a></div>
+                    <div class="resource-item"><span class="star-badge">⭐16k</span><a href="https://github.com/weaviate/weaviate" target="_blank">Weaviate</a></div>
+                </div>
+
+                <div class="lesson-card">
+                    <div class="resources-title">📝 面试准备</div>
+                    <div class="resource-item"><span class="star-badge">⭐10k</span><a href="https://github.com/alexeygrigorev/data-science-interviews" target="_blank">Data Science Interviews</a></div>
+                    <div class="resource-item"><span class="star-badge">⭐10k</span><a href="https://github.com/Engineer1999/A-Curated-List-of-ML-System-Design-Case-Studies" target="_blank">ML System Design</a></div>
+                    <div class="resource-item"><span class="star-badge">⭐140k</span><a href="https://github.com/yangshun/tech-interview-handbook" target="_blank">Tech Interview Handbook</a></div>
+                   <div class="resource-item"><span class="star-badge">⭐1k</span><a href="https://github.com/Devinterview-io/llms-interview-questions" target="_blank">LLMs Interview Questions</a></div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <footer class="footer">
+       <p>📋 AI教材详细课程大纲 |24课完整内容 | GitHub开源项目参考</p>
+        <p style="margin-top: 8px;">数据来源：GitHub API搜索 | 更新日期：2026年6月8日</p>
+    </footer>
+
+    <script>
+        document.querySelectorAll('.nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                target.scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+
+        const sections = document.querySelectorAll('.module-section');
+        const navLinks = document.querySelectorAll('.nav a');
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (scrollY >= sectionTop - 100) {
+                    current = section.getAttribute('id');
+                }
+            });
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

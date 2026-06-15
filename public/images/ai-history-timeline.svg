@@ -1,0 +1,138 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a2e"/>
+      <stop offset="100%" style="stop-color:#16213e"/>
+    </linearGradient>
+    <linearGradient id="lineGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#4a90d9"/>
+      <stop offset="50%" style="stop-color:#16c79a"/>
+      <stop offset="100%" style="stop-color:#f39c12"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="800" fill="url(#bgGrad)"/>
+
+  <!-- Title -->
+  <text x="600" y="50" text-anchor="middle" font-family="Arial, sans-serif" font-size="32" font-weight="bold" fill="#ffffff">AI发展时间线 (1950-2025)</text>
+
+  <!-- Timeline Axis -->
+  <line x1="80" y1="320" x2="1120" y2="320" stroke="url(#lineGrad)" stroke-width="6" stroke-linecap="round"/>
+
+  <!-- Era Markers -->
+  <circle cx="120" cy="320" r="25" fill="#4a90d9" filter="url(#glow)"/>
+  <circle cx="320" cy="320" r="25" fill="#e94560" filter="url(#glow)"/>
+  <circle cx="520" cy="320" r="25" fill="#16c79a" filter="url(#glow)"/>
+  <circle cx="720" cy="320" r="25" fill="#f39c12" filter="url(#glow)"/>
+  <circle cx="920" cy="320" r="25" fill="#f39c12" filter="url(#glow)"/>
+  <circle cx="1040" cy="320" r="20" fill="#e94560" filter="url(#glow)"/>
+
+  <!-- Era Labels -->
+  <text x="120" y="280" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#4a90d9">第一次AI浪潮</text>
+  <text x="120" y="298" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#8ab4f8">1956 符号主义</text>
+
+  <text x="320" y="280" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#e94560">第二次AI浪潮</text>
+  <text x="320" y="298" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#f8a8b8">1980 专家系统</text>
+
+  <text x="520" y="280" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#16c79a">统计学习时代</text>
+  <text x="520" y="298" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#7de8c8">1990 机器学习</text>
+
+  <text x="720" y="280" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#f39c12">深度学习时代</text>
+  <text x="720" y="298" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#f8c878">2012 神经网络</text>
+
+  <!-- Year Labels -->
+  <text x="120" y="355" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#aaaaaa">1956</text>
+  <text x="320" y="355" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#aaaaaa">1980</text>
+  <text x="520" y="355" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#aaaaaa">1990</text>
+  <text x="720" y="355" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#aaaaaa">2012</text>
+  <text x="920" y="355" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#aaaaaa">2017</text>
+  <text x="1040" y="355" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#aaaaaa">2022</text>
+
+  <!-- Milestones Below -->
+  <g transform="translate(80, 400)">
+    <!-- ELIZA -->
+    <rect x="0" y="0" width="160" height="80" rx="10" fill="#1e3a5f" stroke="#4a90d9" stroke-width="2"/>
+    <text x="80" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#ffffff">ELIZA</text>
+    <text x="80" y="55" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#8ab4f8">首个聊天机器人</text>
+    <text x="80" y="72" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#6c8ab8">1966</text>
+  </g>
+
+  <g transform="translate(280, 400)">
+    <!-- Deep Blue -->
+    <rect x="0" y="0" width="160" height="80" rx="10" fill="#3d1e2e" stroke="#e94560" stroke-width="2"/>
+    <text x="80" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#ffffff">Deep Blue</text>
+    <text x="80" y="55" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#f8a8b8">击败国际象棋冠军</text>
+    <text x="80" y="72" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#c87888">1997</text>
+  </g>
+
+  <g transform="translate(480, 400)">
+    <!-- ML Rise -->
+    <rect x="0" y="0" width="160" height="80" rx="10" fill="#0d3d33" stroke="#16c79a" stroke-width="2"/>
+    <text x="80" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#ffffff">统计学习崛起</text>
+    <text x="80" y="55" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#7de8c8">SVM, 随机森林</text>
+    <text x="80" y="72" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#5ba888">1990s</text>
+  </g>
+
+  <g transform="translate(680, 400)">
+    <!-- AlexNet -->
+    <rect x="0" y="0" width="160" height="80" rx="10" fill="#3d2e0a" stroke="#f39c12" stroke-width="2"/>
+    <text x="80" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#ffffff">AlexNet</text>
+    <text x="80" y="55" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#f8c878">ImageNet夺冠</text>
+    <text x="80" y="72" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#c8a060">2012</text>
+  </g>
+
+  <g transform="translate(680, 520)">
+    <!-- AlphaGo -->
+    <rect x="0" y="0" width="160" height="80" rx="10" fill="#3d2e0a" stroke="#f39c12" stroke-width="2"/>
+    <text x="80" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#ffffff">AlphaGo</text>
+    <text x="80" y="55" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#f8c878">击败围棋冠军</text>
+    <text x="80" y="72" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#c8a060">2016</text>
+  </g>
+
+  <g transform="translate(880, 400)">
+    <!-- Transformer -->
+    <rect x="0" y="0" width="160" height="80" rx="10" fill="#3d2e0a" stroke="#f39c12" stroke-width="2"/>
+    <text x="80" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#ffffff">Transformer</text>
+    <text x="80" y="55" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#f8c878">注意力机制</text>
+    <text x="80" y="72" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#c8a060">2017</text>
+  </g>
+
+  <g transform="translate(880, 520)">
+    <!-- ChatGPT -->
+    <rect x="0" y="0" width="160" height="80" rx="10" fill="#3d2e0a" stroke="#f39c12" stroke-width="2"/>
+    <text x="80" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#ffffff">ChatGPT</text>
+    <text x="80" y="55" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#f8c878">大语言模型</text>
+    <text x="80" y="72" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#c8a060">2022</text>
+  </g>
+
+  <g transform="translate(1000, 400)">
+    <!-- GPT-4 -->
+    <rect x="0" y="0" width="140" height="80" rx="10" fill="#4a1a4a" stroke="#e94560" stroke-width="2"/>
+    <text x="70" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#ffffff">GPT-4</text>
+    <text x="70" y="55" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#f8a8b8">多模态大模型</text>
+    <text x="70" y="72" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#c88088">2023</text>
+  </g>
+
+  <!-- Legend -->
+  <g transform="translate(100, 700)">
+    <rect x="0" y="0" width="20" height="20" rx="5" fill="#4a90d9"/>
+    <text x="30" y="15" font-family="Arial, sans-serif" font-size="12" fill="#aaaaaa">符号主义</text>
+
+    <rect x="120" y="0" width="20" height="20" rx="5" fill="#e94560"/>
+    <text x="150" y="15" font-family="Arial, sans-serif" font-size="12" fill="#aaaaaa">专家系统</text>
+
+    <rect x="240" y="0" width="20" height="20" rx="5" fill="#16c79a"/>
+    <text x="270" y="15" font-family="Arial, sans-serif" font-size="12" fill="#aaaaaa">机器学习</text>
+
+    <rect x="360" y="0" width="20" height="20" rx="5" fill="#f39c12"/>
+    <text x="390" y="15" font-family="Arial, sans-serif" font-size="12" fill="#aaaaaa">深度学习</text>
+  </g>
+</svg>
