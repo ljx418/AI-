@@ -57,11 +57,25 @@
 4. 量化方案对比 (≥ 2,000 字): GPTQ vs AWQ vs BitsAndBytes
 5. 工业部署 (≥ 2,000 字): 推理性能 / 量化评测
 
-**代码 (≥ 4)**: bitsandbytes 4-bit 加载 / QLoRA peft config / LLaMA-Factory QLoRA 训练 / 显存监控
+**代码 (≥ 4)**:
+- bitsandbytes 4-bit 加载 (用 mock/伪代码演示，因为 Pyodide 无 GPU)
+- QLoRA peft config (同样本地 GPU 环境)
+- LLaMA-Factory QLoRA 训练 (本地 GPU 环境)
+- **NumPy 4-bit 量化原理演示** (Pyodide 兼容：手动实现 NF4 量化数学，用 numpy.zeros + 量化表查表)
 
 **引用 (≥ 5)**: arxiv:2305.14314 (QLoRA) / github.com/bitsandbytes-foundation/bitsandbytes / github.com/huggingface/peft / LLaMA-Factory 文档 / axolotl 仓库
 
 **openSourceRepo**: `https://github.com/bitsandbytes-foundation/bitsandbytes`
+
+**Pyodide 兼容性说明** (W2 启动前修订, 2026-06-16):
+- L57 真实 QLoRA 训练需 NVIDIA GPU + bitsandbytes (Pyodide 无此能力)
+- **代码示例策略**:
+  - 演示 1-2: 完整生产级 bitsandbytes 4-bit 加载代码 (标注 "本地 GPU 环境运行")
+  - 演示 3-4: Pyodide 兼容 — 用 NumPy 手动实现 NF4 量化数学 (量化常数 + 查表 + 反量化)
+- **教学覆盖**:
+  - QLoRA 数学原理 (Pyodide 可演示) + 工业部署 (本地 GPU, 不可演示) 都讲
+  - 验收不要求 Pyodide 实际跑通 bitsandbytes, 只要求代码可读
+- **学生本地实验建议**: 在 Modal / Colab / 私有 GPU 跑完整流程
 
 ---
 

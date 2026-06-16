@@ -28,7 +28,7 @@ const src = fs.readFileSync('src/data/lessons_new.jsx', 'utf-8');
 const lessonsStart = src.indexOf('export const LESSONS');
 const body = src.slice(lessonsStart);
 
-const re = /"(L\d{2})":\s*\{/g;
+const re = /"(L\d+)":\s*\{/g;
 const matches = [];
 let m;
 while ((m = re.exec(body)) !== null) {
