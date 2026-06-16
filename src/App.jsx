@@ -16,6 +16,7 @@ import BenchmarkRunner from "./components/BenchmarkRunner";
 import AITutor, { AITutorDemo } from "./components/AITutor";
 import { OutlinePage, PlanReportPage, StandalonePage, JupyterDemoPage } from './components/StaticPages';
 import { LESSONS, WEEK_GROUPS } from './data/lessons_new';
+import { useLessons } from './data/useLessons';
 
 // =============================================================================
 // 导航栏
@@ -103,6 +104,8 @@ function Footer() {
 // =============================================================================
 function HomePage() {
   const navigate = useNavigate();
+  const { lessons: LESSONS_DATA, loading: lessonsLoading } = useLessons();
+  const LESSONS = LESSONS_DATA || {};
 
   // Load completed lessons from localStorage
   const [completedLessons, setCompletedLessons] = React.useState(() => {

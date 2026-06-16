@@ -1,6 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { LESSONS, IMAGE_MAP } from '../data/lessons_new';
+import { useLessons } from '../data/useLessons';
 
 const styles = {
   wrapper: {
@@ -440,7 +441,13 @@ function ReferenceSection({ references }) {
 
 export default function LessonContent({ lessonId }) {
   const navigate = useNavigate();
+  const { lessons: LESSONS_DATA, loading } = useLessons();
+  const LESSONS = LESSONS_DATA || {};
   const lesson = LESSONS[lessonId];
+
+  if (loading && !lesson) {
+    return <div style={{ padding: 40, textAlign: 'center' }}>⏳ 加载课程数据中…</div>;
+  }
 
   // Lesson completion state using localStorage
   const [completed, setCompleted] = React.useState(() => {
