@@ -445,10 +445,6 @@ export default function LessonContent({ lessonId }) {
   const LESSONS = LESSONS_DATA || {};
   const lesson = LESSONS[lessonId];
 
-  if (loading && !lesson) {
-    return <div style={{ padding: 40, textAlign: 'center' }}>⏳ 加载课程数据中…</div>;
-  }
-
   // Lesson completion state using localStorage
   const [completed, setCompleted] = React.useState(() => {
     try {
@@ -466,6 +462,10 @@ export default function LessonContent({ lessonId }) {
       localStorage.setItem(`lesson-completed-${lessonId}`, String(newValue));
     } catch {}
   };
+
+  if (loading && !lesson) {
+    return <div style={{ padding: 40, textAlign: 'center' }}>⏳ 加载课程数据中…</div>;
+  }
 
   if (!lesson) {
     return (

@@ -108,14 +108,6 @@ export const WEEK_GROUPS = [
     ]
   },
   {
-    "label": "📅 Week 13-14 前沿模型",
-    "lessons": [
-      "L25",
-      "L26",
-      "L27"
-    ]
-  },
-  {
     "label": "📅 Week 13-14 前沿模型与微调",
     "lessons": [
       "L25",
