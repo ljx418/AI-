@@ -1,4 +1,5 @@
-// scripts/fetch_yuque_v6.mjs — 关键修正: foho2nsutnn37gw3 是 9 专题共用入口, 不排除, 滚 30 轮
+// scripts/fetch_yuque_v7.mjs — 换策略: --single-process Chrome (避免 zygote fork 死)
+// 关键: 4 专题页 (foho/snox/gq5/sozn) 内可能有嵌套子目录, 递归访问
 import puppeteer from 'puppeteer';
 import fs from 'fs';
 import path from 'path';
@@ -8,10 +9,14 @@ const OUT_FILE = path.join(process.cwd(), 'docs', 'yuque_raw', 'yuque_urls.json'
 function sleep(ms) { return new Promise(r => setTimeout(r, ms)); }
 
 (async () => {
+  // --single-process 避免 zygote fork
   const browser = await puppeteer.launch({
     headless: 'new',
     executablePath: process.env.PUPPETEER_EXECUTABLE_PATH,
-    args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-dev-shm-usage'],
+    args: [
+      '--no-sandbox', '--disable-setuid-sandbox', '--disable-dev-shm-usage',
+      '--single-process', '--no-zygote',
+    ],
   });
   const page = await browser.newPage();
   await page.setViewport({ width: 1440, height: 900 });
@@ -28,8 +33,10 @@ function sleep(ms) { return new Promise(r => setTimeout(r, ms)); }
     await page.keyboard.press('Enter');
     await sleep(5000);
   }
+  console.log('登录后 title:', await page.title());
 
   const all = new Set();
+  const visited = new Set();
 
   async function collectUrls() {
     return await page.evaluate(() => {
@@ -49,7 +56,48 @@ function sleep(ms) { return new Promise(r => setTimeout(r, ms)); }
     });
   }
 
-  // 1. 首页滚 20 轮
+  async function visit(slug, depth) {
+    if (visited.has(slug) || depth > 2) return;
+    visited.add(slug);
+    try {
+      await page.goto(`${BASE}/${slug}`, { waitUntil: 'networkidle2', timeout: 30000 });
+      await sleep(1500);
+      for (let r = 0; r < 10; r++) {
+        (await collectUrls()).forEach(u => all.add(u));
+        await page.evaluate(() => window.scrollTo(0, document.documentElement.scrollHeight));
+        await sleep(800);
+      }
+      console.log(`  [d${depth}] ${slug}: 累计 ${all.size}`);
+
+      // 找嵌套子目录 (跟当前 slug 不一样的子 slug)
+      if (depth < 2) {
+        const subSlugs = await page.evaluate(() => {
+          const out = new Set();
+          document.querySelectorAll('a').forEach(a => {
+            if (a.href && a.href.includes('/dhluml/')) {
+              const href = a.href.split('?')[0];
+              const slug = href.split('/').pop();
+              // 找长度 14-22 字符的 slug (可能是子目录)
+              if (slug.length >= 14 && slug.length <= 22 && /^[a-z0-9]+$/.test(slug) && !href.includes('/books/')) {
+                out.add(slug);
+              }
+            }
+          });
+          return [...out];
+        });
+        // 递归访问每个子 slug
+        for (const sub of subSlugs) {
+          if (!visited.has(sub)) {
+            await visit(sub, depth + 1);
+          }
+        }
+      }
+    } catch (e) {
+      console.log(`  [d${depth}] ${slug}: ✗ ${e.message.slice(0, 50)}`);
+    }
+  }
+
+  // 首页滚 20 轮
   console.log('📜 首页滚 20 轮...');
   for (let i = 0; i < 20; i++) {
     (await collectUrls()).forEach(u => all.add(u));
@@ -59,26 +107,13 @@ function sleep(ms) { return new Promise(r => setTimeout(r, ms)); }
   }
   console.log(`   首页累计: ${all.size}`);
 
-  // 2. 访问 9 专题共用入口 foho2nsutnn37gw3 (关键!) + 其他 3 个
+  // 访问 4 已知专题页, 深度 2 递归
   for (const slug of ['foho2nsutnn37gw3', 'snoxhrutgoybigeg', 'gq5n7l8nlgx4m08r', 'soznzt09nuzptr5z']) {
-    console.log(`\n📚 访问 ${slug}, 滚 30 轮...`);
-    try {
-      await page.goto(`${BASE}/${slug}`, { waitUntil: 'networkidle2', timeout: 30000 });
-      await sleep(2000);
-      for (let i = 0; i < 30; i++) {
-        (await collectUrls()).forEach(u => all.add(u));
-        await page.evaluate(() => window.scrollTo(0, document.documentElement.scrollHeight));
-        await sleep(800);
-        if (i % 10 === 0) console.log(`   轮 ${i+1}: ${all.size}`);
-      }
-      console.log(`   ${slug} 后累计: ${all.size}`);
-    } catch (e) {
-      console.log(`   ✗ ${e.message.slice(0, 60)}`);
-    }
+    await visit(slug, 0);
   }
 
   fs.writeFileSync(OUT_FILE, JSON.stringify([...all].sort(), null, 2));
-  console.log(`\n📚 v6 共 ${all.size} URL (目标 287, 偏差 ${Math.round((all.size-287)/287*100)}%)`);
+  console.log(`\n📚 v7 共 ${all.size} URL (目标 287, 偏差 ${Math.round((all.size-287)/287*100)}%)`);
 
   await browser.close();
 })();

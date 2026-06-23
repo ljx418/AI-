@@ -23,8 +23,10 @@ function isDocHref(href) {
   await sleep(2000);
   const hasPwd = await page.$('input.ant-input.larkui-input, input[class*="ant-input"]');
   if (hasPwd) {
+    const pwd = process.env.YUQUE_PASSWORD;
+    if (!pwd) throw new Error('YUQUE_PASSWORD env required (e.g. export YUQUE_PASSWORD=xxx)');
     await hasPwd.click();
-    await page.keyboard.type('ghkq', { delay: 80 });
+    await page.keyboard.type(pwd, { delay: 80 });
     await page.keyboard.press('Enter');
     await sleep(5000);
   }

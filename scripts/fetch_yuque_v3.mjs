@@ -39,9 +39,11 @@ function isDocHref(href) {
   // 检测密码框
   const hasPwd = await page.$('input.ant-input.larkui-input, input[class*="ant-input"]');
   if (hasPwd) {
-    console.log('🔐 检测到密码框, 输入密码 ghkq...');
+    const pwd = process.env.YUQUE_PASSWORD;
+    if (!pwd) throw new Error('YUQUE_PASSWORD env required');
+    console.log(`🔐 检测到密码框, 输入密码 (env YUQUE_PASSWORD)...`);
     await hasPwd.click();
-    await page.keyboard.type('ghkq', { delay: 80 });
+    await page.keyboard.type(pwd, { delay: 80 });
     await page.keyboard.press('Enter');
     await sleep(5000);
     console.log('   登录后 URL:', page.url());
