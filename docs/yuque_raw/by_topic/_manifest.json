@@ -1,0 +1,24 @@
+{
+  "w3_status": "partial",
+  "timestamp": "2026-06-23T15:11:41.357Z",
+  "total_urls": 82,
+  "fetched_docs": 4,
+  "by_topic": {
+    "T1": 0,
+    "T2": 0,
+    "T3": 0,
+    "T4": 0,
+    "T5": 1,
+    "T6": 0,
+    "T7": 1,
+    "T8": 0,
+    "T9": 1,
+    "T_unclassified": 79,
+    "T": 0
+  },
+  "known_entries": 4,
+  "content_matched": 0,
+  "heuristic_rr": 0,
+  "target_287": "差 205 URL",
+  "next_step": "W3 启动按 PRD v3.0 §2.2 主题分配直接写课, 接受 partial 82 URL"
+}
